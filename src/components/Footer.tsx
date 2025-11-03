@@ -114,7 +114,7 @@ export function Footer() {
             <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-3 mb-6">
               <Mail className="w-5 h-5 opacity-60" />
               <a 
-                href="mailto:hello@hitechglobal.com" 
+                href="mailto:hello@hitechglobals.com" 
                 className="text-base sm:text-lg opacity-90 hover:text-[#0063cd] transition-colors break-all"
               >
                 hello@hitechglobals.com
@@ -131,7 +131,7 @@ export function Footer() {
       <div className="border-t border-white/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 py-6">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-xs sm:text-sm opacity-60">
-            <p>© {new Date().getFullYear()} HiTech Global Solutions. All rights reserved.</p>
+            <p>© {new Date().getFullYear()} HiTech Globals. All rights reserved.</p>
             <div className="flex gap-6">
               <a href="#" className="hover:opacity-100 transition-opacity">
                 Privacy Policy

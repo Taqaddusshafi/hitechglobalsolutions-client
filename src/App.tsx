@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { HelmetProvider } from 'react-helmet-async';
 import { BrowserRouter as Router, Routes, Route, Navigate, useLocation } from 'react-router-dom';
 import { Navigation } from './components/Navigation';
 import { Footer } from './components/Footer';
@@ -28,7 +29,6 @@ export default function App() {
   const [contentReady, setContentReady] = useState(false);
 
   useEffect(() => {
-    // Check if user has already seen the splash screen in this session
     const splashSeen = sessionStorage.getItem('splashSeen');
     if (splashSeen === 'true') {
       setShowSplash(false);
@@ -45,30 +45,32 @@ export default function App() {
   };
 
   return (
-    <Router>
-      {showSplash && (
-        <SplashScreen onComplete={handleSplashComplete} />
-      )}
-      
-      {contentReady && (
-        <div className="min-h-screen flex flex-col">
-          <ScrollToTop />
-          <Navigation />
-          <main className="flex-1">
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/about" element={<About />} />
-              <Route path="/services" element={<Services />} />
-              <Route path="/portfolio" element={<Portfolio />} />
-              <Route path="/contact" element={<Contact />} />
-              <Route path="*" element={<Navigate to="/" replace />} />
-            </Routes>
-          </main>
-          <Footer />
-          <Analytics/>
-          <SpeedInsights />
-        </div>
-      )}
-    </Router>
+    <HelmetProvider>
+      <Router>
+        {showSplash && (
+          <SplashScreen onComplete={handleSplashComplete} />
+        )}
+        
+        {contentReady && (
+          <div className="min-h-screen flex flex-col">
+            <ScrollToTop />
+            <Navigation />
+            <main className="flex-1">
+              <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/about" element={<About />} />
+                <Route path="/services" element={<Services />} />
+                <Route path="/portfolio" element={<Portfolio />} />
+                <Route path="/contact" element={<Contact />} />
+                <Route path="*" element={<Navigate to="/" replace />} />
+              </Routes>
+            </main>
+            <Footer />
+            <Analytics/>
+            <SpeedInsights />
+          </div>
+        )}
+      </Router>
+    </HelmetProvider>
   );
 }
