@@ -40,7 +40,7 @@ export function Navigation() {
           <Link to="/" className="flex items-center gap-3 group">
             <motion.img
               src={logo}
-              alt="HiTech Global Solutions"
+              alt="HiTech Globals"
               className="h-10 w-10 sm:h-12 sm:w-12"
               whileHover={{ scale: 1.05 }}
               transition={{ duration: 0.2 }}

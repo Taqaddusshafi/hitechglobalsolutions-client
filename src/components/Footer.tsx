@@ -39,7 +39,7 @@ export function Footer() {
                 </span>
               </div>
               <div className="text-lg sm:text-xl line-height-6" style={{ fontFamily: 'Fredoka, sans-serif', fontWeight: 400 }}>
-                Global Solutions
+                Globals
               </div>
             </Link>
             <p className="text-base sm:text-lg opacity-80 mb-6 sm:mb-8 max-w-md">
