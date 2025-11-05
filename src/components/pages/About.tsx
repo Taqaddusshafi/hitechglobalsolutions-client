@@ -75,7 +75,7 @@ export function About() {
   const stats = [
     { value: '50+', label: 'Projects Delivered', icon: TrendingUp },
     { value: '4.9/5', label: 'Client Rating', icon: Star },
-    { value: '10+', label: 'Years Experience', icon: Clock },
+    { value: '3+', label: 'Years Experience', icon: Clock },
   ];
 
   return (
