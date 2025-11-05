@@ -152,7 +152,7 @@ export function AnimatedLogo() {
             color: solutionColor,
           }}
         >
-          Global Solutions
+          Globals
         </motion.div>
       </div>
     </div>
