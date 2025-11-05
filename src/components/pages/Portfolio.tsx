@@ -4,13 +4,34 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowRight, Code, Smartphone, Zap, FileText, Star, Users, TrendingUp, ExternalLink } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
+interface Project {
+  title: string;
+  category: 'Web' | 'Mobile' | 'Design' | 'E-commerce';
+  description: string;
+  tags: string[];
+  color: string;
+  results?: string;
+  client?: string;
+  featured?: boolean;
+}
+
+interface ProjectCardProps {
+  project: Project;
+  index: number;
+}
+
+interface Stat {
+  icon: React.ComponentType<{ className?: string }>;
+  label: string;
+  value: string;
+}
+
 export function Portfolio() {
-  const [activeFilter, setActiveFilter] = useState('All');
-  const [selectedProject, setSelectedProject] = useState<string | null>(null);
+  const [activeFilter, setActiveFilter] = useState<string>('All');
 
-  const filters = ['All', 'Web', 'Mobile', 'Design', 'E-commerce'];
+  const filters: string[] = ['All', 'Web', 'Mobile', 'Design', 'E-commerce'];
 
-  const projects = [
+  const projects: Project[] = [
     {
       title: 'Modern SaaS Platform',
       category: 'Web',
@@ -19,7 +40,6 @@ export function Portfolio() {
       color: '0063cd',
       results: '45% increase in user engagement',
       client: 'Tech Startup',
-      link: '#',
       featured: true,
     },
     {
@@ -30,7 +50,6 @@ export function Portfolio() {
       color: '1a1a1a',
       results: '3x ROI in first 6 months',
       client: 'Fashion Brand',
-      link: '#',
       featured: true,
     },
     {
@@ -41,7 +60,6 @@ export function Portfolio() {
       color: '0063cd',
       results: '50K+ active users',
       client: 'Health Tech',
-      link: '#',
       featured: false,
     },
     {
@@ -52,7 +70,6 @@ export function Portfolio() {
       color: '444444',
       results: 'Brand recognition +60%',
       client: 'Startup Inc',
-      link: '#',
       featured: false,
     },
     {
@@ -63,7 +80,6 @@ export function Portfolio() {
       color: '0063cd',
       results: '200% traffic increase',
       client: 'Creative Professional',
-      link: '#',
       featured: false,
     },
     {
@@ -74,21 +90,20 @@ export function Portfolio() {
       color: '1a1a1a',
       results: '10K daily orders',
       client: 'Restaurant Chain',
-      link: '#',
       featured: true,
     },
   ];
 
-  const filteredProjects =
-    activeFilter === 'All'
-      ? projects
-      : projects.filter((project) => project.category === activeFilter);
-
-  const stats = [
+  const stats: Stat[] = [
     { icon: Users, label: 'Happy Clients', value: '50+' },
     { icon: TrendingUp, label: 'Projects Delivered', value: '120+' },
     { icon: Star, label: 'Avg Rating', value: '4.9/5' },
   ];
+
+  const filteredProjects: Project[] =
+    activeFilter === 'All'
+      ? projects
+      : projects.filter((project) => project.category === activeFilter);
 
   return (
     <>
@@ -149,7 +164,7 @@ export function Portfolio() {
               <div className="inline-block px-4 py-2 bg-[#0063cd]/10 rounded-full mb-8">
                 <span className="text-[#0063cd] font-medium">Proven Track Record</span>
               </div>
-              <h1 className="text-4xl sm:text-6xl md:text-8xl lg:text-8xl tracking-tight mb-8">
+              <h1 className="text-4xl sm:text-6xl md:text-7xl tracking-tight mb-8">
                 Our <span className="text-[#0063cd]">portfolio</span>
               </h1>
             </motion.div>
@@ -179,7 +194,7 @@ export function Portfolio() {
               ))}
             </motion.div>
 
-            {/* CTA - Above the fold */}
+            {/* CTAs */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
@@ -187,13 +202,13 @@ export function Portfolio() {
               className="flex flex-col sm:flex-row gap-4 justify-center"
             >
               <Link to="/contact">
-                <button className="px-8 py-4 bg-[#0063cd] text-white rounded-full hover:bg-[#0063cd]/90 transition-colors inline-flex items-center gap-2 group font-medium shadow-lg hover:shadow-xl w-full sm:w-auto justify-center">
+                <button className="px-8 py-4 bg-[#0063cd] text-white rounded-full hover:bg-[#0063cd]/90 transition-all inline-flex items-center gap-2 group font-medium shadow-lg hover:shadow-xl w-full sm:w-auto justify-center">
                   Start Your Project
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </button>
               </Link>
               <Link to="/contact">
-                <button className="px-8 py-4 bg-white border-2 border-[#0063cd] text-[#0063cd] rounded-full hover:bg-[#0063cd]/5 transition-colors inline-flex items-center gap-2 group font-medium w-full sm:w-auto justify-center">
+                <button className="px-8 py-4 bg-white border-2 border-[#0063cd] text-[#0063cd] rounded-full hover:bg-[#0063cd]/5 transition-all inline-flex items-center gap-2 group font-medium w-full sm:w-auto justify-center">
                   Schedule Consultation
                   <ExternalLink className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </button>
@@ -249,7 +264,7 @@ export function Portfolio() {
           </section>
         )}
 
-        {/* Projects Grid - Enhanced */}
+        {/* Projects Grid */}
         <section className="px-4 sm:px-6 pb-32" aria-label="Portfolio Projects">
           <div className="max-w-7xl mx-auto">
             <AnimatePresence mode="wait">
@@ -262,12 +277,7 @@ export function Portfolio() {
                 className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
               >
                 {filteredProjects.map((project, index) => (
-                  <ProjectCard 
-                    key={project.title} 
-                    project={project} 
-                    index={index}
-                    onHover={() => setSelectedProject(project.title)}
-                  />
+                  <ProjectCard key={project.title} project={project} index={index} />
                 ))}
               </motion.div>
             </AnimatePresence>
@@ -370,7 +380,7 @@ export function Portfolio() {
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
-                  className="p-8 bg-white rounded-2xl border border-border"
+                  className="p-8 bg-white rounded-2xl border border-border hover:shadow-lg transition-all"
                 >
                   <h3 className="text-2xl font-bold mb-3">{item.title}</h3>
                   <p className="text-muted-foreground text-lg">{item.description}</p>
@@ -380,7 +390,7 @@ export function Portfolio() {
           </div>
         </section>
 
-        {/* Final CTA - Primary conversion point */}
+        {/* Final CTA */}
         <section className="py-32 px-4 sm:px-6 bg-gradient-to-br from-[#0063cd] to-[#003fa3]">
           <div className="max-w-4xl mx-auto">
             <motion.div
@@ -422,8 +432,8 @@ export function Portfolio() {
   );
 }
 
-// Enhanced Project Card Component
-function ProjectCard({ project, index, onHover }: { project: any; index: number; onHover: () => void }) {
+// Project Card Component with proper TypeScript types
+function ProjectCard({ project, index }: ProjectCardProps) {
   return (
     <motion.article
       initial={{ opacity: 0, y: 30 }}
@@ -431,7 +441,6 @@ function ProjectCard({ project, index, onHover }: { project: any; index: number;
       viewport={{ once: true }}
       transition={{ duration: 0.6, delay: index * 0.1 }}
       className="group cursor-pointer h-full"
-      onMouseEnter={onHover}
     >
       <div className="relative aspect-[4/5] rounded-2xl overflow-hidden mb-6 bg-secondary shadow-lg hover:shadow-2xl transition-all">
         <div 
@@ -490,7 +499,7 @@ function ProjectCard({ project, index, onHover }: { project: any; index: number;
         </div>
 
         {/* CTA at project level */}
-        <Link to="/contact" className="w-full mt-4">
+        <Link to="/contact" className="w-full mt-4 block">
           <button className="w-full px-4 py-2 bg-[#0063cd] text-white rounded-lg hover:bg-[#0063cd]/90 transition-all text-sm font-medium group/btn flex items-center justify-center gap-2">
             Discuss Similar Project
             <ArrowRight className="w-3 h-3 group-hover/btn:translate-x-1 transition-transform" />
