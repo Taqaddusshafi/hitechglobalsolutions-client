@@ -18,7 +18,7 @@ export function Footer() {
       { name: 'Mobile Apps', path: '/services' },
     ],
     social: [
-      { name: 'LinkedIn', url: '#' },
+      { name: 'LinkedIn', url: 'https://www.linkedin.com/company/hitech-globals/' },
       { name: 'Twitter', url: '#' },
       { name: 'Instagram', url: '#' },
       { name: 'GitHub', url: '#' },
