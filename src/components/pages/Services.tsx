@@ -10,7 +10,6 @@ import {
   Zap,
   ArrowRight,
   CheckCircle,
-  Star,
   Clock,
   Users,
   TrendingUp,
@@ -31,6 +30,13 @@ interface ProcessStep {
   title: string;
   description: string;
   duration?: string;
+}
+
+interface Benefit {
+  icon: React.ComponentType<{ className?: string }>;
+  title: string;
+  stat: string;
+  description: string;
 }
 
 export function Services() {
@@ -175,7 +181,7 @@ export function Services() {
     },
   ];
 
-  const benefits = [
+  const benefits: Benefit[] = [
     {
       icon: TrendingUp,
       title: 'Proven Results',
