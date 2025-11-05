@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { ArrowRight, Mail } from 'lucide-react';
+import { ArrowRight, Mail, Phone } from 'lucide-react';
 
 export function Footer() {
   const links = {
@@ -111,16 +111,27 @@ export function Footer() {
         <div className="border-t border-white/10 pt-12 lg:pt-16 pb-8">
           <div className="max-w-2xl">
             <h3 className="text-xl sm:text-2xl mb-4">Get in touch</h3>
-            <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-3 mb-6">
-              <Mail className="w-5 h-5 opacity-60" />
-              <a 
-                href="mailto:hello@hitechglobals.com" 
-                className="text-base sm:text-lg opacity-90 hover:text-[#0063cd] transition-colors break-all"
-              >
-                hello@hitechglobals.com
-              </a>
+            <div className="space-y-4">
+              <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-3">
+                <Mail className="w-5 h-5 opacity-60" />
+                <a 
+                  href="mailto:hello@hitechglobals.com" 
+                  className="text-base sm:text-lg opacity-90 hover:text-[#0063cd] transition-colors break-all"
+                >
+                  hello@hitechglobals.com
+                </a>
+              </div>
+              <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-3">
+                <Phone className="w-5 h-5 opacity-60" />
+                <a 
+                  href="tel:+918639433317" 
+                  className="text-base sm:text-lg opacity-90 hover:text-[#0063cd] transition-colors"
+                >
+                  +91 863 943 3317
+                </a>
+              </div>
             </div>
-            <p className="opacity-70 text-sm">
+            <p className="opacity-70 text-sm mt-6">
               We're a remote-first team available 24/7. Whether you're across the street or across the world, we're here to help bring your ideas to life.
             </p>
           </div>
