@@ -1,7 +1,7 @@
 import { Helmet } from 'react-helmet-async';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Globe, Code, Palette, Sparkles, Check, Zap, Shield, Rocket, Users } from 'lucide-react';
+import { ArrowRight, Globe, Code, Palette, Sparkles, Zap, Shield, Rocket, Users } from 'lucide-react';
 
 export function Home() {
   const services = [
