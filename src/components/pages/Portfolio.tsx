@@ -1,7 +1,7 @@
 import { Helmet } from 'react-helmet-async';
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ArrowRight, Code, Smartphone, Zap, FileText, Star, Users, TrendingUp, ExternalLink } from 'lucide-react';
+import { ArrowRight, Code, Smartphone, Zap, FileText, Star, Users, TrendingUp, ExternalLink, Sparkles } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 interface Project {
@@ -112,22 +112,22 @@ export function Portfolio() {
         <meta name="description" content="View HiTech Globals portfolio of web design, mobile app development, and e-commerce projects. See our expertise in React, Next.js, React Native, Flutter, and more." />
         <meta name="keywords" content="web design portfolio, mobile app projects, e-commerce development, React projects, Next.js portfolio, design portfolio, development work" />
         <meta name="robots" content="index, follow" />
-        
+
         {/* Open Graph Tags */}
         <meta property="og:type" content="website" />
         <meta property="og:title" content="Portfolio - HiTech Globals | Web & Mobile Projects" />
         <meta property="og:description" content="Explore our portfolio of successful web design, mobile app, and e-commerce projects built with modern technologies" />
         <meta property="og:url" content="https://hitechglobals.com/portfolio" />
         <meta property="og:site_name" content="HiTech Globals" />
-        
+
         {/* Twitter Tags */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="HiTech Globals - Web & Mobile Portfolio" />
         <meta name="twitter:description" content="View our work showcasing expertise in web design, development, and mobile app creation" />
-        
+
         {/* Canonical */}
         <link rel="canonical" href="https://hitechglobals.com/portfolio" />
-        
+
         {/* Structured Data (JSON-LD) - CreativeWork/Portfolio */}
         <script type="application/ld+json">
           {JSON.stringify({
@@ -152,20 +152,59 @@ export function Portfolio() {
         </script>
       </Helmet>
 
-      <div className="bg-white pt-20">
+      <div className="bg-white pt-20 overflow-hidden">
         {/* Hero Section with Stats */}
-        <section className="min-h-[80vh] flex items-center justify-center px-4 sm:px-6 py-20">
-          <div className="max-w-5xl mx-auto text-center w-full">
+        <section className="min-h-[80vh] flex items-center justify-center px-4 sm:px-6 py-20 relative">
+          {/* Animated Background */}
+          <div className="absolute inset-0 overflow-hidden pointer-events-none">
+            <motion.div
+              className="absolute top-20 -left-20 w-72 h-72 sm:w-96 sm:h-96 bg-[#0063cd]/10 rounded-full blur-3xl"
+              animate={{ x: [0, 50, 0], y: [0, 30, 0], scale: [1, 1.1, 1] }}
+              transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
+            />
+            <motion.div
+              className="absolute bottom-20 -right-20 w-72 h-72 sm:w-96 sm:h-96 bg-purple-500/10 rounded-full blur-3xl"
+              animate={{ x: [0, -50, 0], y: [0, -30, 0], scale: [1, 1.2, 1] }}
+              transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
+            />
+
+            {/* Floating shapes */}
+            <motion.div
+              className="absolute top-32 right-[20%] w-4 h-4 bg-[#0063cd]/30 rounded-full"
+              animate={{ y: [0, -20, 0], opacity: [0.3, 0.6, 0.3] }}
+              transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+            />
+            <motion.div
+              className="absolute top-1/3 left-[15%] w-3 h-3 bg-purple-500/40 rotate-45"
+              animate={{ y: [0, 15, 0], rotate: [45, 90, 45] }}
+              transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
+            />
+          </div>
+
+          <div className="max-w-5xl mx-auto text-center w-full relative z-10">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
             >
-              <div className="inline-block px-4 py-2 bg-[#0063cd]/10 rounded-full mb-8">
+              <motion.div
+                className="inline-flex items-center gap-2 px-4 sm:px-6 py-2.5 bg-gradient-to-r from-[#0063cd]/10 to-purple-500/10 rounded-full mb-6 sm:mb-8 border border-[#0063cd]/20 backdrop-blur-sm"
+                whileHover={{ scale: 1.05 }}
+              >
+                <Star className="w-4 h-4 text-[#0063cd]" />
                 <span className="text-[#0063cd] font-medium">Proven Track Record</span>
-              </div>
-              <h1 className="text-4xl sm:text-6xl md:text-7xl tracking-tight mb-8">
-                Our <span className="text-[#0063cd]">portfolio</span>
+              </motion.div>
+
+              <h1 className="text-4xl sm:text-6xl md:text-7xl tracking-tight mb-8 font-bold">
+                Our <span className="relative">
+                  <span className="text-[#0063cd]">portfolio</span>
+                  <motion.span
+                    className="absolute -bottom-1 left-0 right-0 h-3 sm:h-4 bg-[#0063cd]/10 -z-10 rounded-sm"
+                    initial={{ scaleX: 0 }}
+                    animate={{ scaleX: 1 }}
+                    transition={{ duration: 0.8, delay: 0.5 }}
+                  />
+                </span>
               </h1>
             </motion.div>
 
@@ -185,12 +224,21 @@ export function Portfolio() {
               transition={{ duration: 0.8, delay: 0.4 }}
               className="grid grid-cols-3 gap-4 sm:gap-8 mb-12 max-w-2xl mx-auto"
             >
-              {stats.map((stat) => (
-                <div key={stat.label} className="p-4 bg-secondary/30 rounded-2xl">
-                  <stat.icon className="w-6 h-6 text-[#0063cd] mx-auto mb-2" />
-                  <div className="text-2xl sm:text-3xl font-bold">{stat.value}</div>
+              {stats.map((stat, index) => (
+                <motion.div
+                  key={stat.label}
+                  className="p-4 sm:p-6 bg-white rounded-2xl border border-border shadow-sm hover:shadow-lg hover:border-[#0063cd]/30 transition-all group"
+                  whileHover={{ y: -5 }}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.5 + index * 0.1 }}
+                >
+                  <motion.div className="w-10 h-10 sm:w-12 sm:h-12 bg-[#0063cd]/10 rounded-xl flex items-center justify-center mx-auto mb-3 group-hover:bg-[#0063cd] transition-colors">
+                    <stat.icon className="w-5 h-5 sm:w-6 sm:h-6 text-[#0063cd] group-hover:text-white transition-colors" />
+                  </motion.div>
+                  <div className="text-2xl sm:text-3xl font-bold text-[#0063cd]">{stat.value}</div>
                   <div className="text-xs sm:text-sm text-muted-foreground">{stat.label}</div>
-                </div>
+                </motion.div>
               ))}
             </motion.div>
 
@@ -202,16 +250,24 @@ export function Portfolio() {
               className="flex flex-col sm:flex-row gap-4 justify-center"
             >
               <Link to="/contact">
-                <button className="px-8 py-4 bg-[#0063cd] text-white rounded-full hover:bg-[#0063cd]/90 transition-all inline-flex items-center gap-2 group font-medium shadow-lg hover:shadow-xl w-full sm:w-auto justify-center">
+                <motion.button
+                  className="px-8 py-4 bg-gradient-to-r from-[#0063cd] to-[#0052a8] text-white rounded-full hover:shadow-xl hover:shadow-[#0063cd]/25 transition-all inline-flex items-center gap-2 group font-medium w-full sm:w-auto justify-center"
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                >
                   Start Your Project
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                </button>
+                </motion.button>
               </Link>
               <Link to="/contact">
-                <button className="px-8 py-4 bg-white border-2 border-[#0063cd] text-[#0063cd] rounded-full hover:bg-[#0063cd]/5 transition-all inline-flex items-center gap-2 group font-medium w-full sm:w-auto justify-center">
+                <motion.button
+                  className="px-8 py-4 bg-white border-2 border-[#0063cd] text-[#0063cd] rounded-full hover:bg-[#0063cd]/5 transition-all inline-flex items-center gap-2 group font-medium w-full sm:w-auto justify-center"
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                >
                   Schedule Consultation
                   <ExternalLink className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                </button>
+                </motion.button>
               </Link>
             </motion.div>
           </div>
@@ -225,21 +281,25 @@ export function Portfolio() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
-              className="flex flex-wrap justify-center gap-4"
+              className="flex flex-wrap justify-center gap-3 sm:gap-4"
             >
-              {filters.map((filter) => (
-                <button
+              {filters.map((filter, index) => (
+                <motion.button
                   key={filter}
                   onClick={() => setActiveFilter(filter)}
-                  className={`px-6 py-3 rounded-full transition-all font-medium ${
-                    activeFilter === filter
-                      ? 'bg-[#0063cd] text-white shadow-lg'
-                      : 'bg-secondary/50 hover:bg-secondary text-foreground'
-                  }`}
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: index * 0.05 }}
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className={`px-6 py-3 rounded-full transition-all font-medium ${activeFilter === filter
+                      ? 'bg-gradient-to-r from-[#0063cd] to-[#0052a8] text-white shadow-lg shadow-[#0063cd]/25'
+                      : 'bg-white border border-border hover:border-[#0063cd]/50 text-foreground hover:shadow-md'
+                    }`}
                   aria-pressed={activeFilter === filter}
                 >
                   {filter}
-                </button>
+                </motion.button>
               ))}
             </motion.div>
           </div>
@@ -253,9 +313,9 @@ export function Portfolio() {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.6 }}
-                className="bg-gradient-to-r from-[#0063cd]/10 to-[#0063cd]/5 border border-[#0063cd]/20 rounded-2xl p-6 text-center"
+                className="bg-gradient-to-r from-[#0063cd]/10 via-purple-500/5 to-[#0063cd]/10 border border-[#0063cd]/20 rounded-2xl p-6 text-center"
               >
-                <Star className="w-5 h-5 text-[#0063cd] inline-block mb-2" />
+                <Sparkles className="w-5 h-5 text-[#0063cd] inline-block mb-2" />
                 <p className="text-muted-foreground">
                   Scroll to see our <span className="font-bold text-foreground">featured success stories</span> with proven results
                 </p>
@@ -265,7 +325,7 @@ export function Portfolio() {
         )}
 
         {/* Projects Grid */}
-        <section className="px-4 sm:px-6 pb-32" aria-label="Portfolio Projects">
+        <section className="px-4 sm:px-6 pb-16 sm:pb-24 lg:pb-32" aria-label="Portfolio Projects">
           <div className="max-w-7xl mx-auto">
             <AnimatePresence mode="wait">
               <motion.div
@@ -274,7 +334,7 @@ export function Portfolio() {
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
                 transition={{ duration: 0.3 }}
-                className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
+                className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8"
               >
                 {filteredProjects.map((project, index) => (
                   <ProjectCard key={project.title} project={project} index={index} />
@@ -285,8 +345,10 @@ export function Portfolio() {
         </section>
 
         {/* What We Deliver */}
-        <section className="py-32 px-4 sm:px-6 bg-secondary/30" aria-label="What You Get">
-          <div className="max-w-7xl mx-auto">
+        <section className="py-16 sm:py-24 lg:py-32 px-4 sm:px-6 bg-secondary/30 relative" aria-label="What You Get">
+          <div className="absolute top-0 right-0 w-1/3 h-1/3 bg-gradient-to-bl from-[#0063cd]/5 to-transparent pointer-events-none" />
+
+          <div className="max-w-7xl mx-auto relative z-10">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -294,33 +356,43 @@ export function Portfolio() {
               transition={{ duration: 0.6 }}
               className="text-center mb-16"
             >
-              <h2 className="text-5xl md:text-7xl mb-6">What you get</h2>
-              <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+              <motion.span
+                className="inline-block text-[#0063cd] text-sm sm:text-base font-medium mb-4 px-4 py-2 bg-[#0063cd]/10 rounded-full"
+                whileHover={{ scale: 1.05 }}
+              >
+                Included With Every Project
+              </motion.span>
+              <h2 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl mb-6 font-bold">What you get</h2>
+              <p className="text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto">
                 Every project includes quality standards and best practices to ensure long-term success
               </p>
             </motion.div>
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
               {[
                 {
                   icon: Code,
                   title: 'Clean Code',
                   description: 'Well-structured, maintainable code following industry best practices and standards',
+                  gradient: 'from-blue-500/20 to-cyan-500/20',
                 },
                 {
                   icon: Smartphone,
                   title: 'Responsive Design',
                   description: 'Beautiful design that looks perfect on all devices and screen sizes',
+                  gradient: 'from-purple-500/20 to-pink-500/20',
                 },
                 {
                   icon: Zap,
                   title: 'Performance',
                   description: 'Fast loading times and smooth interactions optimized for user experience',
+                  gradient: 'from-amber-500/20 to-orange-500/20',
                 },
                 {
                   icon: FileText,
                   title: 'Documentation',
                   description: 'Clear documentation and guides for easy maintenance and future updates',
+                  gradient: 'from-green-500/20 to-emerald-500/20',
                 },
               ].map((item, index) => (
                 <motion.article
@@ -329,13 +401,21 @@ export function Portfolio() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
-                  className="p-6 bg-white rounded-2xl border border-border hover:border-[#0063cd] transition-all hover:shadow-lg"
+                  whileHover={{ y: -8 }}
+                  className="relative p-6 bg-white rounded-2xl border border-border hover:border-[#0063cd]/50 transition-all hover:shadow-xl group overflow-hidden"
                 >
-                  <div className="w-10 h-10 bg-[#0063cd] rounded-lg mb-4 flex items-center justify-center">
-                    <item.icon className="w-5 h-5 text-white" aria-hidden="true" />
+                  <div className={`absolute inset-0 bg-gradient-to-br ${item.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-500`} />
+
+                  <div className="relative z-10">
+                    <motion.div
+                      className="w-12 h-12 bg-[#0063cd] rounded-xl mb-4 flex items-center justify-center group-hover:scale-110 transition-transform"
+                      whileHover={{ rotate: [0, -10, 10, 0] }}
+                    >
+                      <item.icon className="w-6 h-6 text-white" aria-hidden="true" />
+                    </motion.div>
+                    <h3 className="text-xl mb-2 font-bold">{item.title}</h3>
+                    <p className="text-muted-foreground text-sm">{item.description}</p>
                   </div>
-                  <h3 className="text-xl mb-2 font-bold">{item.title}</h3>
-                  <p className="text-muted-foreground text-sm">{item.description}</p>
                 </motion.article>
               ))}
             </div>
@@ -343,8 +423,17 @@ export function Portfolio() {
         </section>
 
         {/* Why Choose Us */}
-        <section className="py-32 px-4 sm:px-6">
-          <div className="max-w-7xl mx-auto">
+        <section className="py-16 sm:py-24 lg:py-32 px-4 sm:px-6 relative">
+          <div className="absolute inset-0 opacity-5">
+            <div className="absolute inset-0"
+              style={{
+                backgroundImage: `radial-gradient(#0063cd 1px, transparent 1px)`,
+                backgroundSize: '30px 30px'
+              }}
+            />
+          </div>
+
+          <div className="max-w-7xl mx-auto relative z-10">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -352,10 +441,16 @@ export function Portfolio() {
               transition={{ duration: 0.6 }}
               className="text-center mb-16"
             >
-              <h2 className="text-5xl md:text-7xl mb-6">Why clients choose us</h2>
+              <motion.span
+                className="inline-block text-[#0063cd] text-sm sm:text-base font-medium mb-4 px-4 py-2 bg-[#0063cd]/10 rounded-full"
+                whileHover={{ scale: 1.05 }}
+              >
+                Why Us
+              </motion.span>
+              <h2 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl mb-6 font-bold">Why clients choose us</h2>
             </motion.div>
 
-            <div className="grid md:grid-cols-2 gap-8">
+            <div className="grid md:grid-cols-2 gap-6 sm:gap-8">
               {[
                 {
                   title: 'Expert Team',
@@ -380,10 +475,11 @@ export function Portfolio() {
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
-                  className="p-8 bg-white rounded-2xl border border-border hover:shadow-lg transition-all"
+                  whileHover={{ y: -5 }}
+                  className="p-6 sm:p-8 bg-white rounded-2xl border border-border hover:border-[#0063cd]/50 hover:shadow-xl transition-all"
                 >
-                  <h3 className="text-2xl font-bold mb-3">{item.title}</h3>
-                  <p className="text-muted-foreground text-lg">{item.description}</p>
+                  <h3 className="text-xl sm:text-2xl font-bold mb-3">{item.title}</h3>
+                  <p className="text-muted-foreground text-base sm:text-lg">{item.description}</p>
                 </motion.div>
               ))}
             </div>
@@ -391,39 +487,71 @@ export function Portfolio() {
         </section>
 
         {/* Final CTA */}
-        <section className="py-32 px-4 sm:px-6 bg-gradient-to-br from-[#0063cd] to-[#003fa3]">
-          <div className="max-w-4xl mx-auto">
+        <section className="py-16 sm:py-24 lg:py-32 px-4 sm:px-6 relative overflow-hidden">
+          <div className="absolute inset-0 bg-gradient-to-br from-[#0063cd]/5 via-transparent to-purple-500/5" />
+
+          <div className="max-w-4xl mx-auto relative z-10">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
-              className="text-white text-center"
+              className="relative bg-gradient-to-br from-[#0063cd] via-[#0052a8] to-[#003d7a] text-white rounded-3xl sm:rounded-[2rem] p-8 sm:p-12 md:p-16 text-center overflow-hidden"
             >
-              <h2 className="text-4xl md:text-6xl mb-6 font-bold">
-                Ready to build something<br />
-                amazing together?
-              </h2>
-              <p className="text-lg sm:text-xl opacity-90 mb-8 max-w-2xl mx-auto">
-                Let's discuss your project requirements and create a custom solution that drives real business results. Our team is ready to bring your vision to life.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Link to="/contact">
-                  <button className="px-8 py-4 bg-white text-[#0063cd] rounded-full hover:bg-white/90 transition-all inline-flex items-center gap-2 group font-bold shadow-lg hover:shadow-xl w-full sm:w-auto justify-center">
-                    Get Free Consultation
-                    <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                  </button>
-                </Link>
-                <a href="mailto:hello@hitechglobals.com">
-                  <button className="px-8 py-4 bg-white/10 border-2 border-white text-white rounded-full hover:bg-white/20 transition-all inline-flex items-center gap-2 group font-bold w-full sm:w-auto justify-center">
-                    Email Us
-                    <ExternalLink className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                  </button>
-                </a>
+              {/* Decorative */}
+              <div className="absolute top-0 left-0 w-full h-full opacity-10">
+                <div className="absolute top-10 left-10 w-20 h-20 border-2 border-white rounded-full" />
+                <div className="absolute bottom-10 right-10 w-32 h-32 border-2 border-white rounded-full" />
               </div>
-              <p className="text-sm opacity-75 mt-6">
-                💬 Average response time: Under 2 hours | 📱 Free discovery call included
-              </p>
+
+              <motion.div
+                className="absolute -top-20 -right-20 w-60 h-60 bg-white/10 rounded-full blur-3xl"
+                animate={{ scale: [1, 1.2, 1], opacity: [0.1, 0.2, 0.1] }}
+                transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
+              />
+
+              <div className="relative z-10">
+                <motion.div
+                  initial={{ scale: 0.8, opacity: 0 }}
+                  whileInView={{ scale: 1, opacity: 1 }}
+                  viewport={{ once: true }}
+                  className="inline-flex items-center justify-center w-16 h-16 sm:w-20 sm:h-20 bg-white/10 rounded-2xl mb-6 backdrop-blur-sm"
+                >
+                  <Sparkles className="w-8 h-8 sm:w-10 sm:h-10" />
+                </motion.div>
+
+                <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-6 font-bold">
+                  Ready to build something<br />amazing together?
+                </h2>
+                <p className="text-base sm:text-lg lg:text-xl opacity-90 mb-8 max-w-2xl mx-auto">
+                  Let's discuss your project requirements and create a custom solution that drives real business results. Our team is ready to bring your vision to life.
+                </p>
+                <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                  <Link to="/contact">
+                    <motion.button
+                      className="px-8 py-4 bg-white text-[#0063cd] rounded-full hover:bg-white/95 transition-all inline-flex items-center gap-2 group font-bold shadow-xl hover:shadow-2xl w-full sm:w-auto justify-center"
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
+                    >
+                      Get Free Consultation
+                      <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                    </motion.button>
+                  </Link>
+                  <a href="mailto:hello@hitechglobals.com">
+                    <motion.button
+                      className="px-8 py-4 bg-white/10 border-2 border-white text-white rounded-full hover:bg-white/20 transition-all inline-flex items-center gap-2 group font-bold w-full sm:w-auto justify-center"
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
+                    >
+                      Email Us
+                      <ExternalLink className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                    </motion.button>
+                  </a>
+                </div>
+                <p className="text-sm opacity-75 mt-6">
+                  💬 Average response time: Under 2 hours | 📱 Free discovery call included
+                </p>
+              </div>
             </motion.div>
           </div>
         </section>
@@ -432,7 +560,7 @@ export function Portfolio() {
   );
 }
 
-// Project Card Component with proper TypeScript types
+// Project Card Component
 function ProjectCard({ project, index }: ProjectCardProps) {
   return (
     <motion.article
@@ -440,10 +568,11 @@ function ProjectCard({ project, index }: ProjectCardProps) {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.6, delay: index * 0.1 }}
+      whileHover={{ y: -8 }}
       className="group cursor-pointer h-full"
     >
       <div className="relative aspect-[4/5] rounded-2xl overflow-hidden mb-6 bg-secondary shadow-lg hover:shadow-2xl transition-all">
-        <div 
+        <motion.div
           className="w-full h-full flex items-center justify-center text-white p-8 transition-transform duration-500 group-hover:scale-105"
           style={{ backgroundColor: `#${project.color}` }}
           role="img"
@@ -453,13 +582,16 @@ function ProjectCard({ project, index }: ProjectCardProps) {
             <h3 className="text-2xl sm:text-3xl font-bold mb-2">{project.title}</h3>
             <p className="opacity-80 text-sm sm:text-base mb-4">{project.category}</p>
             {project.featured && (
-              <div className="inline-block px-3 py-1 bg-white/20 rounded-full text-xs font-semibold">
-                ⭐ Featured
-              </div>
+              <motion.div
+                className="inline-flex items-center gap-1 px-3 py-1 bg-white/20 rounded-full text-xs font-semibold backdrop-blur-sm"
+                whileHover={{ scale: 1.1 }}
+              >
+                <Star className="w-3 h-3" /> Featured
+              </motion.div>
             )}
           </div>
-        </div>
-        <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" aria-hidden="true" />
+        </motion.div>
+        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" aria-hidden="true" />
       </div>
 
       <div className="space-y-3">
@@ -467,16 +599,16 @@ function ProjectCard({ project, index }: ProjectCardProps) {
           <span className="text-sm font-semibold text-[#0063cd]">{project.category}</span>
           {project.featured && <Star className="w-4 h-4 text-[#0063cd]" />}
         </div>
-        <h3 className="text-2xl font-bold">{project.title}</h3>
+        <h3 className="text-2xl font-bold group-hover:text-[#0063cd] transition-colors">{project.title}</h3>
         <p className="text-muted-foreground leading-relaxed">{project.description}</p>
-        
+
         {/* Results Badge */}
         {project.results && (
           <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ delay: 0.3 }}
-            className="p-3 bg-[#0063cd]/10 border border-[#0063cd]/20 rounded-lg"
+            className="p-3 bg-gradient-to-r from-[#0063cd]/10 to-purple-500/10 border border-[#0063cd]/20 rounded-xl"
           >
             <p className="text-sm font-semibold text-[#0063cd]">✅ {project.results}</p>
           </motion.div>
@@ -491,19 +623,23 @@ function ProjectCard({ project, index }: ProjectCardProps) {
           {project.tags.map((tag: string) => (
             <span
               key={tag}
-              className="text-xs px-3 py-1 bg-secondary rounded-full font-medium text-foreground"
+              className="text-xs px-3 py-1.5 bg-secondary hover:bg-[#0063cd]/10 rounded-full font-medium text-foreground transition-colors"
             >
               {tag}
             </span>
           ))}
         </div>
 
-        {/* CTA at project level */}
+        {/* CTA */}
         <Link to="/contact" className="w-full mt-4 block">
-          <button className="w-full px-4 py-2 bg-[#0063cd] text-white rounded-lg hover:bg-[#0063cd]/90 transition-all text-sm font-medium group/btn flex items-center justify-center gap-2">
+          <motion.button
+            className="w-full px-4 py-3 bg-[#0063cd] text-white rounded-xl hover:bg-[#0052a8] transition-all text-sm font-medium group/btn flex items-center justify-center gap-2"
+            whileHover={{ scale: 1.02 }}
+            whileTap={{ scale: 0.98 }}
+          >
             Discuss Similar Project
-            <ArrowRight className="w-3 h-3 group-hover/btn:translate-x-1 transition-transform" />
-          </button>
+            <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
+          </motion.button>
         </Link>
       </div>
     </motion.article>
