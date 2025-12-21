@@ -14,6 +14,17 @@ import { Blog } from './components/pages/Blog';
 import { BlogPost } from './components/pages/BlogPost';
 import { NotFound } from './components/pages/NotFound';
 
+// Admin imports
+import { AuthProvider } from './components/admin/AuthContext';
+import { AdminLogin } from './components/admin/AdminLogin';
+import { AdminLayout } from './components/admin/AdminLayout';
+import { AdminDashboard } from './components/admin/AdminDashboard';
+import { AdminBlogs } from './components/admin/AdminBlogs';
+import { BlogEditor } from './components/admin/BlogEditor';
+import { AdminTestimonials } from './components/admin/AdminTestimonials';
+import { TestimonialEditor } from './components/admin/TestimonialEditor';
+import { ProtectedRoute } from './components/admin/ProtectedRoute';
+
 import { Analytics } from "@vercel/analytics/react"
 import { SpeedInsights } from "@vercel/speed-insights/react";
 
@@ -26,6 +37,17 @@ function ScrollToTop() {
   }, [location.pathname]);
 
   return null;
+}
+
+// Main site layout with navigation and footer
+function MainLayout({ children }: { children: React.ReactNode }) {
+  return (
+    <div className="min-h-screen flex flex-col bg-background text-foreground">
+      <Navigation />
+      <main className="flex-1">{children}</main>
+      <Footer />
+    </div>
+  );
 }
 
 export default function App() {
@@ -51,34 +73,62 @@ export default function App() {
   return (
     <ThemeProvider>
       <HelmetProvider>
-        <Router>
-          {showSplash && (
-            <SplashScreen onComplete={handleSplashComplete} />
-          )}
+        <AuthProvider>
+          <Router>
+            {showSplash && (
+              <SplashScreen onComplete={handleSplashComplete} />
+            )}
 
-          {contentReady && (
-            <div className="min-h-screen flex flex-col bg-background text-foreground">
-              <ScrollToTop />
-              <Navigation />
-              <main className="flex-1">
+            {contentReady && (
+              <>
+                <ScrollToTop />
                 <Routes>
-                  <Route path="/" element={<Home />} />
-                  <Route path="/about" element={<About />} />
-                  <Route path="/services" element={<Services />} />
-                  <Route path="/portfolio" element={<Portfolio />} />
-                  <Route path="/contact" element={<Contact />} />
-                  <Route path="/blog" element={<Blog />} />
-                  <Route path="/blog/:slug" element={<BlogPost />} />
-                  <Route path="*" element={<NotFound />} />
+                  {/* Admin Routes */}
+                  <Route path="/admin/login" element={<AdminLogin />} />
+                  <Route
+                    path="/admin"
+                    element={
+                      <ProtectedRoute>
+                        <AdminLayout />
+                      </ProtectedRoute>
+                    }
+                  >
+                    <Route index element={<AdminDashboard />} />
+                    <Route path="blogs" element={<AdminBlogs />} />
+                    <Route path="blogs/new" element={<BlogEditor />} />
+                    <Route path="blogs/:id" element={<BlogEditor />} />
+                    <Route path="testimonials" element={<AdminTestimonials />} />
+                    <Route path="testimonials/new" element={<TestimonialEditor />} />
+                    <Route path="testimonials/:id" element={<TestimonialEditor />} />
+                  </Route>
+
+                  {/* Main Site Routes */}
+                  <Route
+                    path="*"
+                    element={
+                      <MainLayout>
+                        <Routes>
+                          <Route path="/" element={<Home />} />
+                          <Route path="/about" element={<About />} />
+                          <Route path="/services" element={<Services />} />
+                          <Route path="/portfolio" element={<Portfolio />} />
+                          <Route path="/contact" element={<Contact />} />
+                          <Route path="/blog" element={<Blog />} />
+                          <Route path="/blog/:slug" element={<BlogPost />} />
+                          <Route path="*" element={<NotFound />} />
+                        </Routes>
+                      </MainLayout>
+                    }
+                  />
                 </Routes>
-              </main>
-              <Footer />
-              <Analytics />
-              <SpeedInsights />
-            </div>
-          )}
-        </Router>
+                <Analytics />
+                <SpeedInsights />
+              </>
+            )}
+          </Router>
+        </AuthProvider>
       </HelmetProvider>
     </ThemeProvider>
   );
 }
+
