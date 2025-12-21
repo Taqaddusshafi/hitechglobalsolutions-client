@@ -2,8 +2,10 @@ import { Helmet } from 'react-helmet-async';
 import { motion } from 'framer-motion';
 import { Mail, Clock, Calendar, ArrowRight, MessageCircle, Sparkles, Phone } from 'lucide-react';
 import { InlineWidget } from 'react-calendly';
+import { useTheme } from 'next-themes';
 
 export function Contact() {
+  const { resolvedTheme } = useTheme();
   const contactMethods = [
     {
       icon: Mail,
@@ -222,6 +224,11 @@ export function Contact() {
                     styles={{
                       height: '700px',
                       width: '100%',
+                    }}
+                    pageSettings={{
+                      backgroundColor: resolvedTheme === 'dark' ? '1a1a2e' : 'ffffff',
+                      primaryColor: '0063cd',
+                      textColor: resolvedTheme === 'dark' ? 'ffffff' : '1a1a2e',
                     }}
                   />
                 </div>
