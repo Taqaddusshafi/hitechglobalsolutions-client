@@ -1,28 +1,37 @@
 import { Helmet } from 'react-helmet-async';
 import { useState, useEffect } from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { getLegalPage, type LegalPage as LegalPageType } from '../../lib/supabase';
 
 export function LegalPage() {
     const { slug } = useParams<{ slug: string }>();
-    const navigate = useNavigate();
     const [page, setPage] = useState<LegalPageType | null>(null);
     const [loading, setLoading] = useState(true);
+    const [error, setError] = useState<string | null>(null);
 
     useEffect(() => {
         async function fetchPage() {
             if (!slug) return;
-            const data = await getLegalPage(slug);
-            if (!data) {
-                navigate('/404');
-                return;
+            console.log('Fetching legal page with slug:', slug);
+            try {
+                const data = await getLegalPage(slug);
+                console.log('Legal page data received:', data);
+                if (!data) {
+                    setError('Page not found');
+                    setLoading(false);
+                    return;
+                }
+                setPage(data);
+                setLoading(false);
+            } catch (err) {
+                console.error('Error in LegalPage:', err);
+                setError('Failed to load page');
+                setLoading(false);
             }
-            setPage(data);
-            setLoading(false);
         }
         fetchPage();
-    }, [slug, navigate]);
+    }, [slug]);
 
     const formatDate = (dateString: string) => {
         return new Date(dateString).toLocaleDateString('en-US', {
@@ -45,6 +54,18 @@ export function LegalPage() {
                             <div className="h-4 bg-secondary rounded w-3/4" />
                         </div>
                     </div>
+                </div>
+            </div>
+        );
+    }
+
+    if (error) {
+        return (
+            <div className="bg-background pt-20 min-h-screen">
+                <div className="max-w-4xl mx-auto px-4 py-20 text-center">
+                    <h1 className="text-2xl font-bold text-foreground mb-4">Error</h1>
+                    <p className="text-muted-foreground">{error}</p>
+                    <p className="text-sm text-muted-foreground mt-4">Slug: {slug}</p>
                 </div>
             </div>
         );
