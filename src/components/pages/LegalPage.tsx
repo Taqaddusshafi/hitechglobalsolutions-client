@@ -13,10 +13,8 @@ export function LegalPage() {
     useEffect(() => {
         async function fetchPage() {
             if (!slug) return;
-            console.log('Fetching legal page with slug:', slug);
             try {
                 const data = await getLegalPage(slug);
-                console.log('Legal page data received:', data);
                 if (!data) {
                     setError('Page not found');
                     setLoading(false);
@@ -25,7 +23,6 @@ export function LegalPage() {
                 setPage(data);
                 setLoading(false);
             } catch (err) {
-                console.error('Error in LegalPage:', err);
                 setError('Failed to load page');
                 setLoading(false);
             }
@@ -109,8 +106,13 @@ export function LegalPage() {
                             .split('\n\n')
                             .map((paragraph, index) => {
                                 const trimmed = paragraph.trim();
+                                // Skip h1 as we already show title
                                 if (trimmed.startsWith('# ') && !trimmed.startsWith('## ')) {
-                                    return null; // Skip h1 as we already show title
+                                    return null;
+                                }
+                                // Skip "Last updated" line since we show it in header
+                                if (trimmed.toLowerCase().startsWith('last updated')) {
+                                    return null;
                                 }
                                 if (trimmed.startsWith('### ')) {
                                     return (
@@ -130,16 +132,24 @@ export function LegalPage() {
                                     const items = trimmed.split('\n').filter(line => line.trim().startsWith('- '));
                                     return (
                                         <ul key={index} className="list-disc list-inside space-y-2 text-muted-foreground mb-6">
-                                            {items.map((item, i) => (
-                                                <li key={i}>{item.replace('- ', '').replace(/\*\*(.*?)\*\*/g, '$1')}</li>
-                                            ))}
+                                            {items.map((item, i) => {
+                                                const text = item.replace('- ', '').replace(/\*\*(.*?)\*\*/g, '$1');
+                                                return <li key={i}>{text}</li>;
+                                            })}
                                         </ul>
                                     );
                                 }
                                 if (!trimmed) return null;
+                                // Render paragraphs with bold text support
+                                const parts = trimmed.split(/(\*\*.*?\*\*)/g);
                                 return (
                                     <p key={index} className="text-muted-foreground leading-relaxed mb-4">
-                                        {trimmed}
+                                        {parts.map((part, i) => {
+                                            if (part.startsWith('**') && part.endsWith('**')) {
+                                                return <strong key={i} className="text-foreground">{part.slice(2, -2)}</strong>;
+                                            }
+                                            return part;
+                                        })}
                                     </p>
                                 );
                             })}

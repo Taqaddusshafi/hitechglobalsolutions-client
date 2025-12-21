@@ -432,10 +432,7 @@ If you have any questions about these Terms, please contact us at hello@hitechgl
         .eq('slug', slug)
         .single();
 
-    console.log('Legal page fetch:', { slug, data, error });
-
     if (error) {
-        console.error('Error fetching legal page:', error);
         return null;
     }
 
