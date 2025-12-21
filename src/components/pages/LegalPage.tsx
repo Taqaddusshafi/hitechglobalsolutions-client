@@ -104,33 +104,45 @@ export function LegalPage() {
                         transition={{ duration: 0.5, delay: 0.1 }}
                         className="prose prose-lg dark:prose-invert max-w-none"
                     >
-                        {page.content.split('\n\n').map((paragraph, index) => {
-                            if (paragraph.startsWith('# ')) {
-                                return null; // Skip h1 as we already show title
-                            }
-                            if (paragraph.startsWith('## ')) {
+                        {page.content
+                            .replace(/\r\n/g, '\n') // Normalize Windows line endings
+                            .split('\n\n')
+                            .map((paragraph, index) => {
+                                const trimmed = paragraph.trim();
+                                if (trimmed.startsWith('# ') && !trimmed.startsWith('## ')) {
+                                    return null; // Skip h1 as we already show title
+                                }
+                                if (trimmed.startsWith('### ')) {
+                                    return (
+                                        <h3 key={index} className="text-xl font-semibold mt-6 mb-3 text-foreground">
+                                            {trimmed.replace('### ', '')}
+                                        </h3>
+                                    );
+                                }
+                                if (trimmed.startsWith('## ')) {
+                                    return (
+                                        <h2 key={index} className="text-2xl font-bold mt-8 mb-4 text-foreground">
+                                            {trimmed.replace('## ', '')}
+                                        </h2>
+                                    );
+                                }
+                                if (trimmed.startsWith('- ')) {
+                                    const items = trimmed.split('\n').filter(line => line.trim().startsWith('- '));
+                                    return (
+                                        <ul key={index} className="list-disc list-inside space-y-2 text-muted-foreground mb-6">
+                                            {items.map((item, i) => (
+                                                <li key={i}>{item.replace('- ', '').replace(/\*\*(.*?)\*\*/g, '$1')}</li>
+                                            ))}
+                                        </ul>
+                                    );
+                                }
+                                if (!trimmed) return null;
                                 return (
-                                    <h2 key={index} className="text-2xl font-bold mt-8 mb-4 text-foreground">
-                                        {paragraph.replace('## ', '')}
-                                    </h2>
+                                    <p key={index} className="text-muted-foreground leading-relaxed mb-4">
+                                        {trimmed}
+                                    </p>
                                 );
-                            }
-                            if (paragraph.startsWith('- ')) {
-                                const items = paragraph.split('\n').filter(line => line.startsWith('- '));
-                                return (
-                                    <ul key={index} className="list-disc list-inside space-y-2 text-muted-foreground mb-6">
-                                        {items.map((item, i) => (
-                                            <li key={i}>{item.replace('- ', '')}</li>
-                                        ))}
-                                    </ul>
-                                );
-                            }
-                            return (
-                                <p key={index} className="text-muted-foreground leading-relaxed mb-4">
-                                    {paragraph}
-                                </p>
-                            );
-                        })}
+                            })}
                     </motion.div>
                 </article>
             </div>
