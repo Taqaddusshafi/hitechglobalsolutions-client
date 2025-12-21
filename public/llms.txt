@@ -1,0 +1,45 @@
+# HiTech Globals
+
+> Remote-first digital agency specializing in web development, mobile apps, e-commerce, and custom software solutions.
+
+## About
+
+HiTech Globals is a digital agency that helps businesses build exceptional digital products. We are a remote-first team available 24/7, working with clients worldwide to transform their ideas into reality.
+
+## Services
+
+- Web Development (React, Next.js, Vue, Angular)
+- Mobile App Development (React Native, Flutter)
+- E-Commerce Solutions (Shopify, Custom)
+- UI/UX Design
+- Brand Design
+- Custom Software Development
+- API Development
+- Cloud Solutions
+
+## Contact
+
+- Email: hello@hitechglobals.com
+- Phone: +91 863 943 3317
+- Website: https://hitechglobals.com
+
+## Pages
+
+- [Home](https://hitechglobals.com/)
+- [About](https://hitechglobals.com/about)
+- [Services](https://hitechglobals.com/services)
+- [Portfolio](https://hitechglobals.com/portfolio)
+- [Blog](https://hitechglobals.com/blog)
+- [Contact](https://hitechglobals.com/contact)
+
+## Social
+
+- [LinkedIn](https://www.linkedin.com/company/hitech-globals/)
+
+## Technologies
+
+React, Next.js, TypeScript, Node.js, Python, PostgreSQL, MongoDB, AWS, Vercel, Tailwind CSS, Framer Motion
+
+## Location
+
+Remote-first, India-based team serving clients worldwide.
