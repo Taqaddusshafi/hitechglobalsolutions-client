@@ -26,7 +26,7 @@ export function Footer() {
   };
 
   return (
-    <footer className="bg-foreground text-background">
+    <footer className="bg-[#0f0f0f] text-white">
       {/* Main Footer */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 py-12 sm:py-16 lg:py-20">
         <div className="grid md:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-12 mb-12 lg:mb-16">
@@ -114,8 +114,8 @@ export function Footer() {
             <div className="space-y-4">
               <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-3">
                 <Mail className="w-5 h-5 opacity-60" />
-                <a 
-                  href="mailto:hello@hitechglobals.com" 
+                <a
+                  href="mailto:hello@hitechglobals.com"
                   className="text-base sm:text-lg opacity-90 hover:text-[#0063cd] transition-colors break-all"
                 >
                   hello@hitechglobals.com
@@ -123,8 +123,8 @@ export function Footer() {
               </div>
               <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-3">
                 <Phone className="w-5 h-5 opacity-60" />
-                <a 
-                  href="tel:+918639433317" 
+                <a
+                  href="tel:+918639433317"
                   className="text-base sm:text-lg opacity-90 hover:text-[#0063cd] transition-colors"
                 >
                   +91 863 943 3317

@@ -18,7 +18,7 @@ export function AnimatedLogo() {
   const brandColor = hitechColor;
 
   return (
-    <div className="flex items-center justify-center min-h-screen bg-white">
+    <div className="flex items-center justify-center min-h-screen bg-background">
       <div className="flex flex-col items-center gap-1 justify-center">
         <div className="flex items-end relative">
           {letters.map((letter, index) => {

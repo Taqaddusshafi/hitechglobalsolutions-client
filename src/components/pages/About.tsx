@@ -306,7 +306,7 @@ export function About() {
               </Link>
               <Link to="/portfolio">
                 <motion.button
-                  className="px-8 py-4 bg-white border-2 border-[#0063cd] text-[#0063cd] rounded-full hover:bg-[#0063cd]/5 transition-all inline-flex items-center gap-2 group font-medium w-full sm:w-auto justify-center"
+                  className="px-8 py-4 bg-card border-2 border-[#0063cd] text-[#0063cd] rounded-full hover:bg-[#0063cd]/5 transition-all inline-flex items-center gap-2 group font-medium w-full sm:w-auto justify-center"
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
                 >
@@ -441,7 +441,7 @@ export function About() {
                   viewport={{ once: true }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
                   whileHover={{ y: -8 }}
-                  className={`relative p-8 bg-white rounded-2xl border border-border hover:border-[#0063cd]/50 hover:shadow-2xl transition-all group overflow-hidden`}
+                  className={`relative p-8 bg-card rounded-2xl border border-border hover:border-[#0063cd]/50 hover:shadow-2xl transition-all group overflow-hidden`}
                 >
                   {/* Gradient Background on Hover */}
                   <div className={`absolute inset-0 bg-gradient-to-br ${value.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-500`} />
@@ -592,7 +592,7 @@ export function About() {
                   viewport={{ once: true }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
                   whileHover={{ y: -5 }}
-                  className="p-6 sm:p-8 bg-white rounded-2xl border border-border hover:border-[#0063cd]/50 hover:shadow-xl transition-all group"
+                  className="p-6 sm:p-8 bg-card rounded-2xl border border-border hover:border-[#0063cd]/50 hover:shadow-xl transition-all group"
                 >
                   <motion.div
                     className="w-12 h-12 bg-[#0063cd]/10 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-[#0063cd] transition-colors"
@@ -655,7 +655,7 @@ export function About() {
                   viewport={{ once: true }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
                   whileHover={{ y: -5 }}
-                  className="p-6 sm:p-8 bg-white rounded-2xl border border-border text-center hover:shadow-xl hover:border-[#0063cd]/30 transition-all group"
+                  className="p-6 sm:p-8 bg-card rounded-2xl border border-border text-center hover:shadow-xl hover:border-[#0063cd]/30 transition-all group"
                 >
                   <motion.div
                     className="w-14 h-14 bg-[#0063cd]/10 rounded-2xl flex items-center justify-center mb-4 mx-auto group-hover:bg-[#0063cd] transition-colors"
