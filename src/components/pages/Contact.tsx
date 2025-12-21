@@ -115,7 +115,7 @@ export function Contact() {
         </script>
       </Helmet>
 
-      <div className="bg-white pt-20 overflow-hidden">
+      <div className="bg-background pt-20 overflow-hidden">
         {/* Hero Section */}
         <section className="min-h-[80vh] flex items-center justify-center px-4 sm:px-6 py-20 relative">
           {/* Animated Background */}
@@ -199,7 +199,7 @@ export function Contact() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6 }}
-                className="bg-white rounded-3xl p-6 sm:p-8 md:p-12 border border-border shadow-sm hover:shadow-lg transition-all"
+                className="bg-card rounded-3xl p-6 sm:p-8 md:p-12 border border-border shadow-sm hover:shadow-lg transition-all"
               >
                 <div className="flex items-center gap-3 mb-2">
                   <motion.div
@@ -237,7 +237,7 @@ export function Contact() {
                     viewport={{ once: true }}
                     transition={{ duration: 0.4, delay: index * 0.1 }}
                     whileHover={{ y: -5 }}
-                    className="p-6 bg-white rounded-2xl border border-border hover:border-[#0063cd]/50 hover:shadow-lg transition-all group"
+                    className="p-6 bg-card rounded-2xl border border-border hover:border-[#0063cd]/50 hover:shadow-lg transition-all group"
                   >
                     <motion.div
                       className="w-12 h-12 bg-[#0063cd]/10 rounded-xl flex items-center justify-center mb-4 group-hover:bg-[#0063cd] transition-colors"
@@ -295,7 +295,7 @@ export function Contact() {
               >
                 <a href="mailto:hello@hitechglobals.com" className="block">
                   <motion.div
-                    className="p-6 bg-white rounded-2xl border border-border hover:border-[#0063cd]/50 hover:shadow-lg transition-all flex items-center gap-4 group"
+                    className="p-6 bg-card rounded-2xl border border-border hover:border-[#0063cd]/50 hover:shadow-lg transition-all flex items-center gap-4 group"
                     whileHover={{ y: -3 }}
                   >
                     <div className="w-14 h-14 bg-[#0063cd]/10 rounded-xl flex items-center justify-center group-hover:bg-[#0063cd] transition-colors">
@@ -311,7 +311,7 @@ export function Contact() {
 
                 <a href="tel:+918639433317" className="block">
                   <motion.div
-                    className="p-6 bg-white rounded-2xl border border-border hover:border-[#0063cd]/50 hover:shadow-lg transition-all flex items-center gap-4 group"
+                    className="p-6 bg-card rounded-2xl border border-border hover:border-[#0063cd]/50 hover:shadow-lg transition-all flex items-center gap-4 group"
                     whileHover={{ y: -3 }}
                   >
                     <div className="w-14 h-14 bg-[#0063cd]/10 rounded-xl flex items-center justify-center group-hover:bg-[#0063cd] transition-colors">
@@ -369,7 +369,7 @@ export function Contact() {
                   viewport={{ once: true }}
                   transition={{ duration: 0.4, delay: index * 0.1 }}
                   whileHover={{ y: -3 }}
-                  className="p-6 sm:p-8 bg-white rounded-2xl border border-border hover:border-[#0063cd]/50 hover:shadow-lg transition-all"
+                  className="p-6 sm:p-8 bg-card rounded-2xl border border-border hover:border-[#0063cd]/50 hover:shadow-lg transition-all"
                 >
                   <h3 className="text-lg sm:text-xl font-bold mb-3 text-foreground">{faq.question}</h3>
                   <p className="text-muted-foreground leading-relaxed">{faq.answer}</p>

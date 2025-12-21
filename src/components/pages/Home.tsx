@@ -114,7 +114,7 @@ export function Home() {
         </script>
       </Helmet>
 
-      <div className="bg-white overflow-hidden">
+      <div className="bg-background overflow-hidden">
         {/* Hero Section */}
         <section className="min-h-screen flex items-center justify-center px-4 sm:px-6 pt-20 relative">
           {/* Animated Background Elements */}
@@ -278,7 +278,7 @@ export function Home() {
               </Link>
               <Link to="/portfolio" className="w-auto">
                 <motion.button
-                  className="w-full px-6 sm:px-8 py-3 sm:py-4 border border-border rounded-full hover:border-[#0063cd] hover:text-[#0063cd] transition-all text-sm sm:text-base backdrop-blur-sm bg-white/50"
+                  className="w-full px-6 sm:px-8 py-3 sm:py-4 border border-border rounded-full hover:border-[#0063cd] hover:text-[#0063cd] transition-all text-sm sm:text-base backdrop-blur-sm bg-card/50"
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
                 >
@@ -368,7 +368,7 @@ export function Home() {
                   viewport={{ once: true }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
                   whileHover={{ y: -8, transition: { duration: 0.3 } }}
-                  className={`relative p-6 sm:p-8 bg-white rounded-2xl border border-border hover:border-[#0063cd]/50 hover:shadow-2xl hover:shadow-[#0063cd]/10 transition-all group overflow-hidden`}
+                  className={`relative p-6 sm:p-8 bg-card rounded-2xl border border-border hover:border-[#0063cd]/50 hover:shadow-2xl hover:shadow-[#0063cd]/10 transition-all group overflow-hidden`}
                 >
                   {/* Gradient Background on Hover */}
                   <div className={`absolute inset-0 bg-gradient-to-br ${service.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-500`} />
@@ -527,7 +527,7 @@ export function Home() {
 
                 {/* Floating Badge */}
                 <motion.div
-                  className="absolute -top-4 -right-4 sm:-top-6 sm:-right-6 bg-white rounded-2xl shadow-xl p-4 sm:p-5 border border-border"
+                  className="absolute -top-4 -right-4 sm:-top-6 sm:-right-6 bg-card rounded-2xl shadow-xl p-4 sm:p-5 border border-border"
                   initial={{ opacity: 0, scale: 0.8 }}
                   whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: true }}
@@ -598,7 +598,7 @@ export function Home() {
                     viewport={{ once: true }}
                     transition={{ duration: 0.6, delay: index * 0.15 }}
                     whileHover={{ y: -5 }}
-                    className="relative p-6 sm:p-8 bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all border border-border/50"
+                    className="relative p-6 sm:p-8 bg-card rounded-2xl shadow-sm hover:shadow-xl transition-all border border-border/50"
                   >
                     {/* Step Number Badge */}
                     <motion.div

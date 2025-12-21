@@ -152,7 +152,7 @@ export function Portfolio() {
         </script>
       </Helmet>
 
-      <div className="bg-white pt-20 overflow-hidden">
+      <div className="bg-background pt-20 overflow-hidden">
         {/* Hero Section with Stats */}
         <section className="min-h-[80vh] flex items-center justify-center px-4 sm:px-6 py-20 relative">
           {/* Animated Background */}
@@ -227,7 +227,7 @@ export function Portfolio() {
               {stats.map((stat, index) => (
                 <motion.div
                   key={stat.label}
-                  className="p-4 sm:p-6 bg-white rounded-2xl border border-border shadow-sm hover:shadow-lg hover:border-[#0063cd]/30 transition-all group"
+                  className="p-4 sm:p-6 bg-card rounded-2xl border border-border shadow-sm hover:shadow-lg hover:border-[#0063cd]/30 transition-all group"
                   whileHover={{ y: -5 }}
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
@@ -293,8 +293,8 @@ export function Portfolio() {
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                   className={`px-6 py-3 rounded-full transition-all font-medium ${activeFilter === filter
-                      ? 'bg-gradient-to-r from-[#0063cd] to-[#0052a8] text-white shadow-lg shadow-[#0063cd]/25'
-                      : 'bg-white border border-border hover:border-[#0063cd]/50 text-foreground hover:shadow-md'
+                    ? 'bg-gradient-to-r from-[#0063cd] to-[#0052a8] text-white shadow-lg shadow-[#0063cd]/25'
+                    : 'bg-white border border-border hover:border-[#0063cd]/50 text-foreground hover:shadow-md'
                     }`}
                   aria-pressed={activeFilter === filter}
                 >
@@ -402,7 +402,7 @@ export function Portfolio() {
                   viewport={{ once: true }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
                   whileHover={{ y: -8 }}
-                  className="relative p-6 bg-white rounded-2xl border border-border hover:border-[#0063cd]/50 transition-all hover:shadow-xl group overflow-hidden"
+                  className="relative p-6 bg-card rounded-2xl border border-border hover:border-[#0063cd]/50 transition-all hover:shadow-xl group overflow-hidden"
                 >
                   <div className={`absolute inset-0 bg-gradient-to-br ${item.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-500`} />
 
@@ -476,7 +476,7 @@ export function Portfolio() {
                   viewport={{ once: true }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
                   whileHover={{ y: -5 }}
-                  className="p-6 sm:p-8 bg-white rounded-2xl border border-border hover:border-[#0063cd]/50 hover:shadow-xl transition-all"
+                  className="p-6 sm:p-8 bg-card rounded-2xl border border-border hover:border-[#0063cd]/50 hover:shadow-xl transition-all"
                 >
                   <h3 className="text-xl sm:text-2xl font-bold mb-3">{item.title}</h3>
                   <p className="text-muted-foreground text-base sm:text-lg">{item.description}</p>

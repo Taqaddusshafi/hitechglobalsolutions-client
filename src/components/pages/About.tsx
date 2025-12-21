@@ -135,7 +135,7 @@ export function About() {
         </script>
       </Helmet>
 
-      <div className="bg-white pt-20 overflow-hidden">
+      <div className="bg-background pt-20 overflow-hidden">
         {/* Hero Section with Stats */}
         <section className="min-h-[70vh] sm:min-h-[85vh] flex items-center justify-center px-4 sm:px-6 py-12 sm:py-20 relative">
           {/* Animated Background Elements */}
@@ -270,7 +270,7 @@ export function About() {
               {stats.map((stat, index) => (
                 <motion.div
                   key={stat.label}
-                  className="p-4 sm:p-6 bg-white rounded-2xl border border-border shadow-sm hover:shadow-lg hover:border-[#0063cd]/30 transition-all group"
+                  className="p-4 sm:p-6 bg-card rounded-2xl border border-border shadow-sm hover:shadow-lg hover:border-[#0063cd]/30 transition-all group"
                   whileHover={{ y: -5 }}
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
@@ -360,7 +360,7 @@ export function About() {
                 className="space-y-4 sm:space-y-6"
               >
                 <motion.article
-                  className="relative bg-white rounded-2xl sm:rounded-3xl p-6 sm:p-8 border border-[#0063cd]/20 hover:border-[#0063cd] transition-all hover:shadow-xl overflow-hidden group"
+                  className="relative bg-card rounded-2xl sm:rounded-3xl p-6 sm:p-8 border border-[#0063cd]/20 hover:border-[#0063cd] transition-all hover:shadow-xl overflow-hidden group"
                   whileHover={{ y: -5 }}
                 >
                   {/* Gradient overlay on hover */}

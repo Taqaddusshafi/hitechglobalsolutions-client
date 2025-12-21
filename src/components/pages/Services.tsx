@@ -296,7 +296,7 @@ export function Services() {
         </script>
       </Helmet>
 
-      <div className="bg-white pt-20 overflow-hidden">
+      <div className="bg-background pt-20 overflow-hidden">
         {/* Hero Section with CTA */}
         <section className="min-h-[85vh] flex items-center justify-center px-4 sm:px-6 py-20 relative">
           {/* Animated Background Elements */}
@@ -387,7 +387,7 @@ export function Services() {
               {benefits.map((benefit, index) => (
                 <motion.div
                   key={benefit.title}
-                  className="p-4 bg-white rounded-xl border border-border shadow-sm hover:shadow-lg hover:border-[#0063cd]/30 transition-all group"
+                  className="p-4 bg-card rounded-xl border border-border shadow-sm hover:shadow-lg hover:border-[#0063cd]/30 transition-all group"
                   whileHover={{ y: -3 }}
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
@@ -464,7 +464,7 @@ export function Services() {
                   viewport={{ once: true }}
                   transition={{ duration: 0.6, delay: index * 0.05 }}
                   whileHover={{ y: -8 }}
-                  className="relative p-6 sm:p-8 bg-white rounded-2xl border border-border hover:border-[#0063cd]/50 hover:shadow-2xl transition-all group h-full flex flex-col overflow-hidden"
+                  className="relative p-6 sm:p-8 bg-card rounded-2xl border border-border hover:border-[#0063cd]/50 hover:shadow-2xl transition-all group h-full flex flex-col overflow-hidden"
                 >
                   {/* Gradient overlay on hover */}
                   <div className={`absolute inset-0 bg-gradient-to-br ${service.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-500`} />
@@ -567,7 +567,7 @@ export function Services() {
                   viewport={{ once: true }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
                   whileHover={{ y: -5 }}
-                  className="p-6 sm:p-8 bg-white rounded-2xl border border-border hover:border-[#0063cd]/50 hover:shadow-xl transition-all group"
+                  className="p-6 sm:p-8 bg-card rounded-2xl border border-border hover:border-[#0063cd]/50 hover:shadow-xl transition-all group"
                 >
                   <motion.div
                     className="w-12 h-12 bg-[#0063cd]/10 rounded-xl flex items-center justify-center mb-4 group-hover:bg-[#0063cd] transition-colors"
@@ -621,7 +621,7 @@ export function Services() {
                   viewport={{ once: true }}
                   transition={{ duration: 0.4, delay: index * 0.05 }}
                   whileHover={{ scale: 1.1, y: -3 }}
-                  className="px-6 py-3 bg-white border border-border rounded-full hover:border-[#0063cd] hover:bg-[#0063cd]/5 hover:shadow-lg transition-all font-medium cursor-default"
+                  className="px-6 py-3 bg-card border border-border rounded-full hover:border-[#0063cd] hover:bg-[#0063cd]/5 hover:shadow-lg transition-all font-medium cursor-default"
                   role="listitem"
                 >
                   {tech}
@@ -666,7 +666,7 @@ export function Services() {
                     viewport={{ once: true }}
                     transition={{ duration: 0.6, delay: index * 0.1 }}
                     whileHover={{ y: -5 }}
-                    className="relative p-6 sm:p-8 bg-white rounded-2xl border border-border hover:border-[#0063cd]/50 hover:shadow-xl transition-all"
+                    className="relative p-6 sm:p-8 bg-card rounded-2xl border border-border hover:border-[#0063cd]/50 hover:shadow-xl transition-all"
                   >
                     {/* Step Number Badge */}
                     <motion.div
@@ -752,7 +752,7 @@ export function Services() {
                   whileInView={{ opacity: 1 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
-                  className="group p-6 bg-white rounded-2xl border border-border cursor-pointer hover:border-[#0063cd]/50 hover:shadow-lg transition-all"
+                  className="group p-6 bg-card rounded-2xl border border-border cursor-pointer hover:border-[#0063cd]/50 hover:shadow-lg transition-all"
                 >
                   <summary className="flex items-center justify-between font-bold text-lg list-none">
                     {item.q}

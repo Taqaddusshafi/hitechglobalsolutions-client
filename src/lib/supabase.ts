@@ -180,10 +180,10 @@ export async function getBlogs(): Promise<Blog[]> {
 
     if (error) {
         console.error('Error fetching blogs:', error);
-        return mockBlogs;
+        return [];
     }
 
-    return data?.length ? data : mockBlogs;
+    return data || [];
 }
 
 export async function getBlogBySlug(slug: string): Promise<Blog | null> {
@@ -200,7 +200,7 @@ export async function getBlogBySlug(slug: string): Promise<Blog | null> {
 
     if (error) {
         console.error('Error fetching blog:', error);
-        return mockBlogs.find(blog => blog.slug === slug) || null;
+        return null;
     }
 
     return data;
@@ -216,10 +216,10 @@ export async function getTestimonials(): Promise<Testimonial[]> {
 
     if (error) {
         console.error('Error fetching testimonials:', error);
-        return mockTestimonials;
+        return [];
     }
 
-    return data?.length ? data : mockTestimonials;
+    return data || [];
 }
 
 export async function getFeaturedTestimonials(): Promise<Testimonial[]> {
@@ -234,8 +234,8 @@ export async function getFeaturedTestimonials(): Promise<Testimonial[]> {
 
     if (error) {
         console.error('Error fetching testimonials:', error);
-        return mockTestimonials.filter(t => t.featured);
+        return [];
     }
 
-    return data?.length ? data : mockTestimonials.filter(t => t.featured);
+    return data || [];
 }
