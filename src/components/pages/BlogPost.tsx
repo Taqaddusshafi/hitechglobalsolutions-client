@@ -6,6 +6,7 @@ import { ArrowLeft, Tag, Clock, Twitter, Linkedin, Facebook } from 'lucide-react
 import { getBlogBySlug, type Blog } from '../../lib/supabase';
 import { ReadingProgress } from '../ReadingProgress';
 import { RelatedPosts } from '../RelatedPosts';
+import { TableOfContents, calculateReadTime } from '../TableOfContents';
 
 export function BlogPost() {
     const { slug } = useParams<{ slug: string }>();
@@ -135,7 +136,7 @@ export function BlogPost() {
                             </span>
                             <span className="flex items-center gap-1 text-sm text-muted-foreground">
                                 <Clock className="w-4 h-4" />
-                                5 min read
+                                {calculateReadTime(blog.content)} min read
                             </span>
                         </div>
 
@@ -202,6 +203,9 @@ export function BlogPost() {
                             <span className="text-white/50 text-6xl font-bold">{blog.title.charAt(0)}</span>
                         )}
                     </motion.div>
+
+                    {/* Table of Contents */}
+                    <TableOfContents content={blog.content} />
 
                     {/* Content */}
                     <motion.div
