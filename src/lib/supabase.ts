@@ -39,6 +39,34 @@ export interface Testimonial {
     created_at: string;
 }
 
+export interface Service {
+    id: string;
+    title: string;
+    description: string;
+    icon: string;
+    features: string[];
+    price_from: string | null;
+    gradient: string;
+    order_index: number;
+    active: boolean;
+    created_at: string;
+}
+
+export interface Project {
+    id: string;
+    title: string;
+    slug: string;
+    category: string;
+    description: string;
+    cover_image: string | null;
+    tags: string[];
+    results: string[];
+    gradient: string;
+    featured: boolean;
+    active: boolean;
+    created_at: string;
+}
+
 // Mock data for development
 export const mockBlogs: Blog[] = [
     {
@@ -234,6 +262,93 @@ export async function getFeaturedTestimonials(): Promise<Testimonial[]> {
 
     if (error) {
         console.error('Error fetching testimonials:', error);
+        return [];
+    }
+
+    return data || [];
+}
+
+// Services functions
+export async function getServices(): Promise<Service[]> {
+    if (!supabase) return [];
+
+    const { data, error } = await supabase
+        .from('services')
+        .select('*')
+        .eq('active', true)
+        .order('order_index', { ascending: true });
+
+    if (error) {
+        console.error('Error fetching services:', error);
+        return [];
+    }
+
+    return data || [];
+}
+
+export async function getAllServices(): Promise<Service[]> {
+    if (!supabase) return [];
+
+    const { data, error } = await supabase
+        .from('services')
+        .select('*')
+        .order('order_index', { ascending: true });
+
+    if (error) {
+        console.error('Error fetching services:', error);
+        return [];
+    }
+
+    return data || [];
+}
+
+// Projects functions
+export async function getProjects(): Promise<Project[]> {
+    if (!supabase) return [];
+
+    const { data, error } = await supabase
+        .from('projects')
+        .select('*')
+        .eq('active', true)
+        .order('created_at', { ascending: false });
+
+    if (error) {
+        console.error('Error fetching projects:', error);
+        return [];
+    }
+
+    return data || [];
+}
+
+export async function getAllProjects(): Promise<Project[]> {
+    if (!supabase) return [];
+
+    const { data, error } = await supabase
+        .from('projects')
+        .select('*')
+        .order('created_at', { ascending: false });
+
+    if (error) {
+        console.error('Error fetching projects:', error);
+        return [];
+    }
+
+    return data || [];
+}
+
+export async function getFeaturedProjects(): Promise<Project[]> {
+    if (!supabase) return [];
+
+    const { data, error } = await supabase
+        .from('projects')
+        .select('*')
+        .eq('active', true)
+        .eq('featured', true)
+        .order('created_at', { ascending: false })
+        .limit(6);
+
+    if (error) {
+        console.error('Error fetching projects:', error);
         return [];
     }
 

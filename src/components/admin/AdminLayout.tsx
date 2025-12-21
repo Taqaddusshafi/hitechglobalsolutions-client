@@ -4,6 +4,8 @@ import {
     LayoutDashboard,
     FileText,
     MessageSquare,
+    Briefcase,
+    FolderOpen,
     LogOut,
     Menu,
     X,
@@ -21,6 +23,8 @@ export function AdminLayout() {
         { path: '/admin', label: 'Dashboard', icon: LayoutDashboard, exact: true },
         { path: '/admin/blogs', label: 'Blogs', icon: FileText },
         { path: '/admin/testimonials', label: 'Testimonials', icon: MessageSquare },
+        { path: '/admin/services', label: 'Services', icon: Briefcase },
+        { path: '/admin/portfolio', label: 'Portfolio', icon: FolderOpen },
     ];
 
     const isActive = (path: string, exact?: boolean) => {

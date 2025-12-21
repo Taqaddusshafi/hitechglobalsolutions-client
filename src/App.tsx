@@ -23,6 +23,10 @@ import { AdminBlogs } from './components/admin/AdminBlogs';
 import { BlogEditor } from './components/admin/BlogEditor';
 import { AdminTestimonials } from './components/admin/AdminTestimonials';
 import { TestimonialEditor } from './components/admin/TestimonialEditor';
+import { AdminServices } from './components/admin/AdminServices';
+import { ServiceEditor } from './components/admin/ServiceEditor';
+import { AdminPortfolio } from './components/admin/AdminPortfolio';
+import { ProjectEditor } from './components/admin/ProjectEditor';
 import { ProtectedRoute } from './components/admin/ProtectedRoute';
 
 import { Analytics } from "@vercel/analytics/react"
@@ -100,6 +104,12 @@ export default function App() {
                     <Route path="testimonials" element={<AdminTestimonials />} />
                     <Route path="testimonials/new" element={<TestimonialEditor />} />
                     <Route path="testimonials/:id" element={<TestimonialEditor />} />
+                    <Route path="services" element={<AdminServices />} />
+                    <Route path="services/new" element={<ServiceEditor />} />
+                    <Route path="services/:id" element={<ServiceEditor />} />
+                    <Route path="portfolio" element={<AdminPortfolio />} />
+                    <Route path="portfolio/new" element={<ProjectEditor />} />
+                    <Route path="portfolio/:id" element={<ProjectEditor />} />
                   </Route>
 
                   {/* Main Site Routes */}

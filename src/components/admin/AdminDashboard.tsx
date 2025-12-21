@@ -1,41 +1,50 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { FileText, MessageSquare, Plus, TrendingUp, Eye } from 'lucide-react';
+import { FileText, MessageSquare, Plus, Briefcase, FolderOpen } from 'lucide-react';
 import { supabase } from '../../lib/supabase';
 
 export function AdminDashboard() {
     const [stats, setStats] = useState({
         blogs: 0,
         testimonials: 0,
-        publishedBlogs: 0,
-        featuredTestimonials: 0,
+        services: 0,
+        projects: 0,
     });
 
     useEffect(() => {
         async function fetchStats() {
             if (!supabase) return;
 
-            const [blogsRes, testimonialsRes] = await Promise.all([
-                supabase.from('blogs').select('id, published'),
-                supabase.from('testimonials').select('id, featured'),
+            const [blogsRes, testimonialsRes, servicesRes, projectsRes] = await Promise.all([
+                supabase.from('blogs').select('id'),
+                supabase.from('testimonials').select('id'),
+                supabase.from('services').select('id'),
+                supabase.from('projects').select('id'),
             ]);
 
             setStats({
                 blogs: blogsRes.data?.length || 0,
                 testimonials: testimonialsRes.data?.length || 0,
-                publishedBlogs: blogsRes.data?.filter(b => b.published).length || 0,
-                featuredTestimonials: testimonialsRes.data?.filter(t => t.featured).length || 0,
+                services: servicesRes.data?.length || 0,
+                projects: projectsRes.data?.length || 0,
             });
         }
         fetchStats();
     }, []);
 
     const statCards = [
-        { label: 'Total Blogs', value: stats.blogs, icon: FileText, color: 'from-blue-500 to-cyan-500' },
-        { label: 'Published', value: stats.publishedBlogs, icon: Eye, color: 'from-green-500 to-emerald-500' },
-        { label: 'Testimonials', value: stats.testimonials, icon: MessageSquare, color: 'from-purple-500 to-pink-500' },
-        { label: 'Featured', value: stats.featuredTestimonials, icon: TrendingUp, color: 'from-amber-500 to-orange-500' },
+        { label: 'Blogs', value: stats.blogs, icon: FileText, color: 'from-blue-500 to-cyan-500', link: '/admin/blogs' },
+        { label: 'Testimonials', value: stats.testimonials, icon: MessageSquare, color: 'from-purple-500 to-pink-500', link: '/admin/testimonials' },
+        { label: 'Services', value: stats.services, icon: Briefcase, color: 'from-green-500 to-emerald-500', link: '/admin/services' },
+        { label: 'Projects', value: stats.projects, icon: FolderOpen, color: 'from-amber-500 to-orange-500', link: '/admin/portfolio' },
+    ];
+
+    const quickActions = [
+        { title: 'Blog', desc: 'Create and manage blog posts', icon: FileText, addLink: '/admin/blogs/new', viewLink: '/admin/blogs' },
+        { title: 'Testimonials', desc: 'Manage client testimonials', icon: MessageSquare, addLink: '/admin/testimonials/new', viewLink: '/admin/testimonials' },
+        { title: 'Services', desc: 'Manage your service offerings', icon: Briefcase, addLink: '/admin/services/new', viewLink: '/admin/services' },
+        { title: 'Portfolio', desc: 'Manage portfolio projects', icon: FolderOpen, addLink: '/admin/portfolio/new', viewLink: '/admin/portfolio' },
     ];
 
     return (
@@ -47,85 +56,59 @@ export function AdminDashboard() {
             </div>
 
             {/* Stats Grid */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
                 {statCards.map((stat, index) => (
-                    <motion.div
-                        key={stat.label}
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.4, delay: index * 0.1 }}
-                        className="bg-card border border-border rounded-2xl p-6 hover:shadow-lg transition-all"
-                    >
-                        <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${stat.color} flex items-center justify-center mb-4`}>
-                            <stat.icon className="w-6 h-6 text-white" />
-                        </div>
-                        <div className="text-3xl font-bold text-foreground">{stat.value}</div>
-                        <div className="text-sm text-muted-foreground">{stat.label}</div>
-                    </motion.div>
+                    <Link key={stat.label} to={stat.link}>
+                        <motion.div
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.4, delay: index * 0.1 }}
+                            className="bg-card border border-border rounded-2xl p-5 hover:shadow-lg hover:border-[#0063cd]/50 transition-all"
+                        >
+                            <div className={`w-10 h-10 rounded-xl bg-gradient-to-br ${stat.color} flex items-center justify-center mb-3`}>
+                                <stat.icon className="w-5 h-5 text-white" />
+                            </div>
+                            <div className="text-2xl font-bold text-foreground">{stat.value}</div>
+                            <div className="text-sm text-muted-foreground">{stat.label}</div>
+                        </motion.div>
+                    </Link>
                 ))}
             </div>
 
             {/* Quick Actions */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.4, delay: 0.4 }}
-                    className="bg-card border border-border rounded-2xl p-6"
-                >
-                    <h2 className="text-xl font-bold text-foreground mb-4 flex items-center gap-2">
-                        <FileText className="w-5 h-5 text-[#0063cd]" />
-                        Blog Management
-                    </h2>
-                    <p className="text-muted-foreground mb-6">
-                        Create, edit, and manage your blog posts
-                    </p>
-                    <div className="flex gap-3">
-                        <Link
-                            to="/admin/blogs/new"
-                            className="px-4 py-2 bg-[#0063cd] text-white rounded-xl hover:bg-[#0052a8] transition-colors flex items-center gap-2"
-                        >
-                            <Plus className="w-4 h-4" />
-                            New Post
-                        </Link>
-                        <Link
-                            to="/admin/blogs"
-                            className="px-4 py-2 border border-border rounded-xl hover:bg-secondary transition-colors"
-                        >
-                            View All
-                        </Link>
-                    </div>
-                </motion.div>
-
-                <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.4, delay: 0.5 }}
-                    className="bg-card border border-border rounded-2xl p-6"
-                >
-                    <h2 className="text-xl font-bold text-foreground mb-4 flex items-center gap-2">
-                        <MessageSquare className="w-5 h-5 text-[#0063cd]" />
-                        Testimonial Management
-                    </h2>
-                    <p className="text-muted-foreground mb-6">
-                        Add and manage client testimonials
-                    </p>
-                    <div className="flex gap-3">
-                        <Link
-                            to="/admin/testimonials/new"
-                            className="px-4 py-2 bg-[#0063cd] text-white rounded-xl hover:bg-[#0052a8] transition-colors flex items-center gap-2"
-                        >
-                            <Plus className="w-4 h-4" />
-                            New Testimonial
-                        </Link>
-                        <Link
-                            to="/admin/testimonials"
-                            className="px-4 py-2 border border-border rounded-xl hover:bg-secondary transition-colors"
-                        >
-                            View All
-                        </Link>
-                    </div>
-                </motion.div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                {quickActions.map((action, index) => (
+                    <motion.div
+                        key={action.title}
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.4, delay: 0.4 + index * 0.1 }}
+                        className="bg-card border border-border rounded-2xl p-5"
+                    >
+                        <h2 className="text-lg font-bold text-foreground mb-2 flex items-center gap-2">
+                            <action.icon className="w-5 h-5 text-[#0063cd]" />
+                            {action.title}
+                        </h2>
+                        <p className="text-sm text-muted-foreground mb-4">
+                            {action.desc}
+                        </p>
+                        <div className="flex gap-2">
+                            <Link
+                                to={action.addLink}
+                                className="px-3 py-1.5 bg-[#0063cd] text-white rounded-lg hover:bg-[#0052a8] transition-colors flex items-center gap-1 text-sm"
+                            >
+                                <Plus className="w-4 h-4" />
+                                Add
+                            </Link>
+                            <Link
+                                to={action.viewLink}
+                                className="px-3 py-1.5 border border-border rounded-lg hover:bg-secondary transition-colors text-sm"
+                            >
+                                View All
+                            </Link>
+                        </div>
+                    </motion.div>
+                ))}
             </div>
         </div>
     );
