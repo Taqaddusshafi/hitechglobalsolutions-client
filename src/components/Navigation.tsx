@@ -3,6 +3,7 @@ import { Link, useLocation } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import logo from '../assets/logo.png';
+import { DarkModeToggle } from './DarkModeToggle';
 
 export function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
@@ -22,18 +23,20 @@ export function Navigation() {
     { path: '/about', label: 'About' },
     { path: '/services', label: 'Services' },
     { path: '/portfolio', label: 'Work' },
+    { path: '/blog', label: 'Blog' },
     { path: '/contact', label: 'Contact' },
   ];
 
-  const isActive = (path: string) => location.pathname === path;
+  const isActive = (path: string) => location.pathname === path || (path === '/blog' && location.pathname.startsWith('/blog'));
 
   return (
     <motion.nav
       initial={{ y: -100 }}
       animate={{ y: 0 }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? 'bg-white/80 backdrop-blur-md shadow-sm' : 'bg-white'
-      }`}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled
+        ? 'bg-background/80 backdrop-blur-md shadow-sm border-b border-border'
+        : 'bg-background'
+        }`}
     >
       <div className="max-w-8xl mx-auto px-2 sm:px-4 lg:px-6">
         <div className="flex justify-between items-center h-16 sm:h-20">
@@ -56,11 +59,10 @@ export function Navigation() {
                 className="relative text-lg tracking-wide group"
               >
                 <span
-                  className={`transition-colors ${
-                    isActive(link.path)
-                      ? 'text-[#0051ad]'
-                      : 'text-muted-foreground hover:text-foreground'
-                  }`}
+                  className={`transition-colors ${isActive(link.path)
+                    ? 'text-[#0051ad]'
+                    : 'text-muted-foreground hover:text-foreground'
+                    }`}
                 >
                   {link.label}
                 </span>
@@ -73,16 +75,22 @@ export function Navigation() {
                 )}
               </Link>
             ))}
+
+            {/* Dark Mode Toggle - Desktop */}
+            <DarkModeToggle />
           </div>
 
-          {/* Mobile Menu Button */}
-          <button
-            className="md:hidden p-2"
-            onClick={() => setIsOpen(!isOpen)}
-            aria-label="Toggle menu"
-          >
-            {isOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
+          {/* Mobile: Dark Mode Toggle + Menu Button */}
+          <div className="md:hidden flex items-center gap-2">
+            <DarkModeToggle />
+            <button
+              className="p-2 text-foreground"
+              onClick={() => setIsOpen(!isOpen)}
+              aria-label="Toggle menu"
+            >
+              {isOpen ? <X size={24} /> : <Menu size={24} />}
+            </button>
+          </div>
         </div>
       </div>
 
@@ -93,7 +101,7 @@ export function Navigation() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-white border-t overflow-hidden"
+            className="md:hidden bg-background border-t border-border overflow-hidden"
           >
             <div className="px-6 py-6 space-y-4">
               {navLinks.map((link, index) => (
@@ -106,11 +114,10 @@ export function Navigation() {
                   <Link
                     to={link.path}
                     onClick={() => setIsOpen(false)}
-                    className={`block py-2 text-lg ${
-                      isActive(link.path)
-                        ? 'text-[#0051ad]'
-                        : 'text-muted-foreground'
-                    }`}
+                    className={`block py-2 text-lg ${isActive(link.path)
+                      ? 'text-[#0051ad]'
+                      : 'text-muted-foreground'
+                      }`}
                   >
                     {link.label}
                   </Link>

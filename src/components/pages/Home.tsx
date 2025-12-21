@@ -2,6 +2,7 @@ import { Helmet } from 'react-helmet-async';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Globe, Code, Palette, Sparkles, Zap, Shield, Rocket, Users } from 'lucide-react';
+import { Testimonials } from '../Testimonials';
 
 export function Home() {
   const services = [
@@ -632,6 +633,9 @@ export function Home() {
             </div>
           </div>
         </section>
+
+        {/* Testimonials Section */}
+        <Testimonials />
 
         {/* CTA Section */}
         <section className="py-16 sm:py-24 lg:py-32 px-4 sm:px-6 relative overflow-hidden">
