@@ -354,3 +354,104 @@ export async function getFeaturedProjects(): Promise<Project[]> {
 
     return data || [];
 }
+
+// Legal Pages
+export interface LegalPage {
+    id: string;
+    slug: string; // 'privacy-policy' or 'terms-of-service'
+    title: string;
+    content: string;
+    last_updated: string;
+    created_at: string;
+}
+
+export async function getLegalPage(slug: string): Promise<LegalPage | null> {
+    if (!supabase) {
+        // Return mock data
+        if (slug === 'privacy-policy') {
+            return {
+                id: '1',
+                slug: 'privacy-policy',
+                title: 'Privacy Policy',
+                content: `# Privacy Policy
+
+Last updated: ${new Date().toLocaleDateString()}
+
+## Information We Collect
+
+We collect information you provide directly to us, such as when you fill out a contact form, subscribe to our newsletter, or communicate with us.
+
+## How We Use Your Information
+
+We use the information we collect to:
+- Provide, maintain, and improve our services
+- Send you technical notices and support messages
+- Respond to your comments, questions, and requests
+
+## Contact Us
+
+If you have any questions about this Privacy Policy, please contact us at hello@hitechglobals.com`,
+                last_updated: new Date().toISOString(),
+                created_at: new Date().toISOString()
+            };
+        }
+        if (slug === 'terms-of-service') {
+            return {
+                id: '2',
+                slug: 'terms-of-service',
+                title: 'Terms of Service',
+                content: `# Terms of Service
+
+Last updated: ${new Date().toLocaleDateString()}
+
+## Acceptance of Terms
+
+By accessing and using HiTech Globals services, you accept and agree to be bound by these Terms of Service.
+
+## Services
+
+We provide web development, mobile app development, and digital solutions. All services are subject to availability.
+
+## Intellectual Property
+
+All content, features, and functionality are owned by HiTech Globals and are protected by international copyright laws.
+
+## Contact Us
+
+If you have any questions about these Terms, please contact us at hello@hitechglobals.com`,
+                last_updated: new Date().toISOString(),
+                created_at: new Date().toISOString()
+            };
+        }
+        return null;
+    }
+
+    const { data, error } = await supabase
+        .from('legal_pages')
+        .select('*')
+        .eq('slug', slug)
+        .single();
+
+    if (error) {
+        console.error('Error fetching legal page:', error);
+        return null;
+    }
+
+    return data;
+}
+
+export async function getAllLegalPages(): Promise<LegalPage[]> {
+    if (!supabase) return [];
+
+    const { data, error } = await supabase
+        .from('legal_pages')
+        .select('*')
+        .order('title', { ascending: true });
+
+    if (error) {
+        console.error('Error fetching legal pages:', error);
+        return [];
+    }
+
+    return data || [];
+}

@@ -27,7 +27,7 @@ export function Footer() {
   };
 
   return (
-    <footer className="bg-[#0f0f0f] text-white">
+    <footer className="bg-secondary dark:bg-[#0f0f0f] text-foreground dark:text-white border-t border-border">
       {/* Main Footer */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 py-12 sm:py-16 lg:py-20">
         <div className="grid md:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-12 mb-12 lg:mb-16">
@@ -147,17 +147,17 @@ export function Footer() {
       </div>
 
       {/* Bottom Bar */}
-      <div className="border-t border-white/10">
+      <div className="border-t border-border dark:border-white/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 py-6">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-xs sm:text-sm opacity-60">
             <p>© {new Date().getFullYear()} HiTech Globals. All rights reserved.</p>
             <div className="flex gap-6">
-              <a href="#" className="hover:opacity-100 transition-opacity">
+              <Link to="/legal/privacy-policy" className="hover:opacity-100 transition-opacity">
                 Privacy Policy
-              </a>
-              <a href="#" className="hover:opacity-100 transition-opacity">
+              </Link>
+              <Link to="/legal/terms-of-service" className="hover:opacity-100 transition-opacity">
                 Terms of Service
-              </a>
+              </Link>
             </div>
           </div>
         </div>

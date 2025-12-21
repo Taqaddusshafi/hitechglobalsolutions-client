@@ -7,6 +7,7 @@ import {
     Briefcase,
     FolderOpen,
     Mail,
+    Scale,
     LogOut,
     Menu,
     X,
@@ -27,6 +28,7 @@ export function AdminLayout() {
         { path: '/admin/services', label: 'Services', icon: Briefcase },
         { path: '/admin/portfolio', label: 'Portfolio', icon: FolderOpen },
         { path: '/admin/newsletter', label: 'Newsletter', icon: Mail },
+        { path: '/admin/legal', label: 'Legal Pages', icon: Scale },
     ];
 
     const isActive = (path: string, exact?: boolean) => {

@@ -6,6 +6,7 @@ import { Footer } from './components/Footer';
 import { SplashScreen } from './components/SplashScreen';
 import { ThemeProvider } from './components/ThemeProvider';
 import { BackToTop } from './components/BackToTop';
+import { CookieConsent } from './components/CookieConsent';
 
 // Lazy load page components for code splitting
 const Home = lazy(() => import('./components/pages/Home').then(m => ({ default: m.Home })));
@@ -15,6 +16,7 @@ const Portfolio = lazy(() => import('./components/pages/Portfolio').then(m => ({
 const Contact = lazy(() => import('./components/pages/Contact').then(m => ({ default: m.Contact })));
 const Blog = lazy(() => import('./components/pages/Blog').then(m => ({ default: m.Blog })));
 const BlogPost = lazy(() => import('./components/pages/BlogPost').then(m => ({ default: m.BlogPost })));
+const LegalPage = lazy(() => import('./components/pages/LegalPage').then(m => ({ default: m.LegalPage })));
 const NotFound = lazy(() => import('./components/pages/NotFound').then(m => ({ default: m.NotFound })));
 
 // Lazy load admin components
@@ -30,6 +32,8 @@ const ServiceEditor = lazy(() => import('./components/admin/ServiceEditor').then
 const AdminPortfolio = lazy(() => import('./components/admin/AdminPortfolio').then(m => ({ default: m.AdminPortfolio })));
 const ProjectEditor = lazy(() => import('./components/admin/ProjectEditor').then(m => ({ default: m.ProjectEditor })));
 const AdminNewsletter = lazy(() => import('./components/admin/AdminNewsletter').then(m => ({ default: m.AdminNewsletter })));
+const AdminLegalPages = lazy(() => import('./components/admin/AdminLegalPages').then(m => ({ default: m.AdminLegalPages })));
+const LegalPageEditor = lazy(() => import('./components/admin/LegalPageEditor').then(m => ({ default: m.LegalPageEditor })));
 
 // Non-lazy imports for core functionality
 import { AuthProvider } from './components/admin/AuthContext';
@@ -69,6 +73,7 @@ function MainLayout({ children }: { children: React.ReactNode }) {
       <main className="flex-1">{children}</main>
       <Footer />
       <BackToTop />
+      <CookieConsent />
     </div>
   );
 }
@@ -131,6 +136,9 @@ export default function App() {
                       <Route path="portfolio/new" element={<ProjectEditor />} />
                       <Route path="portfolio/:id" element={<ProjectEditor />} />
                       <Route path="newsletter" element={<AdminNewsletter />} />
+                      <Route path="legal" element={<AdminLegalPages />} />
+                      <Route path="legal/new" element={<LegalPageEditor />} />
+                      <Route path="legal/:id" element={<LegalPageEditor />} />
                     </Route>
 
                     {/* Main Site Routes */}
@@ -146,6 +154,7 @@ export default function App() {
                             <Route path="/contact" element={<Contact />} />
                             <Route path="/blog" element={<Blog />} />
                             <Route path="/blog/:slug" element={<BlogPost />} />
+                            <Route path="/legal/:slug" element={<LegalPage />} />
                             <Route path="*" element={<NotFound />} />
                           </Routes>
                         </MainLayout>

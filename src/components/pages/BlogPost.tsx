@@ -2,11 +2,12 @@ import { Helmet } from 'react-helmet-async';
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Link, useParams, useNavigate } from 'react-router-dom';
-import { ArrowLeft, Tag, Clock, Twitter, Linkedin, Facebook } from 'lucide-react';
+import { ArrowLeft, Tag, Clock } from 'lucide-react';
 import { getBlogBySlug, type Blog } from '../../lib/supabase';
 import { ReadingProgress } from '../ReadingProgress';
 import { RelatedPosts } from '../RelatedPosts';
 import { TableOfContents, calculateReadTime } from '../TableOfContents';
+import { ShareButtons } from '../ShareButtons';
 
 export function BlogPost() {
     const { slug } = useParams<{ slug: string }>();
@@ -35,8 +36,6 @@ export function BlogPost() {
             day: 'numeric'
         });
     };
-
-    const shareUrl = typeof window !== 'undefined' ? window.location.href : '';
 
     if (loading) {
         return (
@@ -160,32 +159,8 @@ export function BlogPost() {
                             </div>
 
                             {/* Share Buttons */}
-                            <div className="flex items-center gap-3 ml-auto">
-                                <span className="text-muted-foreground">Share:</span>
-                                <a
-                                    href={`https://twitter.com/intent/tweet?url=${encodeURIComponent(shareUrl)}&text=${encodeURIComponent(blog.title)}`}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="w-8 h-8 bg-secondary hover:bg-[#0063cd] hover:text-white rounded-full flex items-center justify-center transition-colors"
-                                >
-                                    <Twitter className="w-4 h-4" />
-                                </a>
-                                <a
-                                    href={`https://www.linkedin.com/shareArticle?mini=true&url=${encodeURIComponent(shareUrl)}&title=${encodeURIComponent(blog.title)}`}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="w-8 h-8 bg-secondary hover:bg-[#0063cd] hover:text-white rounded-full flex items-center justify-center transition-colors"
-                                >
-                                    <Linkedin className="w-4 h-4" />
-                                </a>
-                                <a
-                                    href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(shareUrl)}`}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="w-8 h-8 bg-secondary hover:bg-[#0063cd] hover:text-white rounded-full flex items-center justify-center transition-colors"
-                                >
-                                    <Facebook className="w-4 h-4" />
-                                </a>
+                            <div className="ml-auto">
+                                <ShareButtons title={blog.title} />
                             </div>
                         </div>
                     </motion.header>

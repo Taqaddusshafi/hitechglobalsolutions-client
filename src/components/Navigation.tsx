@@ -104,8 +104,15 @@ export function Navigation() {
               <DarkModeToggle />
             </div>
 
-            {/* Mobile: Dark Mode Toggle + Menu Button */}
+            {/* Mobile: Search + Dark Mode Toggle + Menu Button */}
             <div className="md:hidden flex items-center gap-2">
+              <button
+                onClick={() => setSearchOpen(true)}
+                className="p-2 hover:bg-secondary rounded-lg transition-colors text-muted-foreground hover:text-foreground"
+                aria-label="Search"
+              >
+                <Search className="w-5 h-5" />
+              </button>
               <DarkModeToggle />
               <button
                 className="p-2 text-foreground"
