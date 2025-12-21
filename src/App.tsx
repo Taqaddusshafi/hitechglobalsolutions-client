@@ -5,6 +5,7 @@ import { Navigation } from './components/Navigation';
 import { Footer } from './components/Footer';
 import { SplashScreen } from './components/SplashScreen';
 import { ThemeProvider } from './components/ThemeProvider';
+import { BackToTop } from './components/BackToTop';
 
 // Lazy load page components for code splitting
 const Home = lazy(() => import('./components/pages/Home').then(m => ({ default: m.Home })));
@@ -66,6 +67,7 @@ function MainLayout({ children }: { children: React.ReactNode }) {
       <Navigation />
       <main className="flex-1">{children}</main>
       <Footer />
+      <BackToTop />
     </div>
   );
 }

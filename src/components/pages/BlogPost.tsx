@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import { Link, useParams, useNavigate } from 'react-router-dom';
 import { ArrowLeft, Tag, Clock, Twitter, Linkedin, Facebook } from 'lucide-react';
 import { getBlogBySlug, type Blog } from '../../lib/supabase';
+import { ReadingProgress } from '../ReadingProgress';
 
 export function BlogPost() {
     const { slug } = useParams<{ slug: string }>();
@@ -102,6 +103,7 @@ export function BlogPost() {
                 </script>
             </Helmet>
 
+            <ReadingProgress />
             <div className="bg-background pt-20 min-h-screen">
                 <article className="max-w-4xl mx-auto px-4 sm:px-6 py-12 sm:py-20">
                     {/* Back Button */}
