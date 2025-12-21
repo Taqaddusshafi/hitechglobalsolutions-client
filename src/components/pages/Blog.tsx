@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Calendar, User, Sparkles, Clock } from 'lucide-react';
 import { getBlogs, type Blog } from '../../lib/supabase';
+import { Newsletter } from '../Newsletter';
 
 export function Blog() {
     const [blogs, setBlogs] = useState<Blog[]>([]);
@@ -261,6 +262,13 @@ export function Blog() {
                                 </motion.button>
                             </Link>
                         </motion.div>
+                    </div>
+                </section>
+
+                {/* Newsletter Section */}
+                <section className="px-4 sm:px-6 pb-20">
+                    <div className="max-w-4xl mx-auto">
+                        <Newsletter />
                     </div>
                 </section>
             </div>

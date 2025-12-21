@@ -29,6 +29,7 @@ const AdminServices = lazy(() => import('./components/admin/AdminServices').then
 const ServiceEditor = lazy(() => import('./components/admin/ServiceEditor').then(m => ({ default: m.ServiceEditor })));
 const AdminPortfolio = lazy(() => import('./components/admin/AdminPortfolio').then(m => ({ default: m.AdminPortfolio })));
 const ProjectEditor = lazy(() => import('./components/admin/ProjectEditor').then(m => ({ default: m.ProjectEditor })));
+const AdminNewsletter = lazy(() => import('./components/admin/AdminNewsletter').then(m => ({ default: m.AdminNewsletter })));
 
 // Non-lazy imports for core functionality
 import { AuthProvider } from './components/admin/AuthContext';
@@ -129,6 +130,7 @@ export default function App() {
                       <Route path="portfolio" element={<AdminPortfolio />} />
                       <Route path="portfolio/new" element={<ProjectEditor />} />
                       <Route path="portfolio/:id" element={<ProjectEditor />} />
+                      <Route path="newsletter" element={<AdminNewsletter />} />
                     </Route>
 
                     {/* Main Site Routes */}

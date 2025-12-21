@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { ArrowRight, Mail, Phone } from 'lucide-react';
+import { Newsletter } from './Newsletter';
 
 export function Footer() {
   const links = {
@@ -134,6 +135,13 @@ export function Footer() {
             <p className="opacity-70 text-sm mt-6">
               We're a remote-first team available 24/7. Whether you're across the street or across the world, we're here to help bring your ideas to life.
             </p>
+          </div>
+
+          {/* Newsletter */}
+          <div className="mt-8 max-w-md">
+            <h4 className="text-sm uppercase tracking-wider mb-4 opacity-60">Newsletter</h4>
+            <p className="opacity-70 text-sm mb-4">Get the latest insights in your inbox</p>
+            <Newsletter variant="footer" />
           </div>
         </div>
       </div>

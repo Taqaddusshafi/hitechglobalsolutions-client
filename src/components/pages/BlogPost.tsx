@@ -5,6 +5,7 @@ import { Link, useParams, useNavigate } from 'react-router-dom';
 import { ArrowLeft, Tag, Clock, Twitter, Linkedin, Facebook } from 'lucide-react';
 import { getBlogBySlug, type Blog } from '../../lib/supabase';
 import { ReadingProgress } from '../ReadingProgress';
+import { RelatedPosts } from '../RelatedPosts';
 
 export function BlogPost() {
     const { slug } = useParams<{ slug: string }>();
@@ -267,6 +268,13 @@ export function BlogPost() {
                             </motion.button>
                         </Link>
                     </motion.div>
+
+                    {/* Related Posts */}
+                    <RelatedPosts
+                        currentSlug={blog.slug}
+                        currentCategory={blog.category}
+                        currentTags={blog.tags}
+                    />
                 </article>
             </div>
         </>
