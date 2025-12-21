@@ -168,10 +168,20 @@ export function Blog() {
                                     >
                                         <Link to={`/blog/${blog.slug}`}>
                                             <div className="bg-card rounded-2xl border border-border hover:border-[#0063cd]/50 hover:shadow-2xl transition-all overflow-hidden h-full flex flex-col">
-                                                {/* Cover Image Placeholder */}
-                                                <div className="aspect-video bg-gradient-to-br from-[#0063cd] to-[#0052a8] flex items-center justify-center relative overflow-hidden">
+                                                {/* Cover Image */}
+                                                <div className="aspect-video relative overflow-hidden">
+                                                    {blog.cover_image ? (
+                                                        <img
+                                                            src={blog.cover_image}
+                                                            alt={blog.title}
+                                                            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                                                        />
+                                                    ) : (
+                                                        <div className="w-full h-full bg-gradient-to-br from-[#0063cd] to-[#0052a8] flex items-center justify-center">
+                                                            <span className="text-white/80 text-4xl font-bold">{blog.title.charAt(0)}</span>
+                                                        </div>
+                                                    )}
                                                     <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
-                                                    <span className="text-white/80 text-4xl font-bold">{blog.title.charAt(0)}</span>
                                                 </div>
 
                                                 <div className="p-6 flex flex-col flex-grow">
