@@ -128,7 +128,7 @@ export function Footer() {
                   href="tel:+919596672738"
                   className="text-base sm:text-lg opacity-90 hover:text-[#0063cd] transition-colors"
                 >
-                  +91 863 943 3317
+                  +91 959 667 2738
                 </a>
               </div>
             </div>
