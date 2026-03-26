@@ -316,7 +316,7 @@ export function Contact() {
                   </motion.div>
                 </a>
 
-                <a href="tel:+918639433317" className="block">
+                <a href="tel:+919596672738" className="block">
                   <motion.div
                     className="p-6 bg-card rounded-2xl border border-border hover:border-[#0063cd]/50 hover:shadow-lg transition-all flex items-center gap-4 group"
                     whileHover={{ y: -3 }}
@@ -326,7 +326,7 @@ export function Contact() {
                     </div>
                     <div>
                       <div className="text-sm text-muted-foreground">Call us at</div>
-                      <div className="text-lg font-bold text-[#0063cd]">+91 863 943 3317</div>
+                      <div className="text-lg font-bold text-[#0063cd]">+91 959 667 2738</div>
                     </div>
                     <ArrowRight className="w-5 h-5 text-[#0063cd] ml-auto opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all" />
                   </motion.div>
