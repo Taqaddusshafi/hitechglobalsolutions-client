@@ -43,8 +43,11 @@ export function Footer() {
                 Globals
               </div>
             </Link>
-            <p className="text-base sm:text-lg opacity-80 mb-6 sm:mb-8 max-w-md">
-              A remote-first studio building exceptional digital products for businesses worldwide.
+            <p className="text-base sm:text-lg opacity-80 mb-2 max-w-md">
+              <span className="font-bold text-[#0063cd]">HiTech Globals</span> — Your Premium Agentic AI & Software Studio.
+            </p>
+            <p className="text-sm sm:text-base opacity-70 mb-6 sm:mb-8 max-w-md">
+              A remote-first studio building exceptional digital products and autonomous AI solutions for businesses worldwide.
             </p>
             <Link to="/contact">
               <button className="px-6 py-3 bg-[#0063cd] text-white rounded-full hover:bg-[#0063cd]/90 transition-colors inline-flex items-center gap-2 group">

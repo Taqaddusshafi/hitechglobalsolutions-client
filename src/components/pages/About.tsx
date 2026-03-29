@@ -1,4 +1,4 @@
-import { Helmet } from 'react-helmet-async';
+import { SEO } from '../SEO';
 import { motion } from 'framer-motion';
 import { Heart, Users, Award, Zap, Target, Rocket, UserCheck, Eye, Handshake, Headphones, Globe, ArrowRight, ExternalLink, TrendingUp, Clock, Star, Sparkles } from 'lucide-react';
 import { Link } from 'react-router-dom';
@@ -85,55 +85,13 @@ export function About() {
 
   return (
     <>
-      <Helmet>
-        <title>About HiTech Globals - Remote Design & Development Studio</title>
-        <meta name="description" content="Learn about HiTech Globals, a remote-first design and development studio building exceptional digital products for businesses worldwide. Meet our team and discover our values." />
-        <meta name="keywords" content="about HiTech Globals, remote design studio, web development team, digital agency, design company, software development, trusted partner" />
-        <meta name="robots" content="index, follow" />
+      <SEO 
+        title="About HiTech Globals | AI & Digital Studio"
+        description="HiTech Globals is a remote-first AI & Digital studio. We specialize in Agentic AI, custom software, and digital products for businesses worldwide."
+        canonical="/about"
+        keywords="about hitechglobals, hi tech globals ai, remote studio team, agentic ai expertise"
+      />
 
-        {/* Open Graph Tags */}
-        <meta property="og:type" content="website" />
-        <meta property="og:title" content="About HiTech Globals - Remote Design & Development Studio" />
-        <meta property="og:description" content="A remote-first design and development studio building exceptional digital products for businesses worldwide" />
-        <meta property="og:url" content="https://hitechglobals.com/about" />
-        <meta property="og:site_name" content="HiTech Globals" />
-
-        {/* Twitter Tags */}
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="About HiTech Globals - Remote Studio" />
-        <meta name="twitter:description" content="Learn about our remote-first team of designers and developers" />
-
-        {/* Canonical */}
-        <link rel="canonical" href="https://hitechglobals.com/about" />
-
-        {/* Structured Data (JSON-LD) */}
-        <script type="application/ld+json">
-          {JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "Organization",
-            "name": "HiTech Globals",
-            "url": "https://hitechglobals.com",
-            "about": "Remote-first design and development studio building exceptional digital products",
-            "description": "A lean, dedicated team of designers and developers from around the world creating solutions that matter",
-            "foundingDate": "2023",
-            "areaServed": "Global",
-            "aggregateRating": {
-              "@type": "AggregateRating",
-              "ratingValue": "4.9",
-              "ratingCount": "50"
-            },
-            "contactPoint": {
-              "@type": "ContactPoint",
-              "contactType": "Business Development",
-              "url": "https://hitechglobals.com/contact"
-            },
-            "sameAs": [
-              "https://twitter.com/hitechglobals",
-              "https://linkedin.com/company/hitech-globals"
-            ]
-          })}
-        </script>
-      </Helmet>
 
       <div className="bg-background pt-20 overflow-hidden">
         {/* Hero Section with Stats */}
@@ -314,6 +272,38 @@ export function About() {
                   <ExternalLink className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </motion.button>
               </Link>
+            </motion.div>
+          </div>
+        </section>
+        
+        {/* Brand Explanation Section */}
+        <section className="py-20 px-4 sm:px-6 relative overflow-hidden">
+          <div className="max-w-7xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="p-8 sm:p-12 bg-secondary/30 dark:bg-secondary/10 rounded-[3rem] border border-border text-left relative overflow-hidden group"
+            >
+              <div className="absolute top-0 right-0 w-96 h-96 bg-[#0063cd]/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 group-hover:bg-[#0063cd]/10 transition-colors" />
+              <div className="relative z-10">
+                <Sparkles className="w-10 h-10 text-[#0063cd] mb-8" />
+                <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6 text-foreground">Why the plural <span className="text-[#0063cd]">"Globals"</span>?</h2>
+                <p className="text-muted-foreground text-xl leading-relaxed max-w-4xl">
+                  The plural in our name reflects our <span className="text-[#0063cd] font-medium italic underline decoration-[#0063cd]/30 decoration-2 underline-offset-4">multidimensional approach</span> to digital excellence. While others offer "global" reach as a singular service, we represent a collected ecosystem of <span className="font-semibold text-foreground italic">Global Talents</span>, <span className="font-semibold text-foreground italic">Global Standards</span>, and <span className="font-semibold text-foreground italic">Global Innovations</span>. 
+                </p>
+                <div className="mt-8 flex flex-wrap gap-4">
+                  {['Global Talent', 'Global Standards', 'Global Innovation'].map((item) => (
+                    <span key={item} className="px-4 py-2 bg-[#0063cd]/10 text-[#0063cd] rounded-full text-sm font-bold border border-[#0063cd]/20">
+                      {item}
+                    </span>
+                  ))}
+                </div>
+                <p className="mt-8 text-muted-foreground text-lg">
+                   We aren't just one entity; we are <span className="font-bold text-foreground">HiTech Globals</span>—a plural force of nature in the digital space.
+                </p>
+              </div>
             </motion.div>
           </div>
         </section>

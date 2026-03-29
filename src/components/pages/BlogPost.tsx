@@ -1,3 +1,4 @@
+import { SEO } from '../SEO';
 import { Helmet } from 'react-helmet-async';
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
@@ -63,26 +64,18 @@ export function BlogPost() {
 
     return (
         <>
+            <SEO 
+                title={blog.title}
+                description={blog.excerpt}
+                canonical={`/blog/${blog.slug}`}
+                ogType="article"
+                ogImage={blog.cover_image || undefined}
+                keywords={blog.tags.join(', ')}
+            />
+            {/* Structured Data (JSON-LD) - Explicitly adding metadata that's not in the SEO component */}
             <Helmet>
-                <title>{blog.title} - HiTech Globals Blog</title>
-                <meta name="description" content={blog.excerpt} />
-                <meta name="keywords" content={blog.tags.join(', ')} />
-                <meta name="author" content={blog.author} />
-                <meta name="robots" content="index, follow" />
-
-                <meta property="og:type" content="article" />
-                <meta property="og:title" content={blog.title} />
-                <meta property="og:description" content={blog.excerpt} />
-                <meta property="og:url" content={`https://hitechglobals.com/blog/${blog.slug}`} />
                 <meta property="article:author" content={blog.author} />
                 <meta property="article:published_time" content={blog.created_at} />
-
-                <meta name="twitter:card" content="summary_large_image" />
-                <meta name="twitter:title" content={blog.title} />
-                <meta name="twitter:description" content={blog.excerpt} />
-
-                <link rel="canonical" href={`https://hitechglobals.com/blog/${blog.slug}`} />
-
                 <script type="application/ld+json">
                     {JSON.stringify({
                         "@context": "https://schema.org",
@@ -103,6 +96,7 @@ export function BlogPost() {
                     })}
                 </script>
             </Helmet>
+
 
             <ReadingProgress />
             <div className="bg-background pt-20 min-h-screen">

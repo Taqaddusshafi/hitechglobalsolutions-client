@@ -1,4 +1,4 @@
-import { Helmet } from 'react-helmet-async';
+import { SEO } from '../SEO';
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
@@ -35,19 +35,13 @@ export function Blog() {
 
     return (
         <>
-            <Helmet>
-                <title>Blog - HiTech Globals | Web Development Insights & Tips</title>
-                <meta name="description" content="Read the latest insights, tutorials, and best practices on web development, design, and digital strategy from HiTech Globals." />
-                <meta name="keywords" content="web development blog, design insights, tech tutorials, development tips, digital strategy" />
-                <meta name="robots" content="index, follow" />
+            <SEO 
+                title="Blog - Tech Insights"
+                description="Read the latest insights, tutorials, and best practices on web development, design, and digital strategy from HiTech Globals."
+                canonical="/blog"
+                keywords="web development blog, design insights, tech tutorials"
+            />
 
-                <meta property="og:type" content="website" />
-                <meta property="og:title" content="Blog - HiTech Globals" />
-                <meta property="og:description" content="Latest insights and tutorials on web development and design" />
-                <meta property="og:url" content="https://hitechglobals.com/blog" />
-
-                <link rel="canonical" href="https://hitechglobals.com/blog" />
-            </Helmet>
 
             <div className="bg-background pt-20 overflow-hidden min-h-screen">
                 {/* Hero Section */}

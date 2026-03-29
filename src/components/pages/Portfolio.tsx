@@ -1,4 +1,4 @@
-import { Helmet } from 'react-helmet-async';
+import { SEO } from '../SEO';
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowRight, Code, Smartphone, Zap, FileText, Star, Users, TrendingUp, ExternalLink, Sparkles } from 'lucide-react';
@@ -107,50 +107,13 @@ export function Portfolio() {
 
   return (
     <>
-      <Helmet>
-        <title>Portfolio - HiTech Globals | Web & Mobile App Projects</title>
-        <meta name="description" content="View HiTech Globals portfolio of web design, mobile app development, and e-commerce projects. See our expertise in React, Next.js, React Native, Flutter, and more." />
-        <meta name="keywords" content="web design portfolio, mobile app projects, e-commerce development, React projects, Next.js portfolio, design portfolio, development work" />
-        <meta name="robots" content="index, follow" />
+      <SEO 
+        title="Our Portfolio - Recent Projects"
+        description="View HiTech Globals portfolio of web design, mobile app development, and e-commerce projects. See our expertise in React, Next.js, React Native, and Flutter."
+        canonical="/portfolio"
+        keywords="hitechglobals portfolio, web design showcase, mobile apps work"
+      />
 
-        {/* Open Graph Tags */}
-        <meta property="og:type" content="website" />
-        <meta property="og:title" content="Portfolio - HiTech Globals | Web & Mobile Projects" />
-        <meta property="og:description" content="Explore our portfolio of successful web design, mobile app, and e-commerce projects built with modern technologies" />
-        <meta property="og:url" content="https://hitechglobals.com/portfolio" />
-        <meta property="og:site_name" content="HiTech Globals" />
-
-        {/* Twitter Tags */}
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="HiTech Globals - Web & Mobile Portfolio" />
-        <meta name="twitter:description" content="View our work showcasing expertise in web design, development, and mobile app creation" />
-
-        {/* Canonical */}
-        <link rel="canonical" href="https://hitechglobals.com/portfolio" />
-
-        {/* Structured Data (JSON-LD) - CreativeWork/Portfolio */}
-        <script type="application/ld+json">
-          {JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "CollectionPage",
-            "url": "https://hitechglobals.com/portfolio",
-            "name": "HiTech Globals Portfolio",
-            "description": "Portfolio showcasing web design, mobile app development, and e-commerce projects",
-            "publisher": {
-              "@type": "Organization",
-              "name": "HiTech Globals",
-              "url": "https://hitechglobals.com"
-            },
-            "hasPart": projects.map((project) => ({
-              "@type": "CreativeWork",
-              "name": project.title,
-              "description": project.description,
-              "category": project.category,
-              "keywords": project.tags.join(", ")
-            }))
-          })}
-        </script>
-      </Helmet>
 
       <div className="bg-background pt-20 overflow-hidden">
         {/* Hero Section with Stats */}

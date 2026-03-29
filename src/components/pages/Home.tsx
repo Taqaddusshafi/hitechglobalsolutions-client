@@ -1,4 +1,4 @@
-import { Helmet } from 'react-helmet-async';
+import { SEO } from '../SEO';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Globe, Code, Palette, Sparkles, Zap, Shield, Rocket, Users } from 'lucide-react';
@@ -6,6 +6,12 @@ import { Testimonials } from '../Testimonials';
 
 export function Home() {
   const services = [
+    {
+      icon: Sparkles,
+      title: 'Agentic AI',
+      description: 'Autonomous AI agents and LLM solutions tailored for your business',
+      gradient: 'from-blue-600/20 to-indigo-600/20',
+    },
     {
       icon: Palette,
       title: 'Design',
@@ -23,12 +29,6 @@ export function Home() {
       title: 'Digital Strategy',
       description: 'Strategic guidance to maximize your digital impact',
       gradient: 'from-green-500/20 to-emerald-500/20',
-    },
-    {
-      icon: Sparkles,
-      title: 'Innovation',
-      description: 'Forward-thinking solutions that set you apart',
-      gradient: 'from-amber-500/20 to-orange-500/20',
     },
   ];
 
@@ -64,55 +64,12 @@ export function Home() {
 
   return (
     <>
-      <Helmet>
-        <title>HiTech Globals - Web Development & Digital Design Studio | Enterprise Solutions</title>
-        <meta name="description" content="HiTech Globals is a remote-first web design and development studio creating exceptional digital products for ambitious brands worldwide. Expert design, custom development, and digital strategy services." />
-        <meta name="keywords" content="web development, digital design, custom web solutions, digital strategy, design studio, development services, enterprise software" />
-        <meta name="robots" content="index, follow" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <SEO 
+        title="Agentic AI & Web Development Studio"
+        description="HiTech Globals is a remote-first studio specializing in Agentic AI, custom web development, and digital design for ambitious brands worldwide."
+        keywords="hitechglobals, hi tech globals, agentic ai studio, ai agents development, web design studio, remote developers"
+      />
 
-        {/* Open Graph Tags */}
-        <meta property="og:type" content="website" />
-        <meta property="og:title" content="HiTech Globals - Web Development & Digital Design Studio" />
-        <meta property="og:description" content="Remote-first studio crafting exceptional digital experiences for ambitious brands. Design, development, and digital strategy services." />
-        <meta property="og:url" content="https://hitechglobals.com" />
-        <meta property="og:site_name" content="HiTech Globals" />
-
-        {/* Twitter Tags */}
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="HiTech Globals - Web Development & Digital Design" />
-        <meta name="twitter:description" content="Expert web design and development services for ambitious brands worldwide" />
-
-        {/* Canonical */}
-        <link rel="canonical" href="https://hitechglobals.com" />
-
-        {/* Structured Data (JSON-LD) */}
-        <script type="application/ld+json">
-          {JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "Organization",
-            "name": "HiTech Globals",
-            "url": "https://hitechglobals.com",
-            "description": "Remote-first web design and development studio creating digital products for ambitious brands worldwide",
-            "logo": "https://hitechglobals.com/logo.png",
-            "sameAs": [
-              "https://twitter.com/hitechglobals",
-              "https://linkedin.com/company/hitechglobals",
-              "https://github.com/hitechglobals"
-            ],
-            "contactPoint": {
-              "@type": "ContactPoint",
-              "contactType": "Customer Service",
-              "url": "https://hitechglobals.com/contact"
-            },
-            "address": {
-              "@type": "PostalAddress",
-              "addressCountry": "Global"
-            },
-            "knowsAbout": ["Web Design", "Web Development", "Digital Strategy", "Mobile App Development", "UI/UX Design"]
-          })}
-        </script>
-      </Helmet>
 
       <div className="bg-background overflow-hidden">
         {/* Hero Section */}
@@ -229,10 +186,10 @@ export function Home() {
                 <span className="text-[#0063cd] text-sm sm:text-base font-medium">Design & Development Studio</span>
               </motion.div>
 
-              <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl tracking-tight mb-6 sm:mb-8">
-                We build
+              <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl tracking-tight mb-6 sm:mb-8 font-bold">
+                Build 
                 <span className="relative">
-                  <span className="text-[#0063cd]"> digital products</span>
+                  <span className="text-[#0063cd]"> Agentic AI</span>
                   <motion.span
                     className="absolute -bottom-1 left-1 right-0 h-3 sm:h-4 bg-[#0063cd]/10 -z-10 rounded-sm"
                     initial={{ scaleX: 0 }}
@@ -241,7 +198,7 @@ export function Home() {
                   />
                 </span>
                 <br />
-                that matter
+                & Digital Products
               </h1>
             </motion.div>
 
@@ -251,7 +208,7 @@ export function Home() {
               transition={{ duration: 0.8, delay: 0.2 }}
               className="text-lg sm:text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto mb-8 sm:mb-12 px-4"
             >
-              A remote-first studio crafting exceptional digital experiences for ambitious brands worldwide. Expert web design, custom development, and strategic digital solutions.
+              HiTech Globals is a remote-first studio crafting exceptional digital experiences for ambitious brands worldwide. Expert web design, custom development, and strategic Agentic AI solutions.
             </motion.p>
 
             <motion.div
@@ -681,6 +638,32 @@ export function Home() {
                 >
                   <Rocket className="w-8 h-8 sm:w-10 sm:h-10" />
                 </motion.div>
+
+                {/* FAQ Structured Data */}
+                <script type="application/ld+json">
+                  {JSON.stringify({
+                    "@context": "https://schema.org",
+                    "@type": "FAQPage",
+                    "mainEntity": [
+                      {
+                        "@type": "Question",
+                        "name": "What is HiTech Globals?",
+                        "acceptedAnswer": {
+                          "@type": "Answer",
+                          "text": "HiTech Globals is a specialized Agentic AI and Digital Solutions studio building exceptional products for businesses worldwide."
+                        }
+                      },
+                      {
+                        "@type": "Question",
+                        "name": "Why the plural 'Globals'?",
+                        "acceptedAnswer": {
+                          "@type": "Answer",
+                          "text": "The name reflects our collected ecosystem of Global Talent, Global Standards, and Global Innovation."
+                        }
+                      }
+                    ]
+                  })}
+                </script>
 
                 <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl mb-4 sm:mb-6 font-semibold">
                   Ready to bring your

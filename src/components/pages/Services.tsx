@@ -1,4 +1,4 @@
-import { Helmet } from 'react-helmet-async';
+import { SEO } from '../SEO';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import {
@@ -45,6 +45,21 @@ interface Benefit {
 export function Services() {
   const services: Service[] = [
     {
+      icon: Sparkles,
+      title: 'AI & Agentic Solutions',
+      description: 'Cutting-edge AI integration and autonomous agent development to transform your business processes',
+      features: [
+        'Agentic AI Development',
+        'Custom LLM Integration',
+        'AI Automation Workflows',
+        'Natural Language Processing',
+        'Predictive Analytics',
+        'AI-Powered Chatbots',
+      ],
+      price: 'Contact for Quote',
+      gradient: 'from-blue-600/20 to-indigo-600/20',
+    },
+    {
       icon: Palette,
       title: 'UI/UX Design',
       description: 'Beautiful, intuitive interfaces that users love and engage with',
@@ -56,7 +71,7 @@ export function Services() {
         'Responsive Design',
         'Accessibility (WCAG)',
       ],
-      price: 'From $2,000',
+      price: 'Contact for Quote',
       gradient: 'from-pink-500/20 to-purple-500/20',
     },
     {
@@ -71,7 +86,7 @@ export function Services() {
         'Performance Optimization',
         'SEO Optimization',
       ],
-      price: 'From $5,000',
+      price: 'Contact for Quote',
       gradient: 'from-blue-500/20 to-cyan-500/20',
     },
     {
@@ -86,7 +101,7 @@ export function Services() {
         'App Store Deployment',
         'Push Notifications',
       ],
-      price: 'From $8,000',
+      price: 'Contact for Quote',
       gradient: 'from-green-500/20 to-emerald-500/20',
     },
     {
@@ -101,7 +116,7 @@ export function Services() {
         'Analytics Setup',
         'Conversion Optimization',
       ],
-      price: 'From $4,000',
+      price: 'Contact for Quote',
       gradient: 'from-amber-500/20 to-orange-500/20',
     },
     {
@@ -116,7 +131,7 @@ export function Services() {
         'SEO Optimization',
         'Mobile Responsive',
       ],
-      price: 'From $3,000',
+      price: 'Contact for Quote',
       gradient: 'from-indigo-500/20 to-blue-500/20',
     },
     {
@@ -131,12 +146,15 @@ export function Services() {
         'Marketing Materials',
         'Brand Guidelines',
       ],
-      price: 'From $1,500',
+      price: 'Contact for Quote',
       gradient: 'from-violet-500/20 to-purple-500/20',
     },
   ];
 
   const technologies = [
+    'AI Agents',
+    'OpenAI / Anthropic',
+    'LangChain',
     'React',
     'Next.js',
     'TypeScript',
@@ -147,7 +165,6 @@ export function Services() {
     'Figma',
     'Firebase',
     'Shopify',
-    'WordPress',
     'PostgreSQL',
   ];
 
@@ -225,76 +242,13 @@ export function Services() {
 
   return (
     <>
-      <Helmet>
-        <title>Services - HiTech Globals | Web Design & Mobile Development</title>
-        <meta name="description" content="Explore HiTech Globals services: UI/UX design, web development, mobile apps, e-commerce solutions, web design, and brand identity. We use React, Next.js, Flutter, and more." />
-        <meta name="keywords" content="web design services, web development, mobile app development, e-commerce solutions, UI/UX design, brand identity, React development, Flutter development, custom web development" />
-        <meta name="robots" content="index, follow" />
+      <SEO 
+        title="AI, Web & Mobile App Services"
+        description="HiTech Globals offers cutting-edge AI Agent development, custom software, and digital design. Transform your business with our Agentic AI and full-stack solutions."
+        canonical="/services"
+        keywords="agentic ai, ai agents, hi tech globals ai, hitechglobals services, custom llm solutions, ai automation"
+      />
 
-        {/* Open Graph Tags */}
-        <meta property="og:type" content="website" />
-        <meta property="og:title" content="Services - HiTech Globals | Design & Development" />
-        <meta property="og:description" content="Professional web design, mobile development, e-commerce, and UI/UX design services for businesses worldwide" />
-        <meta property="og:url" content="https://hitechglobals.com/services" />
-        <meta property="og:site_name" content="HiTech Globals" />
-
-        {/* Twitter Tags */}
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="HiTech Globals - Web Design & Development Services" />
-        <meta name="twitter:description" content="UI/UX design, web development, mobile apps, e-commerce, and brand identity services" />
-
-        {/* Canonical */}
-        <link rel="canonical" href="https://hitechglobals.com/services" />
-
-        {/* Structured Data (JSON-LD) - Service */}
-        <script type="application/ld+json">
-          {JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "ProfessionalService",
-            "name": "HiTech Globals",
-            "url": "https://hitechglobals.com/services",
-            "description": "Full-spectrum design and development services including web design, web development, mobile apps, e-commerce, UI/UX design, and brand identity",
-            "areaServed": "Global",
-            "hasOfferingDescription": services.map((service) => ({
-              "@type": "OfferingDescription",
-              "name": service.title,
-              "description": service.description
-            })),
-            "contactPoint": {
-              "@type": "ContactPoint",
-              "contactType": "Customer Service",
-              "url": "https://hitechglobals.com/contact"
-            },
-            "aggregateRating": {
-              "@type": "AggregateRating",
-              "ratingValue": "4.9",
-              "ratingCount": "50"
-            }
-          })}
-        </script>
-
-        {/* BreadcrumbList Schema */}
-        <script type="application/ld+json">
-          {JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "BreadcrumbList",
-            "itemListElement": [
-              {
-                "@type": "ListItem",
-                "position": 1,
-                "name": "Home",
-                "item": "https://hitechglobals.com"
-              },
-              {
-                "@type": "ListItem",
-                "position": 2,
-                "name": "Services",
-                "item": "https://hitechglobals.com/services"
-              }
-            ]
-          })}
-        </script>
-      </Helmet>
 
       <div className="bg-background pt-20 overflow-hidden">
         {/* Hero Section with CTA */}

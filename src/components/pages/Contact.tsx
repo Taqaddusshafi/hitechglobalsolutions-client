@@ -1,4 +1,4 @@
-import { Helmet } from 'react-helmet-async';
+import { SEO } from '../SEO';
 import { motion } from 'framer-motion';
 import { Mail, Clock, Calendar, ArrowRight, MessageCircle, Sparkles, Phone } from 'lucide-react';
 import { InlineWidget } from 'react-calendly';
@@ -9,6 +9,7 @@ export function Contact() {
   const contactMethods = [
     {
       icon: Mail,
+      label: 'Email Us',
       title: 'Email Us',
       value: 'hello@hitechglobals.com',
       link: 'mailto:hello@hitechglobals.com',
@@ -16,6 +17,7 @@ export function Contact() {
     },
     {
       icon: Clock,
+      label: 'Response Time',
       title: 'Response Time',
       value: 'Within 24 hours',
       link: null,
@@ -52,70 +54,13 @@ export function Contact() {
 
   return (
     <>
-      <Helmet>
-        <title>Contact HiTech Globals - Get in Touch | Web Design & Development Services</title>
-        <meta name="description" content="Contact HiTech Globals to discuss your project. Schedule a free 30-minute consultation. We respond within 24 hours. Email: hello@hitechglobals.com" />
-        <meta name="keywords" content="contact us, web development services, design consultation, project discussion, schedule meeting, get in touch" />
-        <meta name="robots" content="index, follow" />
+      <SEO 
+        title="Contact Us - Let's Build Your Project"
+        description="Get in touch with HiTech Globals for your next web design or development project. Schedule a free 30-minute consultation. We respond within 24 hours."
+        canonical="/contact"
+        keywords="contact hitechglobals, hire developers, business inquiry"
+      />
 
-        {/* Open Graph Tags */}
-        <meta property="og:type" content="website" />
-        <meta property="og:title" content="Contact HiTech Globals - Get in Touch" />
-        <meta property="og:description" content="Schedule a free consultation with HiTech Globals. Discuss your project and see how we can help bring your vision to life." />
-        <meta property="og:url" content="https://hitechglobals.com/contact" />
-        <meta property="og:site_name" content="HiTech Globals" />
-
-        {/* Twitter Tags */}
-        <meta name="twitter:card" content="summary" />
-        <meta name="twitter:title" content="Contact HiTech Globals - Schedule Your Free Consultation" />
-        <meta name="twitter:description" content="Get in touch with our team. We respond within 24 hours and offer flexible engagement models." />
-
-        {/* Canonical */}
-        <link rel="canonical" href="https://hitechglobals.com/contact" />
-
-        {/* Structured Data (JSON-LD) - ContactPage */}
-        <script type="application/ld+json">
-          {JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "ContactPage",
-            "url": "https://hitechglobals.com/contact",
-            "name": "HiTech Globals Contact Page",
-            "description": "Get in touch with HiTech Globals for web design and development services",
-            "mainEntity": {
-              "@type": "Organization",
-              "name": "HiTech Globals",
-              "url": "https://hitechglobals.com",
-              "contactPoint": {
-                "@type": "ContactPoint",
-                "contactType": "Customer Service",
-                "email": "hello@hitechglobals.com",
-                "areaServed": "Global",
-                "availableLanguage": ["en"]
-              },
-              "address": {
-                "@type": "PostalAddress",
-                "addressCountry": "Global"
-              }
-            }
-          })}
-        </script>
-
-        {/* FAQ Schema */}
-        <script type="application/ld+json">
-          {JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "FAQPage",
-            "mainEntity": faqs.map((faq) => ({
-              "@type": "Question",
-              "name": faq.question,
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": faq.answer
-              }
-            }))
-          })}
-        </script>
-      </Helmet>
 
       <div className="bg-background pt-20 overflow-hidden">
         {/* Hero Section */}
