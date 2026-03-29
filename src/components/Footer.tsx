@@ -27,7 +27,7 @@ export function Footer() {
   };
 
   return (
-    <footer className="bg-secondary dark:bg-[#0f0f0f] text-foreground dark:text-white border-t border-border">
+    <footer className="bg-secondary dark:bg-[#0f0f0f] text-foreground dark:text-white border-t border-border" role="contentinfo" aria-label="Site footer">
       {/* Main Footer */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 py-12 sm:py-16 lg:py-20">
         <div className="grid md:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-12 mb-12 lg:mb-16">

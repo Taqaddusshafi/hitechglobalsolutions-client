@@ -1,7 +1,7 @@
 {
-    "name": "HiTech Globals",
-    "short_name": "HiTech",
-    "description": "Remote-first digital agency specializing in web development, mobile apps, e-commerce, and custom software solutions.",
+    "name": "HiTech Globals - Agentic AI & Digital Solutions",
+    "short_name": "HiTech Globals",
+    "description": "HiTech Globals is a remote-first AI & Digital studio specializing in Agentic AI, custom web development, mobile apps, and UI/UX design.",
     "start_url": "/",
     "display": "standalone",
     "background_color": "#ffffff",
@@ -28,9 +28,9 @@
     "screenshots": [],
     "shortcuts": [
         {
-            "name": "Services",
-            "short_name": "Services",
-            "description": "View our services",
+            "name": "AI Services",
+            "short_name": "AI",
+            "description": "Agentic AI & Digital Solutions",
             "url": "/services",
             "icons": [
                 {

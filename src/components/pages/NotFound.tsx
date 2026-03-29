@@ -1,4 +1,5 @@
 import { Helmet } from 'react-helmet-async';
+import { SEO } from '../SEO';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { Home, ArrowLeft, Search } from 'lucide-react';
@@ -7,10 +8,12 @@ export function NotFound() {
     return (
         <>
             <Helmet>
-                <title>404 - Page Not Found | HiTech Globals</title>
-                <meta name="description" content="The page you're looking for doesn't exist. Let's get you back on track." />
                 <meta name="robots" content="noindex, nofollow" />
             </Helmet>
+            <SEO 
+                title="404 - Page Not Found"
+                description="The page you're looking for doesn't exist. Let's get you back on track to HiTech Globals."
+            />
 
             <div className="bg-background min-h-screen flex items-center justify-center px-4 sm:px-6 relative overflow-hidden">
                 {/* Animated Background */}
