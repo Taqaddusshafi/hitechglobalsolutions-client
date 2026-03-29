@@ -9,6 +9,7 @@ import { ReadingProgress } from '../ReadingProgress';
 import { RelatedPosts } from '../RelatedPosts';
 import { TableOfContents, calculateReadTime } from '../TableOfContents';
 import { ShareButtons } from '../ShareButtons';
+import { OptimizedImage } from '../OptimizedImage';
 
 export function BlogPost() {
     const { slug } = useParams<{ slug: string }>();
@@ -72,26 +73,43 @@ export function BlogPost() {
                 ogImage={blog.cover_image || undefined}
                 keywords={blog.tags.join(', ')}
             />
-            {/* Structured Data (JSON-LD) - Explicitly adding metadata that's not in the SEO component */}
+            {/* Structured Data (JSON-LD) - Rich blog post schema */}
             <Helmet>
                 <meta property="article:author" content={blog.author} />
                 <meta property="article:published_time" content={blog.created_at} />
+                <meta property="article:modified_time" content={blog.updated_at} />
+                {blog.tags.map((tag) => (
+                    <meta key={tag} property="article:tag" content={tag} />
+                ))}
                 <script type="application/ld+json">
                     {JSON.stringify({
                         "@context": "https://schema.org",
                         "@type": "BlogPosting",
+                        "mainEntityOfPage": {
+                            "@type": "WebPage",
+                            "@id": `https://hitechglobals.com/blog/${blog.slug}`
+                        },
                         "headline": blog.title,
                         "description": blog.excerpt,
+                        "image": blog.cover_image || "https://hitechglobals.com/og-image.png",
                         "author": {
                             "@type": "Organization",
-                            "name": blog.author
+                            "name": blog.author,
+                            "url": "https://hitechglobals.com"
                         },
                         "datePublished": blog.created_at,
                         "dateModified": blog.updated_at,
+                        "wordCount": blog.content.split(/\s+/).length,
+                        "keywords": blog.tags.join(', '),
+                        "articleSection": blog.category,
                         "publisher": {
                             "@type": "Organization",
                             "name": "HiTech Globals",
-                            "url": "https://hitechglobals.com"
+                            "url": "https://hitechglobals.com",
+                            "logo": {
+                                "@type": "ImageObject",
+                                "url": "https://hitechglobals.com/logo.png"
+                            }
                         }
                     })}
                 </script>
@@ -166,8 +184,8 @@ export function BlogPost() {
                         transition={{ duration: 0.6, delay: 0.1 }}
                         className="aspect-video bg-gradient-to-br from-[#0063cd] to-[#0052a8] rounded-2xl mb-10 flex items-center justify-center overflow-hidden"
                     >
-                        {blog.cover_image ? (
-                            <img src={blog.cover_image} alt={blog.title} className="w-full h-full object-cover" />
+                    {blog.cover_image ? (
+                            <OptimizedImage src={blog.cover_image} alt={blog.title} className="w-full h-full" />
                         ) : (
                             <span className="text-white/50 text-6xl font-bold">{blog.title.charAt(0)}</span>
                         )}

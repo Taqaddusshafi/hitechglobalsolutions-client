@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import { ArrowRight, Calendar, User, Sparkles, Clock } from 'lucide-react';
 import { getBlogs, type Blog } from '../../lib/supabase';
 import { Newsletter } from '../Newsletter';
+import { OptimizedImage } from '../OptimizedImage';
 
 export function Blog() {
     const [blogs, setBlogs] = useState<Blog[]>([]);
@@ -166,10 +167,10 @@ export function Blog() {
                                                 {/* Cover Image */}
                                                 <div className="aspect-video relative overflow-hidden">
                                                     {blog.cover_image ? (
-                                                        <img
+                                                        <OptimizedImage
                                                             src={blog.cover_image}
                                                             alt={blog.title}
-                                                            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                                                            className="w-full h-full group-hover:scale-105 transition-transform duration-500"
                                                         />
                                                     ) : (
                                                         <div className="w-full h-full bg-gradient-to-br from-[#0063cd] to-[#0052a8] flex items-center justify-center">
