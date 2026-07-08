@@ -2,7 +2,6 @@ import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, Search } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
-import logo from '../assets/logo.png';
 import { DarkModeToggle } from './DarkModeToggle';
 import { SearchModal } from './SearchModal';
 
@@ -36,8 +35,9 @@ export function Navigation() {
     { path: '/', label: 'Home' },
     { path: '/about', label: 'About' },
     { path: '/services', label: 'Services' },
-    { path: '/portfolio', label: 'Work' },
-    { path: '/blog', label: 'Blog' },
+    { path: '/portfolio', label: 'Portfolio' },
+    { path: '/industries', label: 'Industries' },
+    { path: '/blog', label: 'Insights' },
     { path: '/contact', label: 'Contact' },
   ];
 
@@ -57,14 +57,21 @@ export function Navigation() {
       >
         <div className="max-w-8xl mx-auto px-2 sm:px-4 lg:px-6">
           <div className="flex justify-between items-center h-16 sm:h-20">
-            <Link to="/" className="flex items-center gap-3 group">
-              <motion.img
-                src={logo}
-                alt="HiTech Globals"
-                className="h-10 w-10 sm:h-12 sm:w-12"
-                whileHover={{ scale: 1.05 }}
-                transition={{ duration: 0.2 }}
-              />
+            <Link to="/" className="flex items-center gap-2 group">
+              <div className="flex flex-col">
+                <span
+                  className="text-xl sm:text-2xl font-bold tracking-wider"
+                  style={{ fontFamily: "'Cinzel', serif", color: '#C9A14A' }}
+                >
+                  IRTIQA
+                </span>
+                <span
+                  className="text-[10px] sm:text-xs tracking-[0.3em] text-muted-foreground -mt-1"
+                  style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 300 }}
+                >
+                  MARKETING
+                </span>
+              </div>
             </Link>
 
             {/* Desktop Navigation */}
@@ -73,11 +80,12 @@ export function Navigation() {
                 <Link
                   key={link.path}
                   to={link.path}
-                  className="relative text-lg tracking-wide group"
+                  className="relative text-sm tracking-wide group uppercase"
+                  style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 400, letterSpacing: '0.08em' }}
                 >
                   <span
                     className={`transition-colors ${isActive(link.path)
-                      ? 'text-[#0051ad]'
+                      ? 'text-[#C9A14A]'
                       : 'text-muted-foreground hover:text-foreground'
                       }`}
                   >
@@ -86,7 +94,7 @@ export function Navigation() {
                   {isActive(link.path) && (
                     <motion.div
                       layoutId="activeNav"
-                      className="absolute -bottom-1 left-0 right-0 h-0.5 bg-[#0051ad]"
+                      className="absolute -bottom-1 left-0 right-0 h-0.5 bg-[#C9A14A]"
                       transition={{ type: 'spring', stiffness: 380, damping: 30 }}
                     />
                   )}
@@ -147,10 +155,11 @@ export function Navigation() {
                     <Link
                       to={link.path}
                       onClick={() => setIsOpen(false)}
-                      className={`block py-2 text-lg ${isActive(link.path)
-                        ? 'text-[#0051ad]'
+                      className={`block py-2 text-lg uppercase tracking-wide ${isActive(link.path)
+                        ? 'text-[#C9A14A]'
                         : 'text-muted-foreground'
                         }`}
+                      style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 400, letterSpacing: '0.08em' }}
                     >
                       {link.label}
                     </Link>
@@ -162,8 +171,10 @@ export function Navigation() {
                   transition={{ delay: navLinks.length * 0.1 }}
                 >
                   <Link to="/contact" onClick={() => setIsOpen(false)}>
-                    <button className="w-full px-6 py-3 bg-primary text-primary-foreground rounded-full text-sm tracking-wide mt-4">
-                      Let's Talk
+                    <button className="w-full px-6 py-3 bg-[#C9A14A] text-white rounded-full text-sm tracking-widest uppercase mt-4 hover:bg-[#b8913f] transition-colors"
+                      style={{ fontFamily: "'Poppins', sans-serif" }}
+                    >
+                      Book Free Consultation
                     </button>
                   </Link>
                 </motion.div>

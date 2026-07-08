@@ -1,30 +1,38 @@
-# HiTech Globals — Agentic AI & Digital Solutions Studio
+# Irtiqa Marketing — Creative Marketing Agency
 
-> HiTech Globals is a remote-first AI & Digital studio specializing in Agentic AI, custom web development, mobile apps, and UI/UX design.
+> Irtiqa Marketing is a full-service creative marketing agency helping startups, businesses, and enterprises grow through branding, digital marketing, AI solutions, websites, photography, videography, and performance-driven campaigns.
 
 ## About
-HiTech Globals (hitechglobals.com) is a remote-first digital solutions studio.
-We build exceptional digital products for ambitious businesses worldwide.
-Our team specializes in Agentic AI development, autonomous agent workflows, custom LLM integrations, web applications, mobile apps, and premium UI/UX design.
+Irtiqa Marketing is a premium, modern creative marketing agency combining design elegance, business analytics, and modern AI pipelines to scale brands. 
+Led by Founder & Creative Director Faqeha Fatima, the agency builds authoritative brand structures and designs targeted growth campaigns.
 
 ## Services
-- Agentic AI Development (Custom LLM Integration, AI Automation Workflows, NLP, Predictive Analytics, AI Chatbots)
-- UI/UX Design (User Research, Wireframing, Visual Design, Design Systems, Responsive, WCAG)
-- Web Development (Custom Web Apps, React & Next.js, PWAs, API Integration, Performance, SEO)
-- Mobile Development (iOS & Android, React Native, Flutter, App Store Deployment)
-- E-commerce Solutions (Shopify, Custom E-commerce, Payment Integration, Analytics)
-- Web Design (Landing Pages, Corporate, Portfolios, Blog Sites)
-- Brand Identity (Logo Design, Brand Strategy, Visual Identity, Style Guides)
+- Branding (Logo Design, Brand Identity, Packaging, Brand Guidelines, Corporate Identity)
+- Graphic Design (Social Media Creatives, Brochures, Catalogues, Flyers, Business Profiles, Print Design)
+- Social Media Marketing (Instagram Management, Facebook Marketing, LinkedIn Marketing, Content Planning, Strategy, Growth)
+- Video Production (Reels, Commercial Ads, Corporate Films, Motion Graphics, Video Editing)
+- Photography (Product, Fashion, Corporate, Food, Lifestyle, Events)
+- Website Development (Business Websites, Landing Pages, E-commerce, Portfolio Websites, Custom Development)
+- SEO (On-Page SEO, Technical SEO, Local SEO, Content Optimization)
+- Performance Marketing (Google Ads, Meta Ads, Lead Generation, Remarketing)
+- AI Solutions (AI Automation, AI Content Creation, AI Chatbots, AI Marketing Workflow)
 
 ## Contact
-- Email: hello@hitechglobals.com
-- Website: https://hitechglobals.com
-- LinkedIn: https://www.linkedin.com/company/hitech-globals/
+- Email: hello@irtiqamarketing.com
+- Phone: +91 XXXXX XXXXX
 
 ## Pages
 - Home: https://hitechglobals.com/
 - About: https://hitechglobals.com/about
+- Founder: https://hitechglobals.com/founder
 - Services: https://hitechglobals.com/services
 - Portfolio: https://hitechglobals.com/portfolio
-- Blog: https://hitechglobals.com/blog
+- Industries: https://hitechglobals.com/industries
+- Case Studies: https://hitechglobals.com/case-studies
+- Process: https://hitechglobals.com/process
+- Why Choose Us: https://hitechglobals.com/why-choose-us
+- Clients: https://hitechglobals.com/clients
+- Team: https://hitechglobals.com/team
+- FAQs: https://hitechglobals.com/faqs
+- Insights / Blog: https://hitechglobals.com/blog
 - Contact: https://hitechglobals.com/contact

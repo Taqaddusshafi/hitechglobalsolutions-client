@@ -17,7 +17,7 @@ export function BlogEditor() {
         excerpt: '',
         content: '',
         cover_image: '',
-        author: 'HiTech Globals',
+        author: 'Irtiqa Marketing',
         category: '',
         tags: '',
         published: false,

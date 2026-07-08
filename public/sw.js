@@ -1,4 +1,4 @@
-const CACHE_NAME = 'hitech-globals-v1';
+const CACHE_NAME = 'irtiqa-marketing-v1';
 const STATIC_ASSETS = [
     '/',
     '/logo.png',

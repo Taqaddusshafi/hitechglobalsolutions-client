@@ -28,18 +28,13 @@ export function AdminLogin() {
     };
 
     return (
-        <div className="min-h-screen bg-background flex items-center justify-center px-4 relative overflow-hidden">
+        <div className="min-h-screen bg-background flex items-center justify-center px-4 relative overflow-hidden text-foreground">
             {/* Background Effects */}
             <div className="absolute inset-0 overflow-hidden pointer-events-none">
                 <motion.div
-                    className="absolute top-20 -left-20 w-72 h-72 bg-[#0063cd]/10 rounded-full blur-3xl"
+                    className="absolute top-20 -left-20 w-72 h-72 bg-[#C9A14A]/10 rounded-full blur-3xl"
                     animate={{ x: [0, 50, 0], y: [0, 30, 0] }}
                     transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
-                />
-                <motion.div
-                    className="absolute bottom-20 -right-20 w-72 h-72 bg-purple-500/10 rounded-full blur-3xl"
-                    animate={{ x: [0, -50, 0], y: [0, -30, 0] }}
-                    transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
                 />
             </div>
 
@@ -51,15 +46,15 @@ export function AdminLogin() {
             >
                 <div className="bg-card border border-border rounded-2xl shadow-xl p-8">
                     {/* Header */}
-                    <div className="text-center mb-8">
+                    <div className="text-center mb-8 font-body">
                         <motion.div
-                            className="w-16 h-16 bg-gradient-to-br from-[#0063cd] to-[#0052a8] rounded-2xl flex items-center justify-center mx-auto mb-4"
+                            className="w-16 h-16 bg-gradient-to-br from-[#C9A14A] to-[#b8913f] rounded-2xl flex items-center justify-center mx-auto mb-4"
                             whileHover={{ scale: 1.05, rotate: 5 }}
                         >
                             <LogIn className="w-8 h-8 text-white" />
                         </motion.div>
-                        <h1 className="text-2xl font-bold text-foreground">Admin Login</h1>
-                        <p className="text-muted-foreground mt-2">Sign in to manage your content</p>
+                        <h1 className="text-2xl font-bold font-heading text-foreground">Admin Login</h1>
+                        <p className="text-muted-foreground text-sm mt-2">Sign in to manage your content</p>
                     </div>
 
                     {/* Error Message */}
@@ -67,7 +62,7 @@ export function AdminLogin() {
                         <motion.div
                             initial={{ opacity: 0, y: -10 }}
                             animate={{ opacity: 1, y: 0 }}
-                            className="mb-6 p-4 bg-red-500/10 border border-red-500/30 rounded-xl flex items-center gap-3 text-red-600 dark:text-red-400"
+                            className="mb-6 p-4 bg-red-500/10 border border-red-500/30 rounded-xl flex items-center gap-3 text-red-600 dark:text-red-400 font-body"
                         >
                             <AlertCircle className="w-5 h-5 flex-shrink-0" />
                             <span className="text-sm">{error}</span>
@@ -75,7 +70,7 @@ export function AdminLogin() {
                     )}
 
                     {/* Form */}
-                    <form onSubmit={handleSubmit} className="space-y-5">
+                    <form onSubmit={handleSubmit} className="space-y-5 font-body">
                         <div>
                             <label htmlFor="email" className="block text-sm font-medium text-foreground mb-2">
                                 Email
@@ -87,7 +82,7 @@ export function AdminLogin() {
                                     type="email"
                                     value={email}
                                     onChange={(e) => setEmail(e.target.value)}
-                                    className="w-full pl-12 pr-4 py-3 bg-secondary border border-border rounded-xl focus:outline-none focus:ring-2 focus:ring-[#0063cd] focus:border-transparent transition-all text-foreground placeholder-muted-foreground"
+                                    className="w-full pl-12 pr-4 py-3 bg-secondary border border-border rounded-xl focus:outline-none focus:ring-2 focus:ring-[#C9A14A] focus:border-transparent transition-all text-foreground placeholder-muted-foreground"
                                     placeholder="admin@example.com"
                                     required
                                 />
@@ -105,7 +100,7 @@ export function AdminLogin() {
                                     type="password"
                                     value={password}
                                     onChange={(e) => setPassword(e.target.value)}
-                                    className="w-full pl-12 pr-4 py-3 bg-secondary border border-border rounded-xl focus:outline-none focus:ring-2 focus:ring-[#0063cd] focus:border-transparent transition-all text-foreground placeholder-muted-foreground"
+                                    className="w-full pl-12 pr-4 py-3 bg-secondary border border-border rounded-xl focus:outline-none focus:ring-2 focus:ring-[#C9A14A] focus:border-transparent transition-all text-foreground placeholder-muted-foreground"
                                     placeholder="••••••••"
                                     required
                                 />
@@ -115,7 +110,7 @@ export function AdminLogin() {
                         <motion.button
                             type="submit"
                             disabled={loading}
-                            className="w-full py-3 bg-gradient-to-r from-[#0063cd] to-[#0052a8] text-white rounded-xl font-medium hover:shadow-lg hover:shadow-[#0063cd]/25 transition-all disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+                            className="w-full py-3 bg-gradient-to-r from-[#C9A14A] to-[#b8913f] text-white rounded-xl font-medium hover:shadow-lg hover:shadow-[#C9A14A]/25 transition-all disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
                             whileHover={{ scale: loading ? 1 : 1.02 }}
                             whileTap={{ scale: loading ? 1 : 0.98 }}
                         >
@@ -134,8 +129,8 @@ export function AdminLogin() {
                     </form>
 
                     {/* Back Link */}
-                    <div className="mt-6 text-center">
-                        <a href="/" className="text-sm text-muted-foreground hover:text-[#0063cd] transition-colors">
+                    <div className="mt-6 text-center font-body">
+                        <a href="/" className="text-sm text-muted-foreground hover:text-[#C9A14A] transition-colors">
                             ← Back to website
                         </a>
                     </div>

@@ -88,7 +88,7 @@ With the rise of edge computing platforms like Cloudflare Workers and Vercel Edg
 
 React Server Components, Astro, and SolidJS are leading the charge in creating faster, more efficient web applications with improved developer experience.`,
         cover_image: null,
-        author: 'HiTech Globals',
+        author: 'Irtiqa Marketing',
         category: 'Technology',
         tags: ['Web Development', 'Trends', '2024'],
         published: true,
@@ -114,7 +114,7 @@ Choose the right state management solution based on your needs. For smaller apps
 
 Use React.memo, useMemo, and useCallback strategically. Implement code splitting with React.lazy to reduce initial bundle size.`,
         cover_image: null,
-        author: 'HiTech Globals',
+        author: 'Irtiqa Marketing',
         category: 'Development',
         tags: ['React', 'JavaScript', 'Best Practices'],
         published: true,
@@ -126,7 +126,7 @@ Use React.memo, useMemo, and useCallback strategically. Implement code splitting
         title: 'UI/UX Design Principles for Modern Websites',
         slug: 'ui-ux-design-principles-modern-websites',
         excerpt: 'Discover the key design principles that create engaging and user-friendly website experiences.',
-        content: `Great design is invisible. It guides users naturally through your website without them even noticing. Here are the principles we follow at HiTech Globals.
+        content: `Great design is invisible. It guides users naturally through your website without them even noticing. Here are the principles we follow at Irtiqa Marketing.
 
 ## Visual Hierarchy
 
@@ -140,7 +140,7 @@ Maintain consistent design patterns throughout your site. Users should be able t
 
 Design for everyone. Use sufficient color contrast, provide alt text for images, and ensure your site works with keyboard navigation.`,
         cover_image: null,
-        author: 'HiTech Globals',
+        author: 'Irtiqa Marketing',
         category: 'Design',
         tags: ['UI/UX', 'Design', 'Web Design'],
         published: true,
@@ -155,7 +155,7 @@ export const mockTestimonials: Testimonial[] = [
         name: 'Sarah Johnson',
         role: 'CEO',
         company: 'TechStart Inc',
-        content: 'HiTech Globals transformed our online presence completely. Their attention to detail and modern design approach exceeded our expectations. Highly recommended!',
+        content: 'Irtiqa Marketing transformed our online presence completely. Their attention to detail and modern design approach exceeded our expectations. Highly recommended!',
         avatar: null,
         rating: 5,
         featured: true,
@@ -166,7 +166,7 @@ export const mockTestimonials: Testimonial[] = [
         name: 'Michael Chen',
         role: 'Product Manager',
         company: 'InnovateCo',
-        content: 'Working with HiTech Globals was a fantastic experience. They delivered our mobile app on time and the quality was exceptional. The team truly cares about their work.',
+        content: 'Working with Irtiqa Marketing was a fantastic experience. They delivered our mobile app on time and the quality was exceptional. The team truly cares about their work.',
         avatar: null,
         rating: 5,
         featured: true,
@@ -390,7 +390,7 @@ We use the information we collect to:
 
 ## Contact Us
 
-If you have any questions about this Privacy Policy, please contact us at hello@hitechglobals.com`,
+If you have any questions about this Privacy Policy, please contact us at hello@irtiqamarketing.com`,
                 last_updated: new Date().toISOString(),
                 created_at: new Date().toISOString()
             };
@@ -406,7 +406,7 @@ Last updated: ${new Date().toLocaleDateString()}
 
 ## Acceptance of Terms
 
-By accessing and using HiTech Globals services, you accept and agree to be bound by these Terms of Service.
+By accessing and using Irtiqa Marketing services, you accept and agree to be bound by these Terms of Service.
 
 ## Services
 
@@ -414,11 +414,11 @@ We provide web development, mobile app development, and digital solutions. All s
 
 ## Intellectual Property
 
-All content, features, and functionality are owned by HiTech Globals and are protected by international copyright laws.
+All content, features, and functionality are owned by Irtiqa Marketing and are protected by international copyright laws.
 
 ## Contact Us
 
-If you have any questions about these Terms, please contact us at hello@hitechglobals.com`,
+If you have any questions about these Terms, please contact us at hello@irtiqamarketing.com`,
                 last_updated: new Date().toISOString(),
                 created_at: new Date().toISOString()
             };

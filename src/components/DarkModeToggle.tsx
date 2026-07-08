@@ -41,7 +41,7 @@ export function DarkModeToggle() {
                         exit={{ y: -20, opacity: 0, rotate: 90 }}
                         transition={{ duration: 0.2 }}
                     >
-                        <Moon className="w-5 h-5 text-[#0063cd]" />
+                        <Moon className="w-5 h-5 text-[#C9A14A]" />
                     </motion.div>
                 ) : (
                     <motion.div
@@ -51,7 +51,7 @@ export function DarkModeToggle() {
                         exit={{ y: -20, opacity: 0, rotate: -90 }}
                         transition={{ duration: 0.2 }}
                     >
-                        <Sun className="w-5 h-5 text-[#0063cd]" />
+                        <Sun className="w-5 h-5 text-[#C9A14A]" />
                     </motion.div>
                 )}
             </AnimatePresence>

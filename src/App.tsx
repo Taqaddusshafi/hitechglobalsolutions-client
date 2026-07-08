@@ -19,6 +19,16 @@ const BlogPost = lazy(() => import('./components/pages/BlogPost').then(m => ({ d
 const LegalPage = lazy(() => import('./components/pages/LegalPage').then(m => ({ default: m.LegalPage })));
 const NotFound = lazy(() => import('./components/pages/NotFound').then(m => ({ default: m.NotFound })));
 
+// New Irtiqa pages
+const Founder = lazy(() => import('./components/pages/Founder').then(m => ({ default: m.Founder })));
+const Industries = lazy(() => import('./components/pages/Industries').then(m => ({ default: m.Industries })));
+const CaseStudies = lazy(() => import('./components/pages/CaseStudies').then(m => ({ default: m.CaseStudies })));
+const Process = lazy(() => import('./components/pages/Process').then(m => ({ default: m.Process })));
+const WhyChooseUs = lazy(() => import('./components/pages/WhyChooseUs').then(m => ({ default: m.WhyChooseUs })));
+const Clients = lazy(() => import('./components/pages/Clients').then(m => ({ default: m.Clients })));
+const Team = lazy(() => import('./components/pages/Team').then(m => ({ default: m.Team })));
+const FAQs = lazy(() => import('./components/pages/FAQs').then(m => ({ default: m.FAQs })));
+
 // Lazy load admin components
 const AdminLogin = lazy(() => import('./components/admin/AdminLogin').then(m => ({ default: m.AdminLogin })));
 const AdminLayout = lazy(() => import('./components/admin/AdminLayout').then(m => ({ default: m.AdminLayout })));
@@ -47,8 +57,8 @@ function PageLoader() {
   return (
     <div className="min-h-screen bg-background flex items-center justify-center">
       <div className="flex flex-col items-center gap-4">
-        <div className="w-12 h-12 border-4 border-[#0063cd]/20 border-t-[#0063cd] rounded-full animate-spin" />
-        <span className="text-muted-foreground text-sm">Loading...</span>
+        <div className="w-12 h-12 border-4 border-[#C9A14A]/20 border-t-[#C9A14A] rounded-full animate-spin" />
+        <span className="text-muted-foreground text-sm" style={{ fontFamily: "'Poppins', sans-serif" }}>Loading...</span>
       </div>
     </div>
   );
@@ -149,8 +159,16 @@ export default function App() {
                           <Routes>
                             <Route path="/" element={<Home />} />
                             <Route path="/about" element={<About />} />
+                            <Route path="/founder" element={<Founder />} />
                             <Route path="/services" element={<Services />} />
                             <Route path="/portfolio" element={<Portfolio />} />
+                            <Route path="/industries" element={<Industries />} />
+                            <Route path="/case-studies" element={<CaseStudies />} />
+                            <Route path="/process" element={<Process />} />
+                            <Route path="/why-choose-us" element={<WhyChooseUs />} />
+                            <Route path="/clients" element={<Clients />} />
+                            <Route path="/team" element={<Team />} />
+                            <Route path="/faqs" element={<FAQs />} />
                             <Route path="/contact" element={<Contact />} />
                             <Route path="/blog" element={<Blog />} />
                             <Route path="/blog/:slug" element={<BlogPost />} />
@@ -172,4 +190,3 @@ export default function App() {
     </ThemeProvider>
   );
 }
-

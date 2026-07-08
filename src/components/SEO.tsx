@@ -17,14 +17,14 @@ export function SEO({
   ogType = 'website',
   keywords,
 }: SEOProps) {
-  const siteName = 'HiTech Globals';
-  const fullTitle = title ? `${title} | ${siteName}` : `${siteName} | Web Development & Digital Solutions`;
-  const defaultDescription = 'HiTech Globals is a remote-first digital agency specializing in web development, mobile apps, e-commerce, and custom software solutions.';
+  const siteName = 'Irtiqa Marketing';
+  const fullTitle = title ? `${title} | ${siteName}` : `${siteName} | Full-Service Creative Marketing Agency`;
+  const defaultDescription = 'Irtiqa Marketing is a full-service creative marketing agency helping startups, businesses, and enterprises grow through branding, digital marketing, AI solutions, websites, photography, videography, and performance-driven campaigns.';
   const pageDescription = description || defaultDescription;
   const url = canonical ? `https://hitechglobals.com${canonical}` : 'https://hitechglobals.com';
   
-  // Brand name variants to focus on plural 'Globals' and specific niche
-  const baseKeywords = 'hitech globals, hitechglobals, hi tech globals, hitech globals ai, hitech globals agentic ai, hitechglobals.com, hitech globals studio';
+  // Brand name variants for SEO
+  const baseKeywords = 'irtiqa marketing, irtiqa, creative marketing agency, branding agency india, digital marketing agency, social media marketing, website development, photography, videography';
   const fullKeywords = keywords ? `${keywords}, ${baseKeywords}` : baseKeywords;
 
   return (

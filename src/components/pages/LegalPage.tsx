@@ -73,8 +73,8 @@ export function LegalPage() {
     return (
         <>
             <Helmet>
-                <title>{page.title} | HiTech Globals</title>
-                <meta name="description" content={`${page.title} for HiTech Globals - Web Development & Digital Solutions`} />
+                <title>{page.title} | Irtiqa Marketing</title>
+                <meta name="description" content={`${page.title} for Irtiqa Marketing - Creative Marketing Agency`} />
                 <meta name="robots" content="noindex, follow" />
                 <link rel="canonical" href={`https://hitechglobals.com/legal/${page.slug}`} />
             </Helmet>

@@ -1,11 +1,11 @@
 {
-    "name": "HiTech Globals - Agentic AI & Digital Solutions",
-    "short_name": "HiTech Globals",
-    "description": "HiTech Globals is a remote-first AI & Digital studio specializing in Agentic AI, custom web development, mobile apps, and UI/UX design.",
+    "name": "Irtiqa Marketing - Creative Marketing Agency",
+    "short_name": "Irtiqa",
+    "description": "Irtiqa Marketing is a full-service creative marketing agency helping startups, businesses, and enterprises grow through branding, digital marketing, AI solutions, websites, photography, and video.",
     "start_url": "/",
     "display": "standalone",
-    "background_color": "#ffffff",
-    "theme_color": "#0063cd",
+    "background_color": "#F8F8F8",
+    "theme_color": "#0B0B0B",
     "orientation": "portrait-primary",
     "icons": [
         {
@@ -28,9 +28,9 @@
     "screenshots": [],
     "shortcuts": [
         {
-            "name": "AI Services",
-            "short_name": "AI",
-            "description": "Agentic AI & Digital Solutions",
+            "name": "Services",
+            "short_name": "Services",
+            "description": "Creative & Marketing Services",
             "url": "/services",
             "icons": [
                 {
@@ -52,9 +52,9 @@
             ]
         },
         {
-            "name": "Blog",
-            "short_name": "Blog",
-            "description": "Read our blog",
+            "name": "Insights",
+            "short_name": "Insights",
+            "description": "Read our latest articles",
             "url": "/blog",
             "icons": [
                 {

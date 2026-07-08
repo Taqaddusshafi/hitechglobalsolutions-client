@@ -1,9 +1,9 @@
 import { motion } from 'framer-motion';
 
 export function AnimatedLogo() {
-  const hitechColor = "#0063cd";
-  const solutionColor = "#444444";
-  const letters = ["h", "ı", "t", "e", "c", "h"]; // Using dotless i (ı)
+  const goldColor = "#C9A14A";
+  const darkColor = "#0B0B0B";
+  const letters = ["i", "r", "t", "i", "q", "a"];
 
   // Different starting positions for each letter
   const startPositions = [
@@ -14,8 +14,6 @@ export function AnimatedLogo() {
     { x: -150, y: -180, rotate: 135 },
     { x: 180, y: 200, rotate: -135 },
   ];
-
-  const brandColor = hitechColor;
 
   return (
     <div className="flex items-center justify-center min-h-screen bg-background">
@@ -51,27 +49,29 @@ export function AnimatedLogo() {
                   damping: 15,
                 }}
                 style={{
-                  fontFamily: "'Fredoka', sans-serif",
-                  fontWeight: 600,
-                  fontSize: "142px",
-                  lineHeight: 0.6,
-                  color: brandColor,
+                  fontFamily: "'Cinzel', serif",
+                  fontWeight: 700,
+                  fontSize: "112px",
+                  lineHeight: 0.8,
+                  color: goldColor,
+                  textTransform: 'uppercase',
+                  letterSpacing: '0.05em',
                 }}
               >
                 {letter}
 
-                {/* Decorative particles bursting from the dot position of "i" */}
-                {index === 1 && (
+                {/* Decorative gold particles on the "q" letter */}
+                {index === 4 && (
                   <>
                     {[...Array(8)].map((_, i) => (
                       <motion.div
                         key={`particle-${i}`}
-                        className="absolute w-2.5 h-2.5 rounded-full"
+                        className="absolute w-2 h-2 rounded-full"
                         style={{
-                          background: brandColor,
-                          left: "40%",
-                          top: "0px",
-                          marginLeft: "-5px",
+                          background: goldColor,
+                          left: "50%",
+                          top: "50%",
+                          marginLeft: "-4px",
                         }}
                         initial={{
                           x: 0,
@@ -80,12 +80,8 @@ export function AnimatedLogo() {
                           opacity: 0,
                         }}
                         animate={{
-                          x:
-                            Math.cos(i * 45 * (Math.PI / 180)) *
-                            50,
-                          y:
-                            Math.sin(i * 45 * (Math.PI / 180)) *
-                            50,
+                          x: Math.cos(i * 45 * (Math.PI / 180)) * 40,
+                          y: Math.sin(i * 45 * (Math.PI / 180)) * 40,
                           scale: [0, 1.5, 0.5],
                           opacity: [0, 1, 0],
                         }}
@@ -96,38 +92,6 @@ export function AnimatedLogo() {
                         }}
                       />
                     ))}
-
-                    {/* The dot of "i" appears after particles burst */}
-                    <motion.div
-                      className="absolute"
-                      style={{
-                        fontFamily: "'Fredoka', sans-serif",
-                        fontWeight: 600,
-                        fontSize: "142px",
-                        lineHeight: 1,
-                        color: brandColor,
-                        left: "5%",
-                        top: "-80px",
-                        transform: "translateX(-50%)",
-                      }}
-                      initial={{
-                        scale: 0,
-                        opacity: 0,
-                      }}
-                      animate={{
-                        scale: 1,
-                        opacity: 1,
-                      }}
-                      transition={{
-                        delay: delay + 1.5,
-                        duration: 0.3,
-                        type: "spring",
-                        stiffness: 300,
-                        damping: 10,
-                      }}
-                    >
-                      ·
-                    </motion.div>
                   </>
                 )}
               </motion.div>
@@ -146,14 +110,29 @@ export function AnimatedLogo() {
             stiffness: 150,
           }}
           style={{
-            fontFamily: "'Fredoka', sans-serif",
-            fontWeight: 400,
-            fontSize: "54px",
-            color: solutionColor,
+            fontFamily: "'Poppins', sans-serif",
+            fontWeight: 300,
+            fontSize: "36px",
+            color: darkColor,
+            letterSpacing: '0.3em',
+            textTransform: 'uppercase',
           }}
         >
-          Globals
+          marketing
         </motion.div>
+
+        {/* Gold line accent */}
+        <motion.div
+          initial={{ scaleX: 0 }}
+          animate={{ scaleX: 1 }}
+          transition={{
+            delay: letters.length * 0.1 + 2,
+            duration: 0.8,
+            ease: "easeOut",
+          }}
+          className="w-24 h-0.5 mt-2"
+          style={{ background: goldColor }}
+        />
       </div>
     </div>
   );

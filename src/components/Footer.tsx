@@ -1,57 +1,66 @@
 import { Link } from 'react-router-dom';
-import { ArrowRight, Mail, Phone } from 'lucide-react';
+import { ArrowRight, Mail, Phone, MapPin } from 'lucide-react';
 import { Newsletter } from './Newsletter';
 
 export function Footer() {
   const links = {
-    company: [
+    quickLinks: [
       { name: 'Home', path: '/' },
       { name: 'About', path: '/about' },
       { name: 'Services', path: '/services' },
-      { name: 'Work', path: '/portfolio' },
+      { name: 'Portfolio', path: '/portfolio' },
       { name: 'Contact', path: '/contact' },
     ],
     services: [
-      { name: 'Brand Design', path: '/services' },
-      { name: 'UX/UI Design', path: '/services' },
-      { name: 'Web Design', path: '/services' },
+      { name: 'Branding', path: '/services' },
+      { name: 'Social Media', path: '/services' },
       { name: 'Web Development', path: '/services' },
-      { name: 'Mobile Apps', path: '/services' },
+      { name: 'Photography', path: '/services' },
+      { name: 'Video Production', path: '/services' },
+      { name: 'Performance Marketing', path: '/services' },
     ],
     social: [
-      { name: 'LinkedIn', url: 'https://www.linkedin.com/company/hitech-globals/' },
-      { name: 'Twitter', url: '#' },
-      { name: 'Instagram', url: '#' },
-      { name: 'GitHub', url: '#' },
+      { name: 'Instagram', url: 'https://www.instagram.com/irtiqamarketing/' },
+      { name: 'LinkedIn', url: 'https://www.linkedin.com/company/irtiqamarketing/' },
+      { name: 'Facebook', url: 'https://www.facebook.com/irtiqamarketing/' },
+      { name: 'YouTube', url: 'https://www.youtube.com/@irtiqamarketing' },
     ],
   };
 
   return (
-    <footer className="bg-secondary dark:bg-[#0f0f0f] text-foreground dark:text-white border-t border-border" role="contentinfo" aria-label="Site footer">
+    <footer className="bg-[#0B0B0B] text-white border-t border-white/5" role="contentinfo" aria-label="Site footer">
       {/* Main Footer */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 py-12 sm:py-16 lg:py-20">
         <div className="grid md:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-12 mb-12 lg:mb-16">
           {/* Brand Section */}
           <div className="lg:col-span-5">
             <Link to="/" className="inline-block mb-6">
-              <div className="flex items-baseline">
-                <span className="text-3xl sm:text-4xl" style={{ fontFamily: 'Fredoka, sans-serif', fontWeight: 600 }}>
-                  hitech
+              <div className="flex flex-col">
+                <span
+                  className="text-3xl sm:text-4xl font-bold tracking-wider"
+                  style={{ fontFamily: "'Cinzel', serif", color: '#C9A14A' }}
+                >
+                  IRTIQA
+                </span>
+                <span
+                  className="text-sm tracking-[0.3em] text-white/60 -mt-1"
+                  style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 300 }}
+                >
+                  MARKETING
                 </span>
               </div>
-              <div className="text-lg sm:text-xl line-height-6" style={{ fontFamily: 'Fredoka, sans-serif', fontWeight: 400 }}>
-                Globals
-              </div>
             </Link>
-            <p className="text-base sm:text-lg opacity-80 mb-2 max-w-md">
-              <span className="font-bold text-[#0063cd]">HiTech Globals</span> — Your Premium Agentic AI & Software Studio.
+            <p className="text-base sm:text-lg text-white/70 mb-2 max-w-md" style={{ fontFamily: "'Poppins', sans-serif" }}>
+              Building Brands. Creating Impact.
             </p>
-            <p className="text-sm sm:text-base opacity-70 mb-6 sm:mb-8 max-w-md">
-              A remote-first studio building exceptional digital products and autonomous AI solutions for businesses worldwide.
+            <p className="text-sm sm:text-base text-white/50 mb-6 sm:mb-8 max-w-md" style={{ fontFamily: "'Poppins', sans-serif" }}>
+              A full-service creative marketing agency helping businesses establish powerful identities and achieve sustainable growth.
             </p>
             <Link to="/contact">
-              <button className="px-6 py-3 bg-[#0063cd] text-white rounded-full hover:bg-[#0063cd]/90 transition-colors inline-flex items-center gap-2 group">
-                Start a Project
+              <button className="px-6 py-3 bg-[#C9A14A] text-white rounded-full hover:bg-[#b8913f] transition-colors inline-flex items-center gap-2 group text-sm tracking-widest uppercase"
+                style={{ fontFamily: "'Poppins', sans-serif" }}
+              >
+                Book Consultation
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </button>
             </Link>
@@ -60,13 +69,16 @@ export function Footer() {
           {/* Links Section */}
           <div className="lg:col-span-7 grid grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8">
             <div>
-              <h4 className="text-sm uppercase tracking-wider mb-6 opacity-60">Company</h4>
+              <h4 className="text-xs uppercase tracking-[0.2em] mb-6 text-[#C9A14A]" style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 500 }}>
+                Quick Links
+              </h4>
               <ul className="space-y-3">
-                {links.company.map((link) => (
+                {links.quickLinks.map((link) => (
                   <li key={link.name}>
                     <Link
                       to={link.path}
-                      className="opacity-80 hover:opacity-100 transition-opacity"
+                      className="text-white/60 hover:text-[#C9A14A] transition-colors text-sm"
+                      style={{ fontFamily: "'Poppins', sans-serif" }}
                     >
                       {link.name}
                     </Link>
@@ -76,13 +88,16 @@ export function Footer() {
             </div>
 
             <div>
-              <h4 className="text-sm uppercase tracking-wider mb-6 opacity-60">Services</h4>
+              <h4 className="text-xs uppercase tracking-[0.2em] mb-6 text-[#C9A14A]" style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 500 }}>
+                Services
+              </h4>
               <ul className="space-y-3">
                 {links.services.map((link) => (
                   <li key={link.name}>
                     <Link
                       to={link.path}
-                      className="opacity-80 hover:opacity-100 transition-opacity"
+                      className="text-white/60 hover:text-[#C9A14A] transition-colors text-sm"
+                      style={{ fontFamily: "'Poppins', sans-serif" }}
                     >
                       {link.name}
                     </Link>
@@ -92,7 +107,9 @@ export function Footer() {
             </div>
 
             <div>
-              <h4 className="text-sm uppercase tracking-wider mb-6 opacity-60">Connect</h4>
+              <h4 className="text-xs uppercase tracking-[0.2em] mb-6 text-[#C9A14A]" style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 500 }}>
+                Connect
+              </h4>
               <ul className="space-y-3">
                 {links.social.map((link) => (
                   <li key={link.name}>
@@ -100,7 +117,8 @@ export function Footer() {
                       href={link.url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="opacity-80 hover:opacity-100 transition-opacity"
+                      className="text-white/60 hover:text-[#C9A14A] transition-colors text-sm"
+                      style={{ fontFamily: "'Poppins', sans-serif" }}
                     >
                       {link.name}
                     </a>
@@ -114,51 +132,59 @@ export function Footer() {
         {/* Contact Info */}
         <div className="border-t border-white/10 pt-12 lg:pt-16 pb-8">
           <div className="max-w-2xl">
-            <h3 className="text-xl sm:text-2xl mb-4">Get in touch</h3>
+            <h3 className="text-xl sm:text-2xl mb-4 text-white" style={{ fontFamily: "'Cinzel', serif" }}>Get in touch</h3>
             <div className="space-y-4">
               <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-3">
-                <Mail className="w-5 h-5 opacity-60" />
+                <Mail className="w-5 h-5 text-[#C9A14A]" />
                 <a
-                  href="mailto:hello@hitechglobals.com"
-                  className="text-base sm:text-lg opacity-90 hover:text-[#0063cd] transition-colors break-all"
+                  href="mailto:hello@irtiqamarketing.com"
+                  className="text-base sm:text-lg text-white/80 hover:text-[#C9A14A] transition-colors break-all"
+                  style={{ fontFamily: "'Poppins', sans-serif" }}
                 >
-                  hello@hitechglobals.com
+                  hello@irtiqamarketing.com
                 </a>
               </div>
               <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-3">
-                <Phone className="w-5 h-5 opacity-60" />
-                <a
-                  href="tel:+919596672738"
-                  className="text-base sm:text-lg opacity-90 hover:text-[#0063cd] transition-colors"
-                >
-                  +91 959 667 2738
-                </a>
+                <Phone className="w-5 h-5 text-[#C9A14A]" />
+                <span className="text-base sm:text-lg text-white/80" style={{ fontFamily: "'Poppins', sans-serif" }}>
+                  +91 XXXXX XXXXX
+                </span>
+              </div>
+              <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-3">
+                <MapPin className="w-5 h-5 text-[#C9A14A]" />
+                <span className="text-base sm:text-lg text-white/80" style={{ fontFamily: "'Poppins', sans-serif" }}>
+                  India
+                </span>
               </div>
             </div>
-            <p className="opacity-70 text-sm mt-6">
-              We're a remote-first team available 24/7. Whether you're across the street or across the world, we're here to help bring your ideas to life.
-            </p>
           </div>
 
           {/* Newsletter */}
           <div className="mt-8 max-w-md">
-            <h4 className="text-sm uppercase tracking-wider mb-4 opacity-60">Newsletter</h4>
-            <p className="opacity-70 text-sm mb-4">Get the latest insights in your inbox</p>
+            <h4 className="text-xs uppercase tracking-[0.2em] mb-4 text-[#C9A14A]" style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 500 }}>
+              Newsletter
+            </h4>
+            <p className="text-white/50 text-sm mb-4" style={{ fontFamily: "'Poppins', sans-serif" }}>Get the latest marketing insights in your inbox</p>
             <Newsletter variant="footer" />
           </div>
         </div>
       </div>
 
       {/* Bottom Bar */}
-      <div className="border-t border-border dark:border-white/10">
+      <div className="border-t border-white/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 py-6">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-xs sm:text-sm opacity-60">
-            <p>© {new Date().getFullYear()} HiTech Globals. All rights reserved.</p>
-            <div className="flex gap-6">
-              <Link to="/legal/privacy-policy" className="hover:opacity-100 transition-opacity">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-xs sm:text-sm text-white/40">
+            <div className="space-y-1">
+              <p style={{ fontFamily: "'Poppins', sans-serif" }}>© {new Date().getFullYear()} Irtiqa Marketing. All rights reserved.</p>
+              <p className="text-[10px] text-white/30" style={{ fontFamily: "'Poppins', sans-serif" }}>
+                Designed and Developed by <a href="https://hitechglobals.com" target="_blank" rel="noopener noreferrer" className="hover:text-[#C9A14A] underline transition-colors">HiTech Globals</a>
+              </p>
+            </div>
+            <div className="flex gap-6" style={{ fontFamily: "'Poppins', sans-serif" }}>
+              <Link to="/legal/privacy-policy" className="hover:text-[#C9A14A] transition-colors">
                 Privacy Policy
               </Link>
-              <Link to="/legal/terms-of-service" className="hover:opacity-100 transition-opacity">
+              <Link to="/legal/terms-of-service" className="hover:text-[#C9A14A] transition-colors">
                 Terms of Service
               </Link>
             </div>

@@ -47,8 +47,8 @@ export function AdminLayout() {
                     {/* Logo */}
                     <div className="p-6 border-b border-border">
                         <Link to="/admin" className="flex items-center gap-3">
-                            <div className="w-10 h-10 bg-gradient-to-br from-[#0063cd] to-[#0052a8] rounded-xl flex items-center justify-center">
-                                <span className="text-white font-bold text-lg">H</span>
+                            <div className="w-10 h-10 bg-gradient-to-br from-[#C9A14A] to-[#b8913f] rounded-xl flex items-center justify-center">
+                                <span className="text-white font-bold text-lg">I</span>
                             </div>
                             <span className="font-bold text-lg text-foreground">Admin Panel</span>
                         </Link>
@@ -64,7 +64,7 @@ export function AdminLayout() {
                                 className={`
                   flex items-center gap-3 px-4 py-3 rounded-xl transition-all
                   ${isActive(item.path, item.exact)
-                                        ? 'bg-[#0063cd] text-white'
+                                        ? 'bg-[#C9A14A] text-white'
                                         : 'text-muted-foreground hover:bg-secondary hover:text-foreground'
                                     }
                 `}
