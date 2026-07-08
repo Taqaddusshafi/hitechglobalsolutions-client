@@ -1,7 +1,6 @@
 import { SEO } from '../SEO';
 import { motion } from 'framer-motion';
-import { ArrowRight, Sparkles, AlertCircle, Award, Target, MessageSquare } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { Sparkles, AlertCircle, Award, Target, MessageSquare } from 'lucide-react';
 
 interface CaseStudy {
   title: string;

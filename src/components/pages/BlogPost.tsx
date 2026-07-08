@@ -1,7 +1,7 @@
 import { SEO } from '../SEO';
 import { motion } from 'framer-motion';
 import { Link, useParams } from 'react-router-dom';
-import { ArrowLeft, Clock, User, Calendar, Tag, Sparkles } from 'lucide-react';
+import { ArrowLeft, Clock, Tag } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import { getBlogBySlug, type Blog } from '../../lib/supabase';
 import { OptimizedImage } from '../OptimizedImage';
