@@ -1,7 +1,6 @@
 import { SEO } from '../SEO';
 import { motion } from 'framer-motion';
-import { Quote, Sparkles, Award, Star } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { Quote } from 'lucide-react';
 
 export function Founder() {
   return (

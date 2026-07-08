@@ -1,6 +1,5 @@
 import { SEO } from '../SEO';
 import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom';
 
 export function Clients() {
   const clientLogos = [

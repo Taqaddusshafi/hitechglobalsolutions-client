@@ -1,8 +1,6 @@
 import { SEO } from '../SEO';
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ArrowRight, Sparkles } from 'lucide-react';
-import { Link } from 'react-router-dom';
 
 interface Project {
   title: string;
@@ -141,7 +139,7 @@ export function Portfolio() {
           <div className="max-w-7xl mx-auto">
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               <AnimatePresence mode="popLayout">
-                {filteredProjects.map((project, idx) => (
+                {filteredProjects.map((project) => (
                   <motion.div
                     layout
                     key={project.title}

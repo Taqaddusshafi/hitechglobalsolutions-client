@@ -1,6 +1,6 @@
 import { SEO } from '../SEO';
 import { motion } from 'framer-motion';
-import { Mail, Clock, ArrowRight, Sparkles, Phone, MapPin, Instagram, Linkedin, Facebook, Youtube } from 'lucide-react';
+import { Mail, ArrowRight, Phone, MapPin, Instagram, Linkedin, Facebook, Youtube } from 'lucide-react';
 import { useState } from 'react';
 
 export function Contact() {

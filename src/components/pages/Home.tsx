@@ -1,7 +1,7 @@
 import { SEO } from '../SEO';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { ArrowRight, CheckCircle2, Star, Target, Zap, Sparkles, Award, Shield, MessageSquare } from 'lucide-react';
+import { ArrowRight, CheckCircle2, Sparkles } from 'lucide-react';
 import { Testimonials } from '../Testimonials';
 
 export function Home() {
@@ -295,7 +295,7 @@ export function Home() {
                 </p>
 
                 <div className="grid sm:grid-cols-2 gap-4">
-                  {whyIrtiqa.map((differentiator, idx) => (
+                  {whyIrtiqa.map((differentiator) => (
                     <div key={differentiator} className="flex items-center gap-3 py-3 border-b border-white/10">
                       <CheckCircle2 className="w-5 h-5 text-[#C9A14A] flex-shrink-0" />
                       <span className="text-sm font-semibold tracking-wide text-white/90" style={{ fontFamily: "'Poppins', sans-serif" }}>

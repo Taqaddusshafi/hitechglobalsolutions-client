@@ -1,6 +1,6 @@
 import { SEO } from '../SEO';
 import { motion } from 'framer-motion';
-import { Compass, Search, Target, Palette, Cpu, TrendingUp, Sparkles, ArrowDown } from 'lucide-react';
+import { Compass, Search, Target, Palette, Cpu, TrendingUp, Sparkles } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 export function Process() {
