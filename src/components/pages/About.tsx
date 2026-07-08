@@ -1,6 +1,6 @@
 import { SEO } from '../SEO';
 import { motion } from 'framer-motion';
-import { Star, Shield, Award, Sparkles, Target, Zap, Rocket, Eye, TrendingUp, Heart } from 'lucide-react';
+import { Award, Sparkles, Target, Zap, Rocket, Eye, TrendingUp, Heart } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 export function About() {
