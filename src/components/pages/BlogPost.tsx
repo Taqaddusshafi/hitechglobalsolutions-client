@@ -156,7 +156,7 @@ export function BlogPost() {
 
                         <div className="flex flex-wrap items-center gap-6 text-sm text-muted-foreground pb-6 border-b border-border/60 font-body">
                           <div className="flex items-center gap-2">
-                            <div className="w-10 h-10 bg-accent rounded-full flex items-center justify-center text-white font-bold font-heading">
+                            <div className="w-10 h-10 bg-accent rounded-full flex items-center justify-center text-accent-foreground font-bold font-heading">
                               {blog.author.charAt(0)}
                             </div>
                             <div>

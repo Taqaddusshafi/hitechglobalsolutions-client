@@ -104,7 +104,7 @@ export function Process() {
                   {/* Icon Node */}
                   <div className="w-16 h-16 sm:w-20 sm:h-20 bg-card border-2 border-accent rounded-full flex items-center justify-center text-accent flex-shrink-0 shadow-sm relative">
                     <Icon className="w-6 h-6 sm:w-8 sm:h-8" />
-                    <span className="absolute -bottom-2 -right-1 text-[10px] font-bold bg-accent text-white px-2 py-0.5 rounded-full font-body">
+                    <span className="absolute -bottom-2 -right-1 text-[10px] font-bold bg-accent text-accent-foreground px-2 py-0.5 rounded-full font-body">
                       {step.step}
                     </span>
                   </div>

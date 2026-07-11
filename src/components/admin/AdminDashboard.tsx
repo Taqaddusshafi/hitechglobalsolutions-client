@@ -95,7 +95,7 @@ export function AdminDashboard() {
                         <div className="flex gap-2">
                             <Link
                                 to={action.addLink}
-                                className="px-3 py-1.5 bg-accent text-white rounded-lg hover:bg-accent/90 transition-colors flex items-center gap-1 text-sm"
+                                className="px-3 py-1.5 bg-accent text-accent-foreground rounded-lg hover:bg-accent/90 transition-colors flex items-center gap-1 text-sm"
                             >
                                 <Plus className="w-4 h-4" />
                                 Add

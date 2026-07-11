@@ -56,7 +56,7 @@ export function Navigation() {
         aria-label="Main navigation"
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled
           ? 'bg-background/80 backdrop-blur-md shadow-sm border-b border-border'
-          : 'bg-background'
+          : 'bg-transparent'
           }`}
       >
         <div className="max-w-8xl mx-auto px-2 sm:px-4 lg:px-6">
@@ -243,7 +243,7 @@ export function Navigation() {
                   transition={{ delay: mobileLinks.length * 0.05 }}
                 >
                   <Link to="/contact" onClick={() => setIsOpen(false)}>
-                    <button className="w-full px-6 py-3 bg-accent text-white rounded-full text-sm tracking-widest uppercase mt-4 hover:bg-accent/90 transition-colors"
+                    <button className="w-full px-6 py-3 bg-accent text-accent-foreground rounded-full text-sm tracking-widest uppercase mt-4 hover:bg-accent/90 transition-colors"
                       style={{ fontFamily: "'Poppins', sans-serif" }}
                     >
                       Book Free Consultation

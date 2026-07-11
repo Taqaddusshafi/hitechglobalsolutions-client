@@ -101,7 +101,7 @@ export function Blog() {
                                     key={category}
                                     onClick={() => setActiveFilter(category)}
                                     className={`px-5 py-2.5 rounded-full text-xs font-semibold uppercase tracking-wider transition-all duration-300 ${activeFilter === category
-                                        ? 'bg-accent text-white shadow-lg shadow-accent/20'
+                                        ? 'bg-accent text-accent-foreground shadow-lg shadow-accent/20'
                                         : 'bg-card border border-border hover:border-accent/50 text-foreground hover:shadow-md'
                                         }`}
                                     style={{ fontFamily: "'Poppins', sans-serif" }}

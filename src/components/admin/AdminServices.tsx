@@ -62,7 +62,7 @@ export function AdminServices() {
                     <motion.button
                         whileHover={{ scale: 1.02 }}
                         whileTap={{ scale: 0.98 }}
-                        className="px-4 py-2 bg-accent text-white rounded-lg flex items-center gap-2"
+                        className="px-4 py-2 bg-accent text-accent-foreground rounded-lg flex items-center gap-2"
                     >
                         <Plus className="w-4 h-4" />
                         Add Service

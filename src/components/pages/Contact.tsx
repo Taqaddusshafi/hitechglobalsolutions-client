@@ -227,7 +227,7 @@ export function Contact() {
                   
                   <button 
                     type="submit"
-                    className="w-full py-4 bg-accent text-white hover:bg-accent/90 transition-all font-semibold uppercase tracking-widest text-xs rounded-full flex items-center justify-center gap-2"
+                    className="w-full py-4 bg-accent text-accent-foreground hover:bg-accent/90 transition-all font-semibold uppercase tracking-widest text-xs rounded-full flex items-center justify-center gap-2"
                   >
                     Submit Query <ArrowRight className="w-4 h-4" />
                   </button>

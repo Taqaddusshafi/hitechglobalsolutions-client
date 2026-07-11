@@ -64,7 +64,7 @@ export function AdminLayout() {
                                 className={`
                   flex items-center gap-3 px-4 py-3 rounded-xl transition-all
                   ${isActive(item.path, item.exact)
-                                        ? 'bg-accent text-white'
+                                        ? 'bg-accent text-accent-foreground'
                                         : 'text-muted-foreground hover:bg-secondary hover:text-foreground'
                                     }
                 `}

@@ -39,7 +39,12 @@ export function Footer() {
         <div className="grid md:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-12 mb-12 lg:mb-16">
           {/* Brand Section */}
           <div className="lg:col-span-5">
-            <Link to="/" className="inline-block mb-6">
+            <Link to="/" className="flex items-center gap-2 group mb-6">
+              <img 
+                src="/logo.png" 
+                alt="Irtiqa Logo" 
+                className="w-8 h-8 sm:w-10 sm:h-10 object-contain invert" 
+              />
               <div className="flex flex-col">
                 <span
                   className="text-3xl sm:text-4xl font-bold tracking-wider text-white"

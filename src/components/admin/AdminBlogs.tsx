@@ -68,7 +68,7 @@ export function AdminBlogs() {
                 </div>
                 <Link
                     to="/admin/blogs/new"
-                    className="px-4 py-2 bg-accent text-white rounded-xl hover:bg-accent/90 transition-colors flex items-center gap-2 w-fit"
+                    className="px-4 py-2 bg-accent text-accent-foreground rounded-xl hover:bg-accent/90 transition-colors flex items-center gap-2 w-fit"
                 >
                     <Plus className="w-4 h-4" />
                     New Post

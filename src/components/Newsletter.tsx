@@ -79,7 +79,7 @@ export function Newsletter({ variant = 'card' }: NewsletterProps) {
                         disabled={status === 'loading' || status === 'success'}
                         whileHover={{ scale: 1.02 }}
                         whileTap={{ scale: 0.98 }}
-                        className="px-4 py-2.5 bg-accent text-primary rounded-lg hover:bg-accent/90 transition-colors disabled:opacity-50 flex items-center gap-1 text-white"
+                        className="px-4 py-2.5 bg-accent text-accent-foreground rounded-lg hover:bg-accent/90 transition-colors disabled:opacity-50 flex items-center gap-1"
                     >
                         {status === 'loading' ? (
                             <Loader2 className="w-4 h-4 animate-spin" />

@@ -110,7 +110,7 @@ export function AdminLogin() {
                         <motion.button
                             type="submit"
                             disabled={loading}
-                            className="w-full py-3 bg-gradient-to-r from-accent to-accent/90 text-white rounded-xl font-medium hover:shadow-lg hover:shadow-accent/25 transition-all disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+                            className="w-full py-3 bg-gradient-to-r from-accent to-accent/90 text-accent-foreground rounded-xl font-medium hover:shadow-lg hover:shadow-accent/25 transition-all disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
                             whileHover={{ scale: loading ? 1 : 1.02 }}
                             whileTap={{ scale: loading ? 1 : 0.98 }}
                         >
