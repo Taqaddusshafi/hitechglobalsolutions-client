@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 
 export function AnimatedLogo() {
-  const goldColor = "#C9A14A";
+  const goldColor = "var(--accent)";
   const darkColor = "#0B0B0B";
   const letters = ["i", "r", "t", "i", "q", "a"];
 

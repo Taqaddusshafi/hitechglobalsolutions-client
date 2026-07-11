@@ -32,7 +32,7 @@ export function Team() {
               transition={{ duration: 0.8 }}
               className="flex flex-col items-center"
             >
-              <span className="text-[#C9A14A] text-xs uppercase tracking-[0.3em] font-semibold block mb-4">
+              <span className="text-accent text-xs uppercase tracking-[0.3em] font-semibold block mb-4">
                 Creative Minds
               </span>
               <h1 className="text-4xl sm:text-6xl font-heading mb-6 tracking-wide leading-tight">
@@ -57,14 +57,14 @@ export function Team() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: idx * 0.06 }}
-                  className="p-8 bg-card rounded-2xl border border-border hover:border-[#C9A14A]/40 transition-all hover:shadow-md text-center flex flex-col justify-between"
+                  className="p-8 bg-card rounded-2xl border border-border hover:border-accent/40 transition-all hover:shadow-md text-center flex flex-col justify-between"
                 >
                   <div>
-                    <div className="w-20 h-20 bg-[#C9A14A]/10 rounded-full flex items-center justify-center text-xl font-heading font-bold text-[#C9A14A] mx-auto mb-6">
+                    <div className="w-20 h-20 bg-accent/10 rounded-full flex items-center justify-center text-xl font-heading font-bold text-accent mx-auto mb-6">
                       {member.name.split(' ').map(n => n[0]).join('')}
                     </div>
                     <h2 className="text-xl font-heading tracking-wide text-foreground mb-1">{member.name}</h2>
-                    <span className="text-xs uppercase tracking-widest text-[#C9A14A] font-semibold font-body block mb-4">
+                    <span className="text-xs uppercase tracking-widest text-accent font-semibold font-body block mb-4">
                       {member.role}
                     </span>
                     <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed font-body">

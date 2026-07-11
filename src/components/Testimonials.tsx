@@ -68,7 +68,7 @@ export function Testimonials() {
             {/* Background decorations */}
             <div className="absolute inset-0 overflow-hidden pointer-events-none">
                 <motion.div
-                    className="absolute top-20 -left-20 w-72 h-72 bg-[#C9A14A]/5 rounded-full blur-3xl"
+                    className="absolute top-20 -left-20 w-72 h-72 bg-accent/5 rounded-full blur-3xl"
                     animate={{ x: [0, 30, 0], y: [0, 20, 0] }}
                     transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
                 />
@@ -82,7 +82,7 @@ export function Testimonials() {
                     transition={{ duration: 0.6 }}
                     className="text-center mb-12 sm:mb-16"
                 >
-                    <span className="inline-block text-[#C9A14A] text-xs uppercase tracking-[0.25em] font-semibold mb-4 px-4 py-2 bg-[#C9A14A]/10 rounded-full font-body">
+                    <span className="inline-block text-accent text-xs uppercase tracking-[0.25em] font-semibold mb-4 px-4 py-2 bg-accent/10 rounded-full font-body">
                         Client Reviews
                     </span>
                     <h2 className="text-3xl sm:text-5xl font-heading mb-4 text-foreground tracking-wide">
@@ -96,7 +96,7 @@ export function Testimonials() {
                     <div className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 sm:-translate-x-12 z-20">
                         <motion.button
                             onClick={prevTestimonial}
-                            className="w-10 h-10 sm:w-12 sm:h-12 bg-card border border-border rounded-full flex items-center justify-center shadow-lg hover:border-[#C9A14A] hover:text-[#C9A14A] transition-colors"
+                            className="w-10 h-10 sm:w-12 sm:h-12 bg-card border border-border rounded-full flex items-center justify-center shadow-lg hover:border-accent hover:text-accent transition-colors"
                             whileHover={{ scale: 1.1 }}
                             whileTap={{ scale: 0.95 }}
                             aria-label="Previous testimonial"
@@ -108,7 +108,7 @@ export function Testimonials() {
                     <div className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 sm:translate-x-12 z-20">
                         <motion.button
                             onClick={nextTestimonial}
-                            className="w-10 h-10 sm:w-12 sm:h-12 bg-card border border-border rounded-full flex items-center justify-center shadow-lg hover:border-[#C9A14A] hover:text-[#C9A14A] transition-colors"
+                            className="w-10 h-10 sm:w-12 sm:h-12 bg-card border border-border rounded-full flex items-center justify-center shadow-lg hover:border-accent hover:text-accent transition-colors"
                             whileHover={{ scale: 1.1 }}
                             whileTap={{ scale: 0.95 }}
                             aria-label="Next testimonial"
@@ -129,7 +129,7 @@ export function Testimonials() {
                         >
                             {/* Quote Icon */}
                             <div className="absolute top-6 right-8 opacity-5">
-                                <Quote className="w-20 h-20 text-[#C9A14A]" />
+                                <Quote className="w-20 h-20 text-accent" />
                             </div>
 
                             {/* Rating */}
@@ -138,7 +138,7 @@ export function Testimonials() {
                                     <Star
                                         key={i}
                                         className={`w-5 h-5 ${i < testimonials[currentIndex].rating
-                                                ? 'text-[#C9A14A] fill-[#C9A14A]'
+                                                ? 'text-accent fill-accent'
                                                 : 'text-gray-300'
                                             }`}
                                     />
@@ -152,7 +152,7 @@ export function Testimonials() {
 
                             {/* Author */}
                             <div className="flex items-center gap-4">
-                                <div className="w-14 h-14 sm:w-16 sm:h-16 bg-[#0B0B0B] border border-[#C9A14A]/30 rounded-full flex items-center justify-center text-white text-xl font-bold font-heading">
+                                <div className="w-14 h-14 sm:w-16 sm:h-16 bg-[#0B0B0B] border border-white/20 rounded-full flex items-center justify-center text-white text-xl font-bold font-heading">
                                     {testimonials[currentIndex].avatar ? (
                                         <img
                                             src={testimonials[currentIndex].avatar}
@@ -185,8 +185,8 @@ export function Testimonials() {
                                 key={index}
                                 onClick={() => setCurrentIndex(index)}
                                 className={`w-2.5 h-2.5 rounded-full transition-all ${index === currentIndex
-                                        ? 'bg-[#C9A14A] w-8'
-                                        : 'bg-border hover:bg-[#C9A14A]/50'
+                                        ? 'bg-accent w-8'
+                                        : 'bg-border hover:bg-accent/50'
                                     }`}
                                 whileHover={{ scale: 1.2 }}
                                 aria-label={`Go to testimonial ${index + 1}`}

@@ -40,7 +40,7 @@ export function Clients() {
               transition={{ duration: 0.8 }}
               className="flex flex-col items-center"
             >
-              <span className="text-[#C9A14A] text-xs uppercase tracking-[0.3em] font-semibold block mb-4">
+              <span className="text-accent text-xs uppercase tracking-[0.3em] font-semibold block mb-4">
                 Trusted By
               </span>
               <h1 className="text-4xl sm:text-6xl font-heading mb-6 tracking-wide leading-tight">
@@ -64,9 +64,9 @@ export function Clients() {
                 {[...clientLogos, ...clientLogos, ...clientLogos].map((client, idx) => (
                   <div
                     key={client.name + '-r1-' + idx}
-                    className="flex-shrink-0 p-8 bg-card rounded-2xl border border-border hover:border-[#C9A14A]/40 transition-all hover:shadow-sm text-center flex flex-col justify-center items-center h-40 min-w-[240px] group overflow-hidden"
+                    className="flex-shrink-0 p-8 bg-card rounded-2xl border border-border hover:border-accent/40 transition-all hover:shadow-sm text-center flex flex-col justify-center items-center h-40 min-w-[240px] group overflow-hidden"
                   >
-                    <div className="w-10 h-10 bg-[#C9A14A]/10 rounded-full flex items-center justify-center text-[#C9A14A] font-bold text-sm mb-3">
+                    <div className="w-10 h-10 bg-accent/10 rounded-full flex items-center justify-center text-accent font-bold text-sm mb-3">
                       {client.name.charAt(0)}
                     </div>
                     <span className="text-lg font-heading font-semibold text-foreground mb-1">
@@ -86,9 +86,9 @@ export function Clients() {
                 {[...clientLogos].reverse().concat([...clientLogos], [...clientLogos]).map((client, idx) => (
                   <div
                     key={client.name + '-r2-' + idx}
-                    className="flex-shrink-0 p-8 bg-card rounded-2xl border border-border hover:border-[#C9A14A]/40 transition-all hover:shadow-sm text-center flex flex-col justify-center items-center h-40 min-w-[240px] group overflow-hidden"
+                    className="flex-shrink-0 p-8 bg-card rounded-2xl border border-border hover:border-accent/40 transition-all hover:shadow-sm text-center flex flex-col justify-center items-center h-40 min-w-[240px] group overflow-hidden"
                   >
-                    <div className="w-10 h-10 bg-[#C9A14A]/10 rounded-full flex items-center justify-center text-[#C9A14A] font-bold text-sm mb-3">
+                    <div className="w-10 h-10 bg-accent/10 rounded-full flex items-center justify-center text-accent font-bold text-sm mb-3">
                       {client.name.charAt(0)}
                     </div>
                     <span className="text-lg font-heading font-semibold text-foreground mb-1">
@@ -107,10 +107,10 @@ export function Clients() {
 
         {/* Numbers Section */}
         <section className="py-20 px-4 sm:px-6 bg-[#0B0B0B] text-white border-t border-white/5 relative overflow-hidden mt-12">
-          <div className="absolute inset-0 bg-[radial-gradient(#C9A14A_0.5px,transparent_0.5px)] [background-size:24px_24px] opacity-5 pointer-events-none" />
+          <div className="absolute inset-0 bg-[radial-gradient(var(--accent)_0.5px,transparent_0.5px)] [background-size:24px_24px] opacity-5 pointer-events-none" />
           <div className="max-w-5xl mx-auto relative z-10">
             <div className="text-center mb-12">
-              <span className="text-[#C9A14A] text-xs uppercase tracking-[0.25em] font-semibold block mb-2">
+              <span className="text-accent text-xs uppercase tracking-[0.25em] font-semibold block mb-2">
                 Proven Impact
               </span>
               <h2 className="text-3xl font-heading tracking-wide text-white">Our Numbers Speaks</h2>
@@ -126,7 +126,7 @@ export function Clients() {
                   transition={{ duration: 0.5, delay: idx * 0.1 }}
                   className="p-6 bg-white/5 rounded-2xl border border-white/10 flex flex-col justify-center"
                 >
-                  <div className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#C9A14A] mb-2 font-heading">{stat.value}</div>
+                  <div className="text-3xl sm:text-4xl md:text-5xl font-bold text-accent mb-2 font-heading">{stat.value}</div>
                   <div className="text-xs sm:text-sm text-white/60 uppercase tracking-wider font-semibold">{stat.label}</div>
                 </motion.div>
               ))}

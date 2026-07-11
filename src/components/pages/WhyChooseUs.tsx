@@ -67,7 +67,7 @@ export function WhyChooseUs() {
               transition={{ duration: 0.8 }}
               className="flex flex-col items-center"
             >
-              <span className="text-[#C9A14A] text-xs uppercase tracking-[0.3em] font-semibold block mb-4">
+              <span className="text-accent text-xs uppercase tracking-[0.3em] font-semibold block mb-4">
                 Our Edge
               </span>
               <h1 className="text-4xl sm:text-6xl font-heading mb-6 tracking-wide leading-tight">
@@ -94,10 +94,10 @@ export function WhyChooseUs() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.5, delay: idx * 0.06 }}
-                    className="p-8 bg-card rounded-2xl border border-border hover:border-[#C9A14A]/40 transition-all hover:shadow-md flex flex-col justify-between"
+                    className="p-8 bg-card rounded-2xl border border-border hover:border-accent/40 transition-all hover:shadow-md flex flex-col justify-between"
                   >
                     <div>
-                      <div className="w-12 h-12 bg-[#C9A14A]/10 rounded-xl flex items-center justify-center text-[#C9A14A] mb-6">
+                      <div className="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center text-accent mb-6">
                         <IconComponent className="w-6 h-6" />
                       </div>
                       <h2 className="text-xl font-heading tracking-wide text-foreground mb-3">{item.title}</h2>
@@ -119,7 +119,7 @@ export function WhyChooseUs() {
               Partner with India’s Premium Creative Agency
             </h2>
             <Link to="/contact">
-              <button className="px-8 py-4 bg-[#C9A14A] text-[#0B0B0B] font-semibold text-sm tracking-widest uppercase rounded-full hover:bg-[#b8913f] hover:text-white transition-all">
+              <button className="px-8 py-4 bg-white text-black font-semibold text-sm tracking-widest uppercase rounded-full hover:bg-neutral-200 transition-all duration-300">
                 Start Today
               </button>
             </Link>

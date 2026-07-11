@@ -42,8 +42,8 @@ export function Footer() {
             <Link to="/" className="inline-block mb-6">
               <div className="flex flex-col">
                 <span
-                  className="text-3xl sm:text-4xl font-bold tracking-wider"
-                  style={{ fontFamily: "'Cinzel', serif", color: '#C9A14A' }}
+                  className="text-3xl sm:text-4xl font-bold tracking-wider text-white"
+                  style={{ fontFamily: "'Cinzel', serif" }}
                 >
                   IRTIQA
                 </span>
@@ -55,7 +55,7 @@ export function Footer() {
                 </span>
               </div>
             </Link>
-            <p className="text-sm text-[#C9A14A]/80 tracking-wider uppercase mb-6 leading-relaxed" style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 400 }}>
+            <p className="text-sm text-neutral-400 tracking-wider uppercase mb-6 leading-relaxed" style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 400 }}>
               Creative Agency | Branding | Digital Marketing | Website Development | Photography | Videography | Social Media | SEO | Performance Marketing
             </p>
           </div>
@@ -63,7 +63,7 @@ export function Footer() {
           {/* Links Section */}
           <div className="lg:col-span-7 grid grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8">
             <div>
-              <h4 className="text-xs uppercase tracking-[0.2em] mb-6 text-[#C9A14A]" style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 500 }}>
+              <h4 className="text-xs uppercase tracking-[0.2em] mb-6 text-white" style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 500 }}>
                 Quick Links
               </h4>
               <ul className="space-y-3">
@@ -71,7 +71,7 @@ export function Footer() {
                   <li key={link.name}>
                     <Link
                       to={link.path}
-                      className="text-white/60 hover:text-[#C9A14A] transition-colors text-sm"
+                      className="text-white/60 hover:text-white transition-colors text-sm"
                       style={{ fontFamily: "'Poppins', sans-serif" }}
                     >
                       {link.name}
@@ -82,7 +82,7 @@ export function Footer() {
             </div>
 
             <div>
-              <h4 className="text-xs uppercase tracking-[0.2em] mb-6 text-[#C9A14A]" style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 500 }}>
+              <h4 className="text-xs uppercase tracking-[0.2em] mb-6 text-white" style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 500 }}>
                 Services
               </h4>
               <ul className="space-y-3">
@@ -90,7 +90,7 @@ export function Footer() {
                   <li key={link.name}>
                     <Link
                       to={link.path}
-                      className="text-white/60 hover:text-[#C9A14A] transition-colors text-sm"
+                      className="text-white/60 hover:text-white transition-colors text-sm"
                       style={{ fontFamily: "'Poppins', sans-serif" }}
                     >
                       {link.name}
@@ -101,7 +101,7 @@ export function Footer() {
             </div>
 
             <div>
-              <h4 className="text-xs uppercase tracking-[0.2em] mb-6 text-[#C9A14A]" style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 500 }}>
+              <h4 className="text-xs uppercase tracking-[0.2em] mb-6 text-white" style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 500 }}>
                 Connect
               </h4>
               <ul className="space-y-3">
@@ -111,7 +111,7 @@ export function Footer() {
                       href={link.url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-white/60 hover:text-[#C9A14A] transition-colors text-sm"
+                      className="text-white/60 hover:text-white transition-colors text-sm"
                       style={{ fontFamily: "'Poppins', sans-serif" }}
                     >
                       {link.name}
@@ -129,23 +129,23 @@ export function Footer() {
             <h3 className="text-xl sm:text-2xl mb-4 text-white" style={{ fontFamily: "'Cinzel', serif" }}>Get in touch</h3>
             <div className="space-y-4">
               <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-3">
-                <Mail className="w-5 h-5 text-[#C9A14A]" />
+                <Mail className="w-5 h-5 text-neutral-400" />
                 <a
                   href="mailto:hello@irtiqamarketing.com"
-                  className="text-base sm:text-lg text-white/80 hover:text-[#C9A14A] transition-colors break-all"
+                  className="text-base sm:text-lg text-white/80 hover:text-white transition-colors break-all"
                   style={{ fontFamily: "'Poppins', sans-serif" }}
                 >
                   hello@irtiqamarketing.com
                 </a>
               </div>
               <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-3">
-                <Phone className="w-5 h-5 text-[#C9A14A]" />
+                <Phone className="w-5 h-5 text-neutral-400" />
                 <span className="text-base sm:text-lg text-white/80" style={{ fontFamily: "'Poppins', sans-serif" }}>
                   +91 XXXXX XXXXX
                 </span>
               </div>
               <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-3">
-                <MapPin className="w-5 h-5 text-[#C9A14A]" />
+                <MapPin className="w-5 h-5 text-neutral-400" />
                 <span className="text-base sm:text-lg text-white/80" style={{ fontFamily: "'Poppins', sans-serif" }}>
                   Lucknow, Uttar Pradesh
                 </span>
@@ -155,7 +155,7 @@ export function Footer() {
 
           {/* Newsletter */}
           <div className="mt-8 max-w-md">
-            <h4 className="text-xs uppercase tracking-[0.2em] mb-4 text-[#C9A14A]" style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 500 }}>
+            <h4 className="text-xs uppercase tracking-[0.2em] mb-4 text-white" style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 500 }}>
               Newsletter
             </h4>
             <p className="text-white/50 text-sm mb-4" style={{ fontFamily: "'Poppins', sans-serif" }}>Get the latest marketing insights in your inbox</p>
@@ -171,14 +171,14 @@ export function Footer() {
             <div className="space-y-1">
               <p style={{ fontFamily: "'Poppins', sans-serif" }}>© {new Date().getFullYear()} Irtiqa Marketing. All rights reserved.</p>
               <p className="text-[10px] text-white/30" style={{ fontFamily: "'Poppins', sans-serif" }}>
-                Designed and Developed by <a href="https://hitechglobals.com" target="_blank" rel="noopener noreferrer" className="hover:text-[#C9A14A] underline transition-colors">HiTech Globals</a>
+                Designed and Developed by <a href="https://hitechglobals.com" target="_blank" rel="noopener noreferrer" className="hover:text-white underline transition-colors">HiTech Globals</a>
               </p>
             </div>
             <div className="flex gap-6" style={{ fontFamily: "'Poppins', sans-serif" }}>
-              <Link to="/legal/privacy-policy" className="hover:text-[#C9A14A] transition-colors">
+              <Link to="/legal/privacy-policy" className="hover:text-white transition-colors">
                 Privacy Policy
               </Link>
-              <Link to="/legal/terms-of-service" className="hover:text-[#C9A14A] transition-colors">
+              <Link to="/legal/terms-of-service" className="hover:text-white transition-colors">
                 Terms of Service
               </Link>
             </div>

@@ -105,10 +105,10 @@ export function RelatedPosts({ currentSlug, currentCategory, currentTags }: Rela
                     >
                         <Link
                             to={`/blog/${post.slug}`}
-                            className="group block bg-card border border-border rounded-xl overflow-hidden hover:shadow-lg hover:border-[#C9A14A]/30 transition-all"
+                            className="group block bg-card border border-border rounded-xl overflow-hidden hover:shadow-lg hover:border-accent/30 transition-all"
                         >
                             {/* Cover */}
-                            <div className="h-32 bg-gradient-to-br from-[#C9A14A] to-[#b8913f] flex items-center justify-center overflow-hidden">
+                            <div className="h-32 bg-gradient-to-br from-accent to-accent/90 flex items-center justify-center overflow-hidden">
                                 {post.cover_image ? (
                                     <img
                                         src={post.cover_image}
@@ -125,7 +125,7 @@ export function RelatedPosts({ currentSlug, currentCategory, currentTags }: Rela
                             {/* Content */}
                             <div className="p-4">
                                 <div className="flex items-center gap-2 mb-2">
-                                    <span className="text-xs text-[#C9A14A] font-medium">
+                                    <span className="text-xs text-accent font-medium">
                                         {post.category}
                                     </span>
                                     <span className="text-muted-foreground text-xs flex items-center gap-1">
@@ -134,11 +134,11 @@ export function RelatedPosts({ currentSlug, currentCategory, currentTags }: Rela
                                     </span>
                                 </div>
 
-                                <h3 className="font-semibold text-foreground group-hover:text-[#C9A14A] transition-colors line-clamp-2 mb-2">
+                                <h3 className="font-semibold text-foreground group-hover:text-accent transition-colors line-clamp-2 mb-2">
                                     {post.title}
                                 </h3>
 
-                                <span className="text-sm text-[#C9A14A] inline-flex items-center gap-1 group-hover:gap-2 transition-all">
+                                <span className="text-sm text-accent inline-flex items-center gap-1 group-hover:gap-2 transition-all">
                                     Read more
                                     <ArrowRight className="w-3 h-3" />
                                 </span>

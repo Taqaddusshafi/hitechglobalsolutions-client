@@ -78,7 +78,7 @@ export function AdminPortfolio() {
                     <motion.button
                         whileHover={{ scale: 1.02 }}
                         whileTap={{ scale: 0.98 }}
-                        className="px-4 py-2 bg-[#C9A14A] text-white rounded-lg flex items-center gap-2"
+                        className="px-4 py-2 bg-accent text-white rounded-lg flex items-center gap-2"
                     >
                         <Plus className="w-4 h-4" />
                         Add Project
@@ -94,7 +94,7 @@ export function AdminPortfolio() {
                     placeholder="Search projects..."
                     value={searchTerm}
                     onChange={(e) => setSearchTerm(e.target.value)}
-                    className="w-full pl-10 pr-4 py-2 bg-card border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#C9A14A]"
+                    className="w-full pl-10 pr-4 py-2 bg-card border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-accent"
                 />
             </div>
 
@@ -107,7 +107,7 @@ export function AdminPortfolio() {
             ) : filteredProjects.length === 0 ? (
                 <div className="text-center py-12 bg-card rounded-lg border border-border">
                     <p className="text-muted-foreground">No projects found</p>
-                    <Link to="/admin/portfolio/new" className="text-[#C9A14A] hover:underline mt-2 inline-block">
+                    <Link to="/admin/portfolio/new" className="text-accent hover:underline mt-2 inline-block">
                         Add your first project
                     </Link>
                 </div>
@@ -122,7 +122,7 @@ export function AdminPortfolio() {
                             className="bg-card border border-border rounded-lg overflow-hidden"
                         >
                             {/* Cover Image */}
-                            <div className={`h-32 bg-gradient-to-br ${project.gradient || 'from-[#C9A14A] to-[#b8913f]'} relative overflow-hidden`}>
+                            <div className={`h-32 bg-gradient-to-br ${project.gradient || 'from-accent to-accent/90'} relative overflow-hidden`}>
                                 {project.cover_image && (
                                     <img
                                         src={project.cover_image}
@@ -141,7 +141,7 @@ export function AdminPortfolio() {
                                 <div className="flex items-start justify-between mb-2">
                                     <div>
                                         <h3 className="font-semibold text-foreground">{project.title}</h3>
-                                        <span className="text-xs text-[#C9A14A] bg-[#C9A14A]/10 px-2 py-0.5 rounded-full">
+                                        <span className="text-xs text-accent bg-accent/10 px-2 py-0.5 rounded-full">
                                             {project.category}
                                         </span>
                                     </div>
@@ -172,7 +172,7 @@ export function AdminPortfolio() {
                                         {project.active ? <Eye className="w-4 h-4" /> : <EyeOff className="w-4 h-4" />}
                                     </button>
                                     <Link to={`/admin/portfolio/${project.id}`} className="flex-1">
-                                        <button className="w-full p-2 bg-[#C9A14A]/10 text-[#C9A14A] rounded-lg hover:bg-[#C9A14A]/20 transition-colors">
+                                        <button className="w-full p-2 bg-accent/10 text-accent rounded-lg hover:bg-accent/20 transition-colors">
                                             <Edit2 className="w-4 h-4 mx-auto" />
                                         </button>
                                     </Link>

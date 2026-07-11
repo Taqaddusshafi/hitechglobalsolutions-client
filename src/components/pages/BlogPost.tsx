@@ -43,7 +43,7 @@ export function BlogPost() {
     if (loading) {
         return (
             <div className="min-h-screen bg-background flex items-center justify-center">
-                <div className="w-12 h-12 border-4 border-[#C9A14A]/25 border-t-[#C9A14A] rounded-full animate-spin" />
+                <div className="w-12 h-12 border-4 border-accent/25 border-t-accent rounded-full animate-spin" />
             </div>
         );
     }
@@ -52,7 +52,7 @@ export function BlogPost() {
         return (
             <div className="min-h-screen bg-background flex flex-col items-center justify-center text-center p-4">
                 <h1 className="text-3xl font-heading mb-4">Article Not Found</h1>
-                <Link to="/blog" className="text-[#C9A14A] hover:underline font-body">
+                <Link to="/blog" className="text-accent hover:underline font-body">
                     Back to Insights
                 </Link>
             </div>
@@ -122,7 +122,7 @@ export function BlogPost() {
                     >
                         <Link
                             to="/blog"
-                            className="inline-flex items-center gap-2 text-muted-foreground hover:text-[#C9A14A] transition-colors mb-8 group font-body"
+                            className="inline-flex items-center gap-2 text-muted-foreground hover:text-accent transition-colors mb-8 group font-body"
                         >
                             <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
                             Back to Insights
@@ -137,11 +137,11 @@ export function BlogPost() {
                         className="mb-8"
                     >
                         <div className="flex items-center gap-4 mb-6">
-                            <span className="px-4 py-2 bg-[#C9A14A]/10 text-[#C9A14A] rounded-full text-sm font-semibold font-body">
+                            <span className="px-4 py-2 bg-accent/10 text-accent rounded-full text-sm font-semibold font-body">
                                 {blog.category}
                             </span>
                             <span className="flex items-center gap-1.5 text-sm text-muted-foreground font-body">
-                                <Clock className="w-4 h-4 text-[#C9A14A]" />
+                                <Clock className="w-4 h-4 text-accent" />
                                 {calculateReadTime(blog.content)} min read
                             </span>
                         </div>
@@ -156,7 +156,7 @@ export function BlogPost() {
 
                         <div className="flex flex-wrap items-center gap-6 text-sm text-muted-foreground pb-6 border-b border-border/60 font-body">
                           <div className="flex items-center gap-2">
-                            <div className="w-10 h-10 bg-[#C9A14A] rounded-full flex items-center justify-center text-white font-bold font-heading">
+                            <div className="w-10 h-10 bg-accent rounded-full flex items-center justify-center text-white font-bold font-heading">
                               {blog.author.charAt(0)}
                             </div>
                             <div>
@@ -220,11 +220,11 @@ export function BlogPost() {
                         className="mt-10 pt-8 border-t border-border/60 font-body"
                     >
                         <div className="flex items-center gap-3 flex-wrap">
-                            <Tag className="w-5 h-5 text-[#C9A14A]" />
+                            <Tag className="w-5 h-5 text-accent" />
                             {blog.tags.map((tag) => (
                                 <span
                                     key={tag}
-                                    className="px-4 py-2 bg-secondary hover:bg-[#C9A14A]/10 rounded-full text-sm font-semibold text-foreground transition-colors"
+                                    className="px-4 py-2 bg-secondary hover:bg-accent/10 rounded-full text-sm font-semibold text-foreground transition-colors"
                                 >
                                     {tag}
                                 </span>
@@ -237,15 +237,15 @@ export function BlogPost() {
                         initial={{ opacity: 0, y: 30 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.6, delay: 0.4 }}
-                        className="mt-16 p-8 bg-[#0B0B0B] border border-[#C9A14A]/30 rounded-2xl text-white text-center"
+                        className="mt-16 p-8 bg-[#0B0B0B] border border-white/20 rounded-2xl text-white text-center"
                     >
-                        <h3 className="text-2xl font-heading mb-4 text-[#C9A14A]">Need help with your project?</h3>
+                        <h3 className="text-2xl font-heading mb-4 text-white">Need help with your project?</h3>
                         <p className="text-white/60 mb-6 font-body text-sm max-w-md mx-auto">
                             Let's discuss how we can help bring your branding and marketing vision to life
                         </p>
                         <Link to="/contact">
                             <motion.button
-                                className="px-8 py-4 bg-[#C9A14A] text-[#0B0B0B] font-semibold text-sm tracking-widest uppercase rounded-full hover:bg-[#b8913f] hover:text-white transition-all inline-flex items-center gap-2 group font-bold shadow-xl"
+                                className="px-8 py-4 bg-white text-black font-semibold text-sm tracking-widest uppercase rounded-full hover:bg-neutral-200 transition-all inline-flex items-center gap-2 group font-bold shadow-xl"
                                 whileHover={{ scale: 1.05 }}
                                 whileTap={{ scale: 0.95 }}
                             >

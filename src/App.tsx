@@ -1,9 +1,8 @@
-import { useState, useEffect, lazy, Suspense } from 'react';
+import { useEffect, lazy, Suspense } from 'react';
 import { HelmetProvider } from 'react-helmet-async';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import { Navigation } from './components/Navigation';
 import { Footer } from './components/Footer';
-import { SplashScreen } from './components/SplashScreen';
 import { ThemeProvider } from './components/ThemeProvider';
 import { BackToTop } from './components/BackToTop';
 import { CookieConsent } from './components/CookieConsent';
@@ -58,7 +57,7 @@ function PageLoader() {
   return (
     <div className="min-h-screen bg-background flex items-center justify-center">
       <div className="flex flex-col items-center gap-4">
-        <div className="w-12 h-12 border-4 border-[#C9A14A]/20 border-t-[#C9A14A] rounded-full animate-spin" />
+        <div className="w-12 h-12 border-4 border-accent/20 border-t-accent rounded-full animate-spin" />
         <span className="text-muted-foreground text-sm" style={{ fontFamily: "'Poppins', sans-serif" }}>Loading...</span>
       </div>
     </div>
@@ -90,36 +89,12 @@ function MainLayout({ children }: { children: React.ReactNode }) {
 }
 
 export default function App() {
-  const [showSplash, setShowSplash] = useState(false);
-  const [contentReady, setContentReady] = useState(false);
-
-  useEffect(() => {
-    const splashSeen = sessionStorage.getItem('splashSeen');
-    if (splashSeen === 'true') {
-      setShowSplash(false);
-      setContentReady(true);
-    } else {
-      setShowSplash(true);
-    }
-  }, []);
-
-  const handleSplashComplete = () => {
-    sessionStorage.setItem('splashSeen', 'true');
-    setShowSplash(false);
-    setContentReady(true);
-  };
-
   return (
     <ThemeProvider>
       <HelmetProvider>
         <AuthProvider>
           <Router>
-            {showSplash && (
-              <SplashScreen onComplete={handleSplashComplete} />
-            )}
-
-            {contentReady && (
-              <>
+            <>
                 <ScrollToTop />
                 <Suspense fallback={<PageLoader />}>
                   <Routes>
@@ -185,7 +160,6 @@ export default function App() {
                 <Analytics />
                 <SpeedInsights />
               </>
-            )}
           </Router>
         </AuthProvider>
       </HelmetProvider>

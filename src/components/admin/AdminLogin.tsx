@@ -32,7 +32,7 @@ export function AdminLogin() {
             {/* Background Effects */}
             <div className="absolute inset-0 overflow-hidden pointer-events-none">
                 <motion.div
-                    className="absolute top-20 -left-20 w-72 h-72 bg-[#C9A14A]/10 rounded-full blur-3xl"
+                    className="absolute top-20 -left-20 w-72 h-72 bg-accent/10 rounded-full blur-3xl"
                     animate={{ x: [0, 50, 0], y: [0, 30, 0] }}
                     transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
                 />
@@ -48,7 +48,7 @@ export function AdminLogin() {
                     {/* Header */}
                     <div className="text-center mb-8 font-body">
                         <motion.div
-                            className="w-16 h-16 bg-gradient-to-br from-[#C9A14A] to-[#b8913f] rounded-2xl flex items-center justify-center mx-auto mb-4"
+                            className="w-16 h-16 bg-gradient-to-br from-accent to-accent/90 rounded-2xl flex items-center justify-center mx-auto mb-4"
                             whileHover={{ scale: 1.05, rotate: 5 }}
                         >
                             <LogIn className="w-8 h-8 text-white" />
@@ -82,7 +82,7 @@ export function AdminLogin() {
                                     type="email"
                                     value={email}
                                     onChange={(e) => setEmail(e.target.value)}
-                                    className="w-full pl-12 pr-4 py-3 bg-secondary border border-border rounded-xl focus:outline-none focus:ring-2 focus:ring-[#C9A14A] focus:border-transparent transition-all text-foreground placeholder-muted-foreground"
+                                    className="w-full pl-12 pr-4 py-3 bg-secondary border border-border rounded-xl focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition-all text-foreground placeholder-muted-foreground"
                                     placeholder="admin@example.com"
                                     required
                                 />
@@ -100,7 +100,7 @@ export function AdminLogin() {
                                     type="password"
                                     value={password}
                                     onChange={(e) => setPassword(e.target.value)}
-                                    className="w-full pl-12 pr-4 py-3 bg-secondary border border-border rounded-xl focus:outline-none focus:ring-2 focus:ring-[#C9A14A] focus:border-transparent transition-all text-foreground placeholder-muted-foreground"
+                                    className="w-full pl-12 pr-4 py-3 bg-secondary border border-border rounded-xl focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition-all text-foreground placeholder-muted-foreground"
                                     placeholder="••••••••"
                                     required
                                 />
@@ -110,7 +110,7 @@ export function AdminLogin() {
                         <motion.button
                             type="submit"
                             disabled={loading}
-                            className="w-full py-3 bg-gradient-to-r from-[#C9A14A] to-[#b8913f] text-white rounded-xl font-medium hover:shadow-lg hover:shadow-[#C9A14A]/25 transition-all disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+                            className="w-full py-3 bg-gradient-to-r from-accent to-accent/90 text-white rounded-xl font-medium hover:shadow-lg hover:shadow-accent/25 transition-all disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
                             whileHover={{ scale: loading ? 1 : 1.02 }}
                             whileTap={{ scale: loading ? 1 : 0.98 }}
                         >
@@ -130,7 +130,7 @@ export function AdminLogin() {
 
                     {/* Back Link */}
                     <div className="mt-6 text-center font-body">
-                        <a href="/" className="text-sm text-muted-foreground hover:text-[#C9A14A] transition-colors">
+                        <a href="/" className="text-sm text-muted-foreground hover:text-accent transition-colors">
                             ← Back to website
                         </a>
                     </div>

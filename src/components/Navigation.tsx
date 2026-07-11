@@ -64,8 +64,8 @@ export function Navigation() {
             <Link to="/" className="flex items-center gap-2 group">
               <div className="flex flex-col">
                 <span
-                  className="text-xl sm:text-2xl font-bold tracking-wider"
-                  style={{ fontFamily: "'Cinzel', serif", color: '#C9A14A' }}
+                  className="text-xl sm:text-2xl font-bold tracking-wider text-foreground"
+                  style={{ fontFamily: "'Cinzel', serif" }}
                 >
                   IRTIQA
                 </span>
@@ -85,13 +85,13 @@ export function Navigation() {
                 className="relative text-sm tracking-wide uppercase font-body"
                 style={{ letterSpacing: '0.08em' }}
               >
-                <span className={`transition-colors ${isActive('/') ? 'text-[#C9A14A]' : 'text-muted-foreground hover:text-foreground'}`}>
+                <span className={`transition-colors ${isActive('/') ? 'text-accent' : 'text-muted-foreground hover:text-foreground'}`}>
                   Home
                 </span>
                 {isActive('/') && (
                   <motion.div
                     layoutId="activeNav"
-                    className="absolute -bottom-1 left-0 right-0 h-0.5 bg-[#C9A14A]"
+                    className="absolute -bottom-1 left-0 right-0 h-0.5 bg-accent"
                     transition={{ type: 'spring', stiffness: 380, damping: 30 }}
                   />
                 )}
@@ -108,7 +108,7 @@ export function Navigation() {
                   style={{ letterSpacing: '0.08em' }}
                 >
                   <span>About</span>
-                  <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${aboutDropdownOpen ? 'rotate-180 text-[#C9A14A]' : ''}`} />
+                  <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${aboutDropdownOpen ? 'rotate-180 text-accent' : ''}`} />
                 </button>
 
                 {/* Dropdown Menu */}
@@ -132,7 +132,7 @@ export function Navigation() {
                           key={subLink.path}
                           to={subLink.path}
                           className={`block px-4 py-2.5 text-xs tracking-wider uppercase font-body hover:bg-secondary transition-colors ${
-                            isActive(subLink.path) ? 'text-[#C9A14A] font-semibold' : 'text-muted-foreground hover:text-foreground'
+                            isActive(subLink.path) ? 'text-accent font-semibold' : 'text-muted-foreground hover:text-foreground'
                           }`}
                         >
                           {subLink.label}
@@ -157,7 +157,7 @@ export function Navigation() {
                 >
                   <span
                     className={`transition-colors ${isActive(link.path)
-                      ? 'text-[#C9A14A]'
+                      ? 'text-accent'
                       : 'text-muted-foreground hover:text-foreground'
                       }`}
                   >
@@ -166,7 +166,7 @@ export function Navigation() {
                   {isActive(link.path) && (
                     <motion.div
                       layoutId="activeNav"
-                      className="absolute -bottom-1 left-0 right-0 h-0.5 bg-[#C9A14A]"
+                      className="absolute -bottom-1 left-0 right-0 h-0.5 bg-accent"
                       transition={{ type: 'spring', stiffness: 380, damping: 30 }}
                     />
                   )}
@@ -228,7 +228,7 @@ export function Navigation() {
                       to={link.path}
                       onClick={() => setIsOpen(false)}
                       className={`block py-2 text-base uppercase tracking-wide ${isActive(link.path)
-                        ? 'text-[#C9A14A]'
+                        ? 'text-accent'
                         : 'text-muted-foreground'
                         }`}
                       style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 400, letterSpacing: '0.08em' }}
@@ -243,7 +243,7 @@ export function Navigation() {
                   transition={{ delay: mobileLinks.length * 0.05 }}
                 >
                   <Link to="/contact" onClick={() => setIsOpen(false)}>
-                    <button className="w-full px-6 py-3 bg-[#C9A14A] text-white rounded-full text-sm tracking-widest uppercase mt-4 hover:bg-[#b8913f] transition-colors"
+                    <button className="w-full px-6 py-3 bg-accent text-white rounded-full text-sm tracking-widest uppercase mt-4 hover:bg-accent/90 transition-colors"
                       style={{ fontFamily: "'Poppins', sans-serif" }}
                     >
                       Book Free Consultation

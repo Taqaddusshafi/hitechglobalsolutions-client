@@ -63,7 +63,7 @@ export function CaseStudies() {
               transition={{ duration: 0.8 }}
               className="flex flex-col items-center"
             >
-              <span className="text-[#C9A14A] text-xs uppercase tracking-[0.3em] font-semibold block mb-4">
+              <span className="text-accent text-xs uppercase tracking-[0.3em] font-semibold block mb-4">
                 Proven Impact
               </span>
               <h1 className="text-4xl sm:text-6xl font-heading mb-6 tracking-wide leading-tight">
@@ -92,7 +92,7 @@ export function CaseStudies() {
                 {/* Header Info */}
                 <div className="flex flex-col md:flex-row justify-between md:items-center border-b border-border pb-6 gap-4">
                   <div>
-                    <span className="text-xs font-semibold text-[#C9A14A] uppercase tracking-widest block mb-2 font-body">
+                    <span className="text-xs font-semibold text-accent uppercase tracking-widest block mb-2 font-body">
                       {study.category}
                     </span>
                     <h2 className="text-2xl sm:text-3xl font-heading tracking-wide text-foreground">{study.title}</h2>
@@ -105,7 +105,7 @@ export function CaseStudies() {
                 {/* Challenge & Strategy */}
                 <div className="grid md:grid-cols-2 gap-8">
                   <div className="space-y-3">
-                    <div className="flex items-center gap-2 text-sm font-semibold text-[#C9A14A] uppercase tracking-wider font-heading">
+                    <div className="flex items-center gap-2 text-sm font-semibold text-accent uppercase tracking-wider font-heading">
                       <AlertCircle className="w-4 h-4" /> Challenge
                     </div>
                     <p className="text-sm text-muted-foreground leading-relaxed font-body">
@@ -114,7 +114,7 @@ export function CaseStudies() {
                   </div>
 
                   <div className="space-y-3">
-                    <div className="flex items-center gap-2 text-sm font-semibold text-[#C9A14A] uppercase tracking-wider font-heading">
+                    <div className="flex items-center gap-2 text-sm font-semibold text-accent uppercase tracking-wider font-heading">
                       <Target className="w-4 h-4" /> Strategy
                     </div>
                     <p className="text-sm text-muted-foreground leading-relaxed font-body">
@@ -126,7 +126,7 @@ export function CaseStudies() {
                 {/* Execution & Result */}
                 <div className="grid md:grid-cols-2 gap-8 pt-4">
                   <div className="space-y-3">
-                    <div className="flex items-center gap-2 text-sm font-semibold text-[#C9A14A] uppercase tracking-wider font-heading">
+                    <div className="flex items-center gap-2 text-sm font-semibold text-accent uppercase tracking-wider font-heading">
                       <Sparkles className="w-4 h-4" /> Execution
                     </div>
                     <p className="text-sm text-muted-foreground leading-relaxed font-body">
@@ -135,10 +135,10 @@ export function CaseStudies() {
                   </div>
 
                   <div className="space-y-3">
-                    <div className="flex items-center gap-2 text-sm font-semibold text-[#C9A14A] uppercase tracking-wider font-heading">
+                    <div className="flex items-center gap-2 text-sm font-semibold text-accent uppercase tracking-wider font-heading">
                       <Award className="w-4 h-4" /> Result
                     </div>
-                    <p className="text-sm text-[#C9A14A] font-semibold leading-relaxed font-body">
+                    <p className="text-sm text-accent font-semibold leading-relaxed font-body">
                       {study.result}
                     </p>
                   </div>
@@ -151,15 +151,15 @@ export function CaseStudies() {
                     <p className="text-sm font-body text-foreground/80">{study.before}</p>
                   </div>
                   <div className="space-y-1 border-t sm:border-t-0 sm:border-l border-border/80 pt-4 sm:pt-0 sm:pl-6">
-                    <span className="text-xs uppercase tracking-wider text-[#C9A14A] font-semibold font-body">After</span>
-                    <p className="text-sm font-body text-[#C9A14A] font-medium">{study.after}</p>
+                    <span className="text-xs uppercase tracking-wider text-accent font-semibold font-body">After</span>
+                    <p className="text-sm font-body text-accent font-medium">{study.after}</p>
                   </div>
                 </div>
 
                 {/* Client Feedback */}
                 <div className="border-t border-border pt-6">
                   <div className="flex gap-4">
-                    <MessageSquare className="w-6 h-6 text-[#C9A14A] flex-shrink-0 opacity-60" />
+                    <MessageSquare className="w-6 h-6 text-accent flex-shrink-0 opacity-60" />
                     <p className="text-sm italic text-muted-foreground font-body leading-relaxed">
                       {study.feedback}
                     </p>

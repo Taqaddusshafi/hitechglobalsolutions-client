@@ -104,7 +104,7 @@ export function Portfolio() {
               transition={{ duration: 0.8 }}
               className="flex flex-col items-center"
             >
-              <span className="text-[#C9A14A] text-xs uppercase tracking-[0.3em] font-semibold block mb-4">
+              <span className="text-accent text-xs uppercase tracking-[0.3em] font-semibold block mb-4">
                 Creative Showcase
               </span>
               <h1 className="text-4xl sm:text-6xl font-heading mb-6 tracking-wide leading-tight">
@@ -124,8 +124,8 @@ export function Portfolio() {
                 onClick={() => setActiveFilter(filter)}
                 className={`px-5 py-2.5 rounded-full text-xs font-semibold uppercase tracking-wider transition-all duration-300 ${
                   activeFilter === filter
-                    ? 'bg-[#C9A14A] text-white'
-                    : 'bg-card border border-border text-muted-foreground hover:border-[#C9A14A] hover:text-foreground'
+                    ? 'bg-accent text-white'
+                    : 'bg-card border border-border text-muted-foreground hover:border-accent hover:text-foreground'
                 }`}
                 style={{ fontFamily: "'Poppins', sans-serif" }}
               >
@@ -148,10 +148,10 @@ export function Portfolio() {
                     animate={{ opacity: 1, scale: 1 }}
                     exit={{ opacity: 0, scale: 0.95 }}
                     transition={{ duration: 0.4 }}
-                    className="p-8 bg-card rounded-2xl border border-border hover:border-[#C9A14A]/40 transition-all hover:shadow-lg flex flex-col justify-between"
+                    className="p-8 bg-card rounded-2xl border border-border hover:border-accent/40 transition-all hover:shadow-lg flex flex-col justify-between"
                   >
                     <div>
-                      <span className="text-xs font-semibold text-[#C9A14A] uppercase tracking-widest block mb-3 font-body">
+                      <span className="text-xs font-semibold text-accent uppercase tracking-widest block mb-3 font-body">
                         {project.category}
                       </span>
                       <h3 className="text-2xl font-heading tracking-wide text-foreground mb-4">{project.title}</h3>
@@ -166,7 +166,7 @@ export function Portfolio() {
                         </div>
                         <div className="flex justify-between items-center text-xs">
                           <span className="text-muted-foreground font-body">Result</span>
-                          <span className="text-[#C9A14A] font-semibold font-body">{project.results}</span>
+                          <span className="text-accent font-semibold font-body">{project.results}</span>
                         </div>
                       </div>
                     </div>

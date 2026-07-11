@@ -231,7 +231,7 @@ We may collect the following information:
 ## Contact Us
 
 If you have questions, contact us at hello@irtiqamarketing.com`}
-                                className="w-full px-4 py-3 bg-background border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#C9A14A] font-mono text-sm"
+                                className="w-full px-4 py-3 bg-background border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-accent font-mono text-sm"
                             />
                         )}
                     </div>

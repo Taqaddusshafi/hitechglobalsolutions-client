@@ -69,7 +69,7 @@ export function Process() {
               transition={{ duration: 0.8 }}
               className="flex flex-col items-center"
             >
-              <span className="text-[#C9A14A] text-xs uppercase tracking-[0.3em] font-semibold block mb-4">
+              <span className="text-accent text-xs uppercase tracking-[0.3em] font-semibold block mb-4">
                 Methodology
               </span>
               <h1 className="text-4xl sm:text-6xl font-heading mb-6 tracking-wide leading-tight">
@@ -88,7 +88,7 @@ export function Process() {
           <div className="max-w-3xl mx-auto relative space-y-12">
             
             {/* Timeline connection line */}
-            <div className="absolute left-[31px] sm:left-[39px] top-6 bottom-6 w-0.5 bg-[#C9A14A]/25 z-0" />
+            <div className="absolute left-[31px] sm:left-[39px] top-6 bottom-6 w-0.5 bg-accent/25 z-0" />
 
             {steps.map((step, idx) => {
               const Icon = step.icon;
@@ -102,15 +102,15 @@ export function Process() {
                   className="flex items-start gap-6 sm:gap-8 relative z-10 bg-background py-2"
                 >
                   {/* Icon Node */}
-                  <div className="w-16 h-16 sm:w-20 sm:h-20 bg-card border-2 border-[#C9A14A] rounded-full flex items-center justify-center text-[#C9A14A] flex-shrink-0 shadow-sm relative">
+                  <div className="w-16 h-16 sm:w-20 sm:h-20 bg-card border-2 border-accent rounded-full flex items-center justify-center text-accent flex-shrink-0 shadow-sm relative">
                     <Icon className="w-6 h-6 sm:w-8 sm:h-8" />
-                    <span className="absolute -bottom-2 -right-1 text-[10px] font-bold bg-[#C9A14A] text-white px-2 py-0.5 rounded-full font-body">
+                    <span className="absolute -bottom-2 -right-1 text-[10px] font-bold bg-accent text-white px-2 py-0.5 rounded-full font-body">
                       {step.step}
                     </span>
                   </div>
 
                   {/* Content */}
-                  <div className="p-6 sm:p-8 bg-card rounded-2xl border border-border hover:border-[#C9A14A]/30 transition-all hover:shadow-md flex-1">
+                  <div className="p-6 sm:p-8 bg-card rounded-2xl border border-border hover:border-accent/30 transition-all hover:shadow-md flex-1">
                     <h2 className="text-xl sm:text-2xl font-heading tracking-wide mb-3">{step.title}</h2>
                     <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed font-body">
                       {step.desc}
@@ -129,7 +129,7 @@ export function Process() {
               Ready to start your Discovery phase?
             </h2>
             <Link to="/contact">
-              <button className="px-8 py-4 bg-[#C9A14A] text-[#0B0B0B] font-semibold text-sm tracking-widest uppercase rounded-full hover:bg-[#b8913f] hover:text-white transition-all">
+              <button className="px-8 py-4 bg-white text-black font-semibold text-sm tracking-widest uppercase rounded-full hover:bg-neutral-200 transition-all duration-300">
                 Book Consultation
               </button>
             </Link>

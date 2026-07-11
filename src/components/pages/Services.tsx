@@ -78,7 +78,7 @@ export function Services() {
                 transition={{ duration: 0.8 }}
                 className="lg:col-span-7 space-y-6"
               >
-                <span className="text-[#C9A14A] text-xs uppercase tracking-[0.3em] font-semibold block">
+                <span className="text-accent text-xs uppercase tracking-[0.3em] font-semibold block">
                   Our Services
                 </span>
                 <h1 className="text-4xl sm:text-5xl lg:text-6xl font-heading leading-tight">
@@ -91,7 +91,7 @@ export function Services() {
                 </p>
                 <div className="flex flex-wrap gap-3 pt-4">
                   {['Branding', 'Design', 'Marketing', 'Development', 'SEO', 'Video Editing'].map((tag) => (
-                    <span key={tag} className="text-xs uppercase tracking-widest text-[#C9A14A] border border-[#C9A14A]/30 px-3 py-1.5 rounded-md bg-[#C9A14A]/5" style={{ fontFamily: "'Poppins', sans-serif" }}>
+                    <span key={tag} className="text-xs uppercase tracking-widest text-accent border border-accent/30 px-3 py-1.5 rounded-md bg-accent/5" style={{ fontFamily: "'Poppins', sans-serif" }}>
                       {tag}
                     </span>
                   ))}
@@ -105,7 +105,7 @@ export function Services() {
                 transition={{ duration: 0.8, delay: 0.2 }}
                 className="lg:col-span-5"
               >
-                <div className="aspect-[3/4] bg-neutral-900 border border-[#C9A14A]/30 rounded-3xl overflow-hidden shadow-2xl relative group">
+                <div className="aspect-[3/4] bg-neutral-900 border border-accent/30 rounded-3xl overflow-hidden shadow-2xl relative group">
                   <img 
                     src="/images/services.JPG" 
                     alt="Our Services" 
@@ -113,7 +113,7 @@ export function Services() {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
                   <div className="absolute bottom-6 left-6 right-6">
-                    <span className="text-[10px] uppercase tracking-widest text-[#C9A14A] font-semibold block mb-1">Featured Visual</span>
+                    <span className="text-[10px] uppercase tracking-widest text-accent font-semibold block mb-1">Featured Visual</span>
                     <h3 className="text-xl font-heading text-white">Creative Execution</h3>
                   </div>
                 </div>
@@ -136,11 +136,11 @@ export function Services() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.5, delay: idx * 0.08 }}
-                    className="p-8 bg-card rounded-2xl border border-border hover:border-[#C9A14A]/40 transition-all hover:shadow-lg flex flex-col justify-between"
+                    className="p-8 bg-card rounded-2xl border border-border hover:border-accent/40 transition-all hover:shadow-lg flex flex-col justify-between"
                   >
                     <div>
                       <div className="flex items-center gap-4 mb-6">
-                        <div className="w-12 h-12 bg-[#C9A14A]/10 rounded-xl flex items-center justify-center text-[#C9A14A]">
+                        <div className="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center text-accent">
                           <IconComponent className="w-6 h-6" />
                         </div>
                         <h2 className="text-2xl font-heading tracking-wide text-foreground">{service.title}</h2>
@@ -151,7 +151,7 @@ export function Services() {
                       <ul className="space-y-2 border-t border-border/50 pt-4 mb-6">
                         {service.items.map((item) => (
                           <li key={item} className="flex items-center gap-2 text-sm font-semibold tracking-wide text-foreground/80 font-body">
-                            <span className="w-1.5 h-1.5 bg-[#C9A14A] rounded-full" />
+                            <span className="w-1.5 h-1.5 bg-accent rounded-full" />
                             {item}
                           </li>
                         ))}
@@ -171,7 +171,7 @@ export function Services() {
               Ready to take your business to the next level?
             </h2>
             <Link to="/contact">
-              <button className="px-8 py-4 bg-[#C9A14A] text-[#0B0B0B] font-semibold text-sm tracking-widest uppercase rounded-full hover:bg-[#b8913f] hover:text-white transition-all">
+              <button className="px-8 py-4 bg-white text-black font-semibold text-sm tracking-widest uppercase rounded-full hover:bg-neutral-200 transition-all duration-300">
                 Book Free Consultation
               </button>
             </Link>

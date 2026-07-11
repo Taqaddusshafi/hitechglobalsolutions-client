@@ -93,7 +93,7 @@ export function Contact() {
               transition={{ duration: 0.8 }}
               className="flex flex-col items-center"
             >
-              <span className="text-[#C9A14A] text-xs uppercase tracking-[0.3em] font-semibold block mb-4">
+              <span className="text-accent text-xs uppercase tracking-[0.3em] font-semibold block mb-4">
                 Get In Touch
               </span>
               <h1 className="text-4xl sm:text-6xl font-heading mb-6 tracking-wide leading-tight">
@@ -117,18 +117,18 @@ export function Contact() {
                   const Icon = method.icon;
                   return (
                     <div key={method.title} className="flex gap-4">
-                      <div className="w-10 h-10 bg-[#C9A14A]/10 rounded-xl flex items-center justify-center text-[#C9A14A] flex-shrink-0">
+                      <div className="w-10 h-10 bg-accent/10 rounded-xl flex items-center justify-center text-accent flex-shrink-0">
                         <Icon className="w-5 h-5" />
                       </div>
                       <div>
                         <h3 className="text-sm font-semibold uppercase tracking-wider text-foreground/50">{method.title}</h3>
                         <p className="text-xs text-muted-foreground mb-1 font-body">{method.description}</p>
                         {method.link ? (
-                          <a href={method.link} className="text-[#C9A14A] font-semibold hover:underline font-body break-all">
+                          <a href={method.link} className="text-accent font-semibold hover:underline font-body break-all">
                             {method.value}
                           </a>
                         ) : (
-                          <span className="text-[#C9A14A] font-semibold font-body">
+                          <span className="text-accent font-semibold font-body">
                             {method.value}
                           </span>
                         )}
@@ -155,16 +155,16 @@ export function Contact() {
               <div className="p-8 bg-card rounded-2xl border border-border text-center">
                 <h2 className="text-lg font-heading tracking-wide mb-4">Connect Socially</h2>
                 <div className="flex justify-center gap-4">
-                  <a href="https://www.instagram.com/irtiqamarketing/" target="_blank" rel="noopener" className="w-10 h-10 bg-secondary rounded-full flex items-center justify-center hover:bg-[#C9A14A] hover:text-white transition-colors">
+                  <a href="https://www.instagram.com/irtiqamarketing/" target="_blank" rel="noopener" className="w-10 h-10 bg-secondary rounded-full flex items-center justify-center hover:bg-accent hover:text-white transition-colors">
                     <Instagram className="w-5 h-5" />
                   </a>
-                  <a href="https://www.linkedin.com/company/irtiqamarketing/" target="_blank" rel="noopener" className="w-10 h-10 bg-secondary rounded-full flex items-center justify-center hover:bg-[#C9A14A] hover:text-white transition-colors">
+                  <a href="https://www.linkedin.com/company/irtiqamarketing/" target="_blank" rel="noopener" className="w-10 h-10 bg-secondary rounded-full flex items-center justify-center hover:bg-accent hover:text-white transition-colors">
                     <Linkedin className="w-5 h-5" />
                   </a>
-                  <a href="https://www.facebook.com/irtiqamarketing/" target="_blank" rel="noopener" className="w-10 h-10 bg-secondary rounded-full flex items-center justify-center hover:bg-[#C9A14A] hover:text-white transition-colors">
+                  <a href="https://www.facebook.com/irtiqamarketing/" target="_blank" rel="noopener" className="w-10 h-10 bg-secondary rounded-full flex items-center justify-center hover:bg-accent hover:text-white transition-colors">
                     <Facebook className="w-5 h-5" />
                   </a>
-                  <a href="https://www.youtube.com/@irtiqamarketing" target="_blank" rel="noopener" className="w-10 h-10 bg-secondary rounded-full flex items-center justify-center hover:bg-[#C9A14A] hover:text-white transition-colors">
+                  <a href="https://www.youtube.com/@irtiqamarketing" target="_blank" rel="noopener" className="w-10 h-10 bg-secondary rounded-full flex items-center justify-center hover:bg-accent hover:text-white transition-colors">
                     <Youtube className="w-5 h-5" />
                   </a>
                 </div>
@@ -183,7 +183,7 @@ export function Contact() {
                       required 
                       value={formState.name}
                       onChange={(e) => setFormState({ ...formState, name: e.target.value })}
-                      className="w-full px-4 py-3 bg-secondary/50 rounded-xl border border-border focus:border-[#C9A14A] focus:outline-none font-body text-sm text-foreground"
+                      className="w-full px-4 py-3 bg-secondary/50 rounded-xl border border-border focus:border-accent focus:outline-none font-body text-sm text-foreground"
                     />
                   </div>
                   <div>
@@ -193,7 +193,7 @@ export function Contact() {
                       required 
                       value={formState.email}
                       onChange={(e) => setFormState({ ...formState, email: e.target.value })}
-                      className="w-full px-4 py-3 bg-secondary/50 rounded-xl border border-border focus:border-[#C9A14A] focus:outline-none font-body text-sm text-foreground"
+                      className="w-full px-4 py-3 bg-secondary/50 rounded-xl border border-border focus:border-accent focus:outline-none font-body text-sm text-foreground"
                     />
                   </div>
                   <div>
@@ -201,7 +201,7 @@ export function Contact() {
                     <select
                       value={formState.service}
                       onChange={(e) => setFormState({ ...formState, service: e.target.value })}
-                      className="w-full px-4 py-3 bg-secondary/50 rounded-xl border border-border focus:border-[#C9A14A] focus:outline-none font-body text-sm text-foreground"
+                      className="w-full px-4 py-3 bg-secondary/50 rounded-xl border border-border focus:border-accent focus:outline-none font-body text-sm text-foreground"
                     >
                       <option>Branding</option>
                       <option>Graphic Design</option>
@@ -221,13 +221,13 @@ export function Contact() {
                       required 
                       value={formState.message}
                       onChange={(e) => setFormState({ ...formState, message: e.target.value })}
-                      className="w-full px-4 py-3 bg-secondary/50 rounded-xl border border-border focus:border-[#C9A14A] focus:outline-none font-body text-sm text-foreground resize-none"
+                      className="w-full px-4 py-3 bg-secondary/50 rounded-xl border border-border focus:border-accent focus:outline-none font-body text-sm text-foreground resize-none"
                     />
                   </div>
                   
                   <button 
                     type="submit"
-                    className="w-full py-4 bg-[#C9A14A] text-white hover:bg-[#b8913f] transition-all font-semibold uppercase tracking-widest text-xs rounded-full flex items-center justify-center gap-2"
+                    className="w-full py-4 bg-accent text-white hover:bg-accent/90 transition-all font-semibold uppercase tracking-widest text-xs rounded-full flex items-center justify-center gap-2"
                   >
                     Submit Query <ArrowRight className="w-4 h-4" />
                   </button>

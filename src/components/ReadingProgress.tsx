@@ -23,7 +23,7 @@ export function ReadingProgress() {
             animate={{ opacity: 1 }}
         >
             <motion.div
-                className="h-full bg-gradient-to-r from-[#C9A14A] to-[#b8913f]"
+                className="h-full bg-gradient-to-r from-accent to-accent/90"
                 style={{ width: `${progress}%` }}
                 transition={{ duration: 0.1 }}
             />

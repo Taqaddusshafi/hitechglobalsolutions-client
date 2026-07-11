@@ -71,7 +71,7 @@ export function Newsletter({ variant = 'card' }: NewsletterProps) {
                             onChange={(e) => setEmail(e.target.value)}
                             placeholder="Enter your email"
                             disabled={status === 'loading' || status === 'success'}
-                            className="w-full pl-10 pr-4 py-2.5 bg-[#141414] border border-white/10 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#C9A14A] text-sm text-white disabled:opacity-50 font-body"
+                            className="w-full pl-10 pr-4 py-2.5 bg-[#141414] border border-white/10 rounded-lg focus:outline-none focus:ring-2 focus:ring-white text-sm text-white disabled:opacity-50 font-body"
                         />
                     </div>
                     <motion.button
@@ -79,7 +79,7 @@ export function Newsletter({ variant = 'card' }: NewsletterProps) {
                         disabled={status === 'loading' || status === 'success'}
                         whileHover={{ scale: 1.02 }}
                         whileTap={{ scale: 0.98 }}
-                        className="px-4 py-2.5 bg-[#C9A14A] text-primary rounded-lg hover:bg-[#b8913f] transition-colors disabled:opacity-50 flex items-center gap-1 text-white"
+                        className="px-4 py-2.5 bg-accent text-primary rounded-lg hover:bg-accent/90 transition-colors disabled:opacity-50 flex items-center gap-1 text-white"
                     >
                         {status === 'loading' ? (
                             <Loader2 className="w-4 h-4 animate-spin" />
@@ -105,12 +105,12 @@ export function Newsletter({ variant = 'card' }: NewsletterProps) {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                className="bg-card border border-[#C9A14A]/20 rounded-xl p-6"
+                className="bg-card border border-accent/20 rounded-xl p-6"
             >
                 <div className="flex flex-col md:flex-row md:items-center gap-4">
                     <div className="flex-1">
                         <h3 className="font-heading tracking-wide text-foreground flex items-center gap-2">
-                            <Sparkles className="w-4 h-4 text-[#C9A14A]" />
+                            <Sparkles className="w-4 h-4 text-accent" />
                             Get our latest articles
                         </h3>
                         <p className="text-xs sm:text-sm text-muted-foreground mt-1 font-body">
@@ -124,14 +124,14 @@ export function Newsletter({ variant = 'card' }: NewsletterProps) {
                             onChange={(e) => setEmail(e.target.value)}
                             placeholder="your@email.com"
                             disabled={status === 'loading' || status === 'success'}
-                            className="px-4 py-2 bg-secondary/60 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#C9A14A] text-sm disabled:opacity-50 w-48 font-body"
+                            className="px-4 py-2 bg-secondary/60 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-white text-sm disabled:opacity-50 w-48 font-body"
                         />
                         <motion.button
                             type="submit"
                             disabled={status === 'loading' || status === 'success'}
                             whileHover={{ scale: 1.02 }}
                             whileTap={{ scale: 0.98 }}
-                            className="px-4 py-2 bg-[#C9A14A] text-white rounded-lg hover:bg-[#b8913f] transition-colors disabled:opacity-50 text-sm font-semibold tracking-wider font-body"
+                            className="px-4 py-2 bg-white text-black rounded-lg hover:bg-neutral-200 transition-colors disabled:opacity-50 text-sm font-semibold tracking-wider font-body"
                         >
                             {status === 'loading' ? 'Subscribing...' : status === 'success' ? 'Subscribed!' : 'Subscribe'}
                         </motion.button>
@@ -152,9 +152,9 @@ export function Newsletter({ variant = 'card' }: NewsletterProps) {
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="bg-[#0B0B0B] border border-[#C9A14A]/30 rounded-2xl p-8 text-white text-center"
+            className="bg-[#0B0B0B] border border-white/20 rounded-2xl p-8 text-white text-center"
         >
-            <div className="w-14 h-14 bg-[#C9A14A]/10 border border-[#C9A14A]/30 rounded-xl flex items-center justify-center mx-auto mb-4 text-[#C9A14A]">
+            <div className="w-14 h-14 bg-white/10 border border-white/20 rounded-xl flex items-center justify-center mx-auto mb-4 text-white">
                 <Mail className="w-7 h-7" />
             </div>
             <h3 className="text-2xl font-heading tracking-wide mb-2">Stay Updated</h3>
@@ -169,14 +169,14 @@ export function Newsletter({ variant = 'card' }: NewsletterProps) {
                         onChange={(e) => setEmail(e.target.value)}
                         placeholder="Enter your email"
                         disabled={status === 'loading' || status === 'success'}
-                        className="flex-1 px-4 py-3 bg-white/5 border border-white/10 rounded-xl placeholder:text-white/40 focus:outline-none focus:ring-2 focus:ring-[#C9A14A] disabled:opacity-50 font-body text-white"
+                        className="flex-1 px-4 py-3 bg-white/5 border border-white/10 rounded-xl placeholder:text-white/40 focus:outline-none focus:ring-2 focus:ring-white disabled:opacity-50 font-body text-white"
                     />
                     <motion.button
                         type="submit"
                         disabled={status === 'loading' || status === 'success'}
                         whileHover={{ scale: 1.02 }}
                         whileTap={{ scale: 0.98 }}
-                        className="px-6 py-3 bg-[#C9A14A] text-white rounded-xl font-semibold hover:bg-[#b8913f] transition-colors disabled:opacity-50 flex items-center justify-center gap-2 font-body uppercase tracking-wider text-xs"
+                        className="px-6 py-3 bg-white text-black rounded-xl font-semibold hover:bg-neutral-200 transition-colors disabled:opacity-50 flex items-center justify-center gap-2 font-body uppercase tracking-wider text-xs"
                     >
                         {status === 'loading' ? (
                             <>

@@ -68,7 +68,7 @@ export function AdminBlogs() {
                 </div>
                 <Link
                     to="/admin/blogs/new"
-                    className="px-4 py-2 bg-[#C9A14A] text-white rounded-xl hover:bg-[#b8913f] transition-colors flex items-center gap-2 w-fit"
+                    className="px-4 py-2 bg-accent text-white rounded-xl hover:bg-accent/90 transition-colors flex items-center gap-2 w-fit"
                 >
                     <Plus className="w-4 h-4" />
                     New Post
@@ -83,21 +83,21 @@ export function AdminBlogs() {
                     placeholder="Search blogs..."
                     value={searchQuery}
                     onChange={(e) => setSearchQuery(e.target.value)}
-                    className="w-full pl-12 pr-4 py-3 bg-card border border-border rounded-xl focus:outline-none focus:ring-2 focus:ring-[#C9A14A] focus:border-transparent text-foreground placeholder-muted-foreground"
+                    className="w-full pl-12 pr-4 py-3 bg-card border border-border rounded-xl focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent text-foreground placeholder-muted-foreground"
                 />
             </div>
 
             {/* Table */}
             {loading ? (
                 <div className="flex items-center justify-center py-12">
-                    <Loader2 className="w-8 h-8 animate-spin text-[#C9A14A]" />
+                    <Loader2 className="w-8 h-8 animate-spin text-accent" />
                 </div>
             ) : filteredBlogs.length === 0 ? (
                 <div className="text-center py-12 bg-card border border-border rounded-2xl">
                     <p className="text-muted-foreground">No blog posts found</p>
                     <Link
                         to="/admin/blogs/new"
-                        className="inline-flex items-center gap-2 mt-4 text-[#C9A14A] hover:underline"
+                        className="inline-flex items-center gap-2 mt-4 text-accent hover:underline"
                     >
                         <Plus className="w-4 h-4" />
                         Create your first post
@@ -130,7 +130,7 @@ export function AdminBlogs() {
                                             <div className="text-sm text-muted-foreground md:hidden">{blog.category}</div>
                                         </td>
                                         <td className="py-4 px-6 hidden md:table-cell">
-                                            <span className="px-3 py-1 bg-[#C9A14A]/10 text-[#C9A14A] rounded-full text-sm">
+                                            <span className="px-3 py-1 bg-accent/10 text-accent rounded-full text-sm">
                                                 {blog.category}
                                             </span>
                                         </td>

@@ -63,7 +63,7 @@ export function FAQs() {
               transition={{ duration: 0.8 }}
               className="flex flex-col items-center"
             >
-              <span className="text-[#C9A14A] text-xs uppercase tracking-[0.3em] font-semibold block mb-4">
+              <span className="text-accent text-xs uppercase tracking-[0.3em] font-semibold block mb-4">
                 Support
               </span>
               <h1 className="text-4xl sm:text-6xl font-heading mb-6 tracking-wide leading-tight">
@@ -92,7 +92,7 @@ export function FAQs() {
                     className="w-full p-6 flex justify-between items-center text-left gap-4 hover:bg-secondary/20 transition-colors"
                   >
                     <div className="flex items-center gap-4">
-                      <HelpCircle className="w-5 h-5 text-[#C9A14A] flex-shrink-0" />
+                      <HelpCircle className="w-5 h-5 text-accent flex-shrink-0" />
                       <span className="text-base sm:text-lg font-heading tracking-wide text-foreground font-semibold">
                         {faq.question}
                       </span>
@@ -100,7 +100,7 @@ export function FAQs() {
                     <motion.div
                       animate={{ rotate: isOpen ? 180 : 0 }}
                       transition={{ duration: 0.2 }}
-                      className="text-[#C9A14A] flex-shrink-0"
+                      className="text-accent flex-shrink-0"
                     >
                       <ChevronDown className="w-5 h-5" />
                     </motion.div>
@@ -133,7 +133,7 @@ export function FAQs() {
               Still have questions?
             </h2>
             <Link to="/contact">
-              <button className="px-8 py-4 bg-[#C9A14A] text-[#0B0B0B] font-semibold text-sm tracking-widest uppercase rounded-full hover:bg-[#b8913f] hover:text-white transition-all">
+              <button className="px-8 py-4 bg-white text-black font-semibold text-sm tracking-widest uppercase rounded-full hover:bg-neutral-200 transition-all duration-300">
                 Ask Us Directly
               </button>
             </Link>

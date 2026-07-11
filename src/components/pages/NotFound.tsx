@@ -19,7 +19,7 @@ export function NotFound() {
                 {/* Animated Background */}
                 <div className="absolute inset-0 overflow-hidden pointer-events-none">
                     <motion.div
-                        className="absolute top-20 -left-20 w-72 h-72 sm:w-96 sm:h-96 bg-[#C9A14A]/10 rounded-full blur-3xl"
+                        className="absolute top-20 -left-20 w-72 h-72 sm:w-96 sm:h-96 bg-accent/10 rounded-full blur-3xl"
                         animate={{ x: [0, 50, 0], y: [0, 30, 0], scale: [1, 1.1, 1] }}
                         transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
                     />
@@ -31,12 +31,12 @@ export function NotFound() {
 
                     {/* Floating shapes */}
                     <motion.div
-                        className="absolute top-1/4 right-1/4 w-4 h-4 bg-[#C9A14A]/30 rounded-full"
+                        className="absolute top-1/4 right-1/4 w-4 h-4 bg-accent/30 rounded-full"
                         animate={{ y: [0, -20, 0], opacity: [0.3, 0.6, 0.3] }}
                         transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
                     />
                     <motion.div
-                        className="absolute bottom-1/3 left-1/4 w-6 h-6 border-2 border-[#C9A14A]/20 rounded-full"
+                        className="absolute bottom-1/3 left-1/4 w-6 h-6 border-2 border-accent/20 rounded-full"
                         animate={{ y: [0, 20, 0], rotate: [0, 180, 360] }}
                         transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
                     />
@@ -50,7 +50,7 @@ export function NotFound() {
                         transition={{ duration: 0.6 }}
                         className="relative mb-8"
                     >
-                        <span className="text-[150px] sm:text-[200px] md:text-[250px] font-bold text-transparent bg-clip-text bg-gradient-to-br from-[#C9A14A] to-[#b8913f] leading-none select-none font-heading">
+                        <span className="text-[150px] sm:text-[200px] md:text-[250px] font-bold text-transparent bg-clip-text bg-gradient-to-br from-accent to-accent/90 leading-none select-none font-heading">
                             404
                         </span>
                         <motion.div
@@ -58,7 +58,7 @@ export function NotFound() {
                             animate={{ y: [0, -10, 0] }}
                             transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
                         >
-                            <Search className="w-16 h-16 sm:w-20 sm:h-20 text-[#C9A14A]/30" />
+                            <Search className="w-16 h-16 sm:w-20 sm:h-20 text-accent/30" />
                         </motion.div>
                     </motion.div>
 
@@ -85,7 +85,7 @@ export function NotFound() {
                     >
                         <Link to="/">
                             <motion.button
-                                className="px-8 py-4 bg-primary text-primary-foreground rounded-full hover:shadow-xl hover:shadow-[#C9A14A]/25 transition-all inline-flex items-center gap-2 group font-medium w-full sm:w-auto justify-center"
+                                className="px-8 py-4 bg-primary text-primary-foreground rounded-full hover:shadow-xl hover:shadow-accent/25 transition-all inline-flex items-center gap-2 group font-medium w-full sm:w-auto justify-center"
                                 whileHover={{ scale: 1.02 }}
                                 whileTap={{ scale: 0.98 }}
                             >
@@ -96,7 +96,7 @@ export function NotFound() {
 
                         <button
                           onClick={() => window.history.back()}
-                          className="px-8 py-4 bg-card border border-border rounded-full hover:border-[#C9A14A] hover:text-[#C9A14A] transition-all inline-flex items-center gap-2 group font-medium w-full sm:w-auto justify-center"
+                          className="px-8 py-4 bg-card border border-border rounded-full hover:border-accent hover:text-accent transition-all inline-flex items-center gap-2 group font-medium w-full sm:w-auto justify-center"
                         >
                             <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
                             Go Back
@@ -121,7 +121,7 @@ export function NotFound() {
                                 <Link
                                     key={link.path}
                                     to={link.path}
-                                    className="px-4 py-2 text-sm bg-secondary hover:bg-[#C9A14A]/10 hover:text-[#C9A14A] rounded-full transition-colors font-medium font-body"
+                                    className="px-4 py-2 text-sm bg-secondary hover:bg-accent/10 hover:text-accent rounded-full transition-colors font-medium font-body"
                                 >
                                     {link.label}
                                 </Link>

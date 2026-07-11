@@ -39,7 +39,7 @@ export function Industries() {
               transition={{ duration: 0.8 }}
               className="flex flex-col items-center"
             >
-              <span className="text-[#C9A14A] text-xs uppercase tracking-[0.3em] font-semibold block mb-4">
+              <span className="text-accent text-xs uppercase tracking-[0.3em] font-semibold block mb-4">
                 Markets We Serve
               </span>
               <h1 className="text-4xl sm:text-6xl font-heading mb-6 tracking-wide leading-tight">
@@ -66,9 +66,9 @@ export function Industries() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.5, delay: idx * 0.05 }}
-                    className="p-8 bg-card rounded-2xl border border-border hover:border-[#C9A14A]/40 transition-all hover:shadow-md flex items-start gap-5"
+                    className="p-8 bg-card rounded-2xl border border-border hover:border-accent/40 transition-all hover:shadow-md flex items-start gap-5"
                   >
-                    <div className="w-12 h-12 bg-[#C9A14A]/10 rounded-xl flex items-center justify-center text-[#C9A14A] flex-shrink-0">
+                    <div className="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center text-accent flex-shrink-0">
                       <IconComponent className="w-6 h-6" />
                     </div>
                     <div>
@@ -94,7 +94,7 @@ export function Industries() {
               Every business structure has a story. Contact us to design a tailored marketing roadmap.
             </p>
             <Link to="/contact">
-              <button className="px-8 py-4 bg-[#C9A14A] text-[#0B0B0B] font-semibold text-sm tracking-widest uppercase rounded-full hover:bg-[#b8913f] hover:text-white transition-all">
+              <button className="px-8 py-4 bg-white text-black font-semibold text-sm tracking-widest uppercase rounded-full hover:bg-neutral-200 transition-all duration-300">
                 Let's Discuss
               </button>
             </Link>

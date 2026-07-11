@@ -51,7 +51,7 @@ export function Blog() {
                     {/* Animated Background */}
                     <div className="absolute inset-0 overflow-hidden pointer-events-none">
                         <motion.div
-                            className="absolute top-20 -left-20 w-72 h-72 sm:w-96 sm:h-96 bg-[#C9A14A]/10 rounded-full blur-3xl"
+                            className="absolute top-20 -left-20 w-72 h-72 sm:w-96 sm:h-96 bg-accent/10 rounded-full blur-3xl"
                             animate={{ x: [0, 50, 0], y: [0, 30, 0], scale: [1, 1.1, 1] }}
                             transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
                         />
@@ -64,9 +64,9 @@ export function Blog() {
                             transition={{ duration: 0.8 }}
                             className="flex flex-col items-center"
                         >
-                            <div className="inline-flex items-center gap-2 px-4 py-2 bg-secondary/50 rounded-full mb-6 border border-[#C9A14A]/25 backdrop-blur-sm">
-                                <Sparkles className="w-4 h-4 text-[#C9A14A]" />
-                                <span className="text-[#C9A14A] font-semibold text-xs tracking-wider uppercase font-body">Insights & Guides</span>
+                            <div className="inline-flex items-center gap-2 px-4 py-2 bg-secondary/50 rounded-full mb-6 border border-accent/25 backdrop-blur-sm">
+                                <Sparkles className="w-4 h-4 text-accent" />
+                                <span className="text-accent font-semibold text-xs tracking-wider uppercase font-body">Insights & Guides</span>
                             </div>
 
                             <h1 className="text-4xl sm:text-6xl font-heading mb-6 tracking-wide leading-tight">
@@ -101,8 +101,8 @@ export function Blog() {
                                     key={category}
                                     onClick={() => setActiveFilter(category)}
                                     className={`px-5 py-2.5 rounded-full text-xs font-semibold uppercase tracking-wider transition-all duration-300 ${activeFilter === category
-                                        ? 'bg-[#C9A14A] text-white shadow-lg shadow-[#C9A14A]/20'
-                                        : 'bg-card border border-border hover:border-[#C9A14A]/50 text-foreground hover:shadow-md'
+                                        ? 'bg-accent text-white shadow-lg shadow-accent/20'
+                                        : 'bg-card border border-border hover:border-accent/50 text-foreground hover:shadow-md'
                                         }`}
                                     style={{ fontFamily: "'Poppins', sans-serif" }}
                                 >
@@ -146,7 +146,7 @@ export function Blog() {
                                         className="group"
                                     >
                                         <Link to={`/blog/${blog.slug}`}>
-                                            <div className="bg-card rounded-2xl border border-border hover:border-[#C9A14A]/40 hover:shadow-xl transition-all overflow-hidden h-full flex flex-col">
+                                            <div className="bg-card rounded-2xl border border-border hover:border-accent/40 hover:shadow-xl transition-all overflow-hidden h-full flex flex-col">
                                                 {/* Cover Image */}
                                                 <div className="aspect-video relative overflow-hidden">
                                                     {blog.cover_image ? (
@@ -165,16 +165,16 @@ export function Blog() {
 
                                                 <div className="p-6 flex flex-col flex-grow">
                                                     <div className="flex items-center gap-4 text-xs text-muted-foreground mb-3 font-body">
-                                                        <span className="px-3 py-1 bg-[#C9A14A]/10 text-[#C9A14A] rounded-full font-semibold">
+                                                        <span className="px-3 py-1 bg-accent/10 text-accent rounded-full font-semibold">
                                                             {blog.category}
                                                         </span>
                                                         <span className="flex items-center gap-1 font-semibold">
-                                                            <Clock className="w-3.5 h-3.5 text-[#C9A14A]" />
+                                                            <Clock className="w-3.5 h-3.5 text-accent" />
                                                             5 min read
                                                         </span>
                                                     </div>
 
-                                                    <h2 className="text-xl font-heading mb-3 group-hover:text-[#C9A14A] transition-colors text-foreground tracking-wide line-clamp-2">
+                                                    <h2 className="text-xl font-heading mb-3 group-hover:text-accent transition-colors text-foreground tracking-wide line-clamp-2">
                                                         {blog.title}
                                                     </h2>
 
@@ -184,11 +184,11 @@ export function Blog() {
 
                                                     <div className="flex items-center justify-between pt-4 border-t border-border/60 text-xs font-semibold text-muted-foreground font-body">
                                                         <div className="flex items-center gap-2">
-                                                            <User className="w-4 h-4 text-[#C9A14A]" />
+                                                            <User className="w-4 h-4 text-accent" />
                                                             <span>{blog.author}</span>
                                                         </div>
                                                         <div className="flex items-center gap-2">
-                                                            <Calendar className="w-4 h-4 text-[#C9A14A]" />
+                                                            <Calendar className="w-4 h-4 text-accent" />
                                                             <span>{formatDate(blog.created_at)}</span>
                                                         </div>
                                                     </div>

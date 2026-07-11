@@ -122,19 +122,19 @@ export function SearchModal({ isOpen, onClose }: { isOpen: boolean; onClose: () 
                                     >
                                         <div className="flex items-start justify-between gap-3">
                                             <div className="flex-1 min-w-0">
-                                                <h4 className="font-medium text-foreground truncate group-hover:text-[#C9A14A] transition-colors">
+                                                <h4 className="font-medium text-foreground truncate group-hover:text-accent transition-colors">
                                                     {blog.title}
                                                 </h4>
                                                 <p className="text-sm text-muted-foreground line-clamp-1 mt-1">
                                                     {blog.excerpt}
                                                 </p>
                                                 <div className="flex items-center gap-2 mt-2">
-                                                    <span className="text-xs bg-[#C9A14A]/10 text-[#C9A14A] px-2 py-0.5 rounded-full">
+                                                    <span className="text-xs bg-accent/10 text-accent px-2 py-0.5 rounded-full">
                                                         {blog.category}
                                                     </span>
                                                 </div>
                                             </div>
-                                            <ArrowRight className="w-4 h-4 text-muted-foreground group-hover:text-[#C9A14A] transition-colors flex-shrink-0 mt-1" />
+                                            <ArrowRight className="w-4 h-4 text-muted-foreground group-hover:text-accent transition-colors flex-shrink-0 mt-1" />
                                         </div>
                                     </Link>
                                 ))}

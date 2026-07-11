@@ -62,7 +62,7 @@ export function AdminServices() {
                     <motion.button
                         whileHover={{ scale: 1.02 }}
                         whileTap={{ scale: 0.98 }}
-                        className="px-4 py-2 bg-[#C9A14A] text-white rounded-lg flex items-center gap-2"
+                        className="px-4 py-2 bg-accent text-white rounded-lg flex items-center gap-2"
                     >
                         <Plus className="w-4 h-4" />
                         Add Service
@@ -78,7 +78,7 @@ export function AdminServices() {
                     placeholder="Search services..."
                     value={searchTerm}
                     onChange={(e) => setSearchTerm(e.target.value)}
-                    className="w-full pl-10 pr-4 py-2 bg-card border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#C9A14A]"
+                    className="w-full pl-10 pr-4 py-2 bg-card border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-accent"
                 />
             </div>
 
@@ -91,7 +91,7 @@ export function AdminServices() {
             ) : filteredServices.length === 0 ? (
                 <div className="text-center py-12 bg-card rounded-lg border border-border">
                     <p className="text-muted-foreground">No services found</p>
-                    <Link to="/admin/services/new" className="text-[#C9A14A] hover:underline mt-2 inline-block">
+                    <Link to="/admin/services/new" className="text-accent hover:underline mt-2 inline-block">
                         Add your first service
                     </Link>
                 </div>
@@ -134,7 +134,7 @@ export function AdminServices() {
                                     {service.active ? <Eye className="w-4 h-4" /> : <EyeOff className="w-4 h-4" />}
                                 </button>
                                 <Link to={`/admin/services/${service.id}`}>
-                                    <button className="p-2 bg-[#C9A14A]/10 text-[#C9A14A] rounded-lg hover:bg-[#C9A14A]/20 transition-colors">
+                                    <button className="p-2 bg-accent/10 text-accent rounded-lg hover:bg-accent/20 transition-colors">
                                         <Edit2 className="w-4 h-4" />
                                     </button>
                                 </Link>

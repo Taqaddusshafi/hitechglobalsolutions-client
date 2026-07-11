@@ -85,7 +85,7 @@ export function TableOfContents({ content }: TableOfContentsProps) {
                 className="w-full flex items-center justify-between text-foreground font-medium"
             >
                 <span className="flex items-center gap-2">
-                    <List className="w-4 h-4 text-[#C9A14A]" />
+                    <List className="w-4 h-4 text-accent" />
                     Table of Contents
                 </span>
                 {isOpen ? (
@@ -110,10 +110,10 @@ export function TableOfContents({ content }: TableOfContentsProps) {
                                     <button
                                         onClick={() => scrollToHeading(heading.id)}
                                         className={`
-                                            w-full text-left text-sm transition-colors hover:text-[#C9A14A]
+                                            w-full text-left text-sm transition-colors hover:text-accent
                                             ${heading.level === 3 ? 'pl-4' : ''}
                                             ${activeId === heading.id
-                                                ? 'text-[#C9A14A] font-medium'
+                                                ? 'text-accent font-medium'
                                                 : 'text-muted-foreground'
                                             }
                                         `}

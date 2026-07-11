@@ -34,7 +34,7 @@ export function AdminDashboard() {
     }, []);
 
     const statCards = [
-        { label: 'Blogs', value: stats.blogs, icon: FileText, color: 'from-yellow-600 to-[#C9A14A]', link: '/admin/blogs' },
+        { label: 'Blogs', value: stats.blogs, icon: FileText, color: 'from-yellow-600 to-accent', link: '/admin/blogs' },
         { label: 'Testimonials', value: stats.testimonials, icon: MessageSquare, color: 'from-purple-500 to-pink-500', link: '/admin/testimonials' },
         { label: 'Services', value: stats.services, icon: Briefcase, color: 'from-green-500 to-emerald-500', link: '/admin/services' },
         { label: 'Projects', value: stats.projects, icon: FolderOpen, color: 'from-amber-500 to-orange-500', link: '/admin/portfolio' },
@@ -63,7 +63,7 @@ export function AdminDashboard() {
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.4, delay: index * 0.1 }}
-                            className="bg-card border border-border rounded-2xl p-5 hover:shadow-lg hover:border-[#C9A14A]/50 transition-all"
+                            className="bg-card border border-border rounded-2xl p-5 hover:shadow-lg hover:border-accent/50 transition-all"
                         >
                             <div className={`w-10 h-10 rounded-xl bg-gradient-to-br ${stat.color} flex items-center justify-center mb-3`}>
                                 <stat.icon className="w-5 h-5 text-white" />
@@ -86,7 +86,7 @@ export function AdminDashboard() {
                         className="bg-card border border-border rounded-2xl p-5"
                     >
                         <h2 className="text-lg font-bold text-foreground mb-2 flex items-center gap-2">
-                            <action.icon className="w-5 h-5 text-[#C9A14A]" />
+                            <action.icon className="w-5 h-5 text-accent" />
                             {action.title}
                         </h2>
                         <p className="text-sm text-muted-foreground mb-4">
@@ -95,7 +95,7 @@ export function AdminDashboard() {
                         <div className="flex gap-2">
                             <Link
                                 to={action.addLink}
-                                className="px-3 py-1.5 bg-[#C9A14A] text-white rounded-lg hover:bg-[#b8913f] transition-colors flex items-center gap-1 text-sm"
+                                className="px-3 py-1.5 bg-accent text-white rounded-lg hover:bg-accent/90 transition-colors flex items-center gap-1 text-sm"
                             >
                                 <Plus className="w-4 h-4" />
                                 Add

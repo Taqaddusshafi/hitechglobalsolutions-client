@@ -38,7 +38,7 @@ export function OptimizedImage({ src, alt, className = '', width, height }: Opti
     >
       {/* Blur placeholder */}
       <div
-        className={`absolute inset-0 bg-gradient-to-br from-[#C9A14A]/20 to-[#C9A14A]/5 transition-opacity duration-500 ${
+        className={`absolute inset-0 bg-gradient-to-br from-accent/20 to-accent/5 transition-opacity duration-500 ${
           isLoaded ? 'opacity-0' : 'opacity-100'
         }`}
       >
