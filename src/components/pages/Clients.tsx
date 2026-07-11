@@ -54,31 +54,54 @@ export function Clients() {
           </div>
         </section>
 
-        {/* Clients Grid */}
-        <section className="py-12 px-4 sm:px-6">
-          <div className="max-w-6xl mx-auto">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-              {clientLogos.map((client, idx) => (
-                <motion.div
-                  key={client.name + idx}
-                  initial={{ opacity: 0, y: 15 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: idx * 0.05 }}
-                  className="p-8 bg-card rounded-2xl border border-border hover:border-[#C9A14A]/40 transition-all hover:shadow-sm text-center flex flex-col justify-center items-center h-44 group overflow-hidden"
-                >
-                  <div className="w-10 h-10 bg-[#C9A14A]/10 rounded-full flex items-center justify-center text-[#C9A14A] font-bold text-sm mb-3">
-                    {client.name.charAt(0)}
+        {/* Clients Scrolling Tickers */}
+        <section className="py-12 overflow-hidden">
+          <div className="max-w-7xl mx-auto space-y-8">
+            
+            {/* Ticker Row 1 (Left direction) */}
+            <div className="relative w-full overflow-hidden py-2 mask-gradient-x">
+              <div className="flex gap-6 animate-marquee">
+                {[...clientLogos, ...clientLogos, ...clientLogos].map((client, idx) => (
+                  <div
+                    key={client.name + '-r1-' + idx}
+                    className="flex-shrink-0 p-8 bg-card rounded-2xl border border-border hover:border-[#C9A14A]/40 transition-all hover:shadow-sm text-center flex flex-col justify-center items-center h-40 min-w-[240px] group overflow-hidden"
+                  >
+                    <div className="w-10 h-10 bg-[#C9A14A]/10 rounded-full flex items-center justify-center text-[#C9A14A] font-bold text-sm mb-3">
+                      {client.name.charAt(0)}
+                    </div>
+                    <span className="text-lg font-heading font-semibold text-foreground mb-1">
+                      {client.name}
+                    </span>
+                    <span className="text-[10px] uppercase tracking-widest text-muted-foreground font-semibold font-body">
+                      {client.industry}
+                    </span>
                   </div>
-                  <span className="text-lg font-heading font-semibold text-foreground mb-1">
-                    {client.name}
-                  </span>
-                  <span className="text-[10px] uppercase tracking-widest text-muted-foreground font-semibold font-body">
-                    {client.industry}
-                  </span>
-                </motion.div>
-              ))}
+                ))}
+              </div>
             </div>
+
+            {/* Ticker Row 2 (Right/Reverse direction) */}
+            <div className="relative w-full overflow-hidden py-2 mask-gradient-x">
+              <div className="flex gap-6 animate-marquee-reverse">
+                {[...clientLogos].reverse().concat([...clientLogos], [...clientLogos]).map((client, idx) => (
+                  <div
+                    key={client.name + '-r2-' + idx}
+                    className="flex-shrink-0 p-8 bg-card rounded-2xl border border-border hover:border-[#C9A14A]/40 transition-all hover:shadow-sm text-center flex flex-col justify-center items-center h-40 min-w-[240px] group overflow-hidden"
+                  >
+                    <div className="w-10 h-10 bg-[#C9A14A]/10 rounded-full flex items-center justify-center text-[#C9A14A] font-bold text-sm mb-3">
+                      {client.name.charAt(0)}
+                    </div>
+                    <span className="text-lg font-heading font-semibold text-foreground mb-1">
+                      {client.name}
+                    </span>
+                    <span className="text-[10px] uppercase tracking-widest text-muted-foreground font-semibold font-body">
+                      {client.industry}
+                    </span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
           </div>
         </section>
 

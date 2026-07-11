@@ -182,26 +182,28 @@ export function Home() {
         {/* Trusted By Section */}
         <section className="py-20 bg-[#0B0B0B] text-white border-b border-white/5 relative overflow-hidden">
           <div className="absolute inset-0 bg-[radial-gradient(#C9A14A_0.5px,transparent_0.5px)] [background-size:24px_24px] opacity-5 pointer-events-none" />
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 text-center relative z-10">
+          <div className="max-w-7xl mx-auto text-center relative z-10">
             <span className="text-[#C9A14A] text-xs uppercase tracking-[0.25em] font-semibold block mb-2" style={{ fontFamily: "'Poppins', sans-serif" }}>
               Trusted By
             </span>
             <h2 className="text-3xl sm:text-4xl font-heading mb-12 tracking-wide text-white">
               Our Clients
             </h2>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 items-center justify-center">
-              {clientLogos.map((client, index) => (
-                <motion.div
-                  key={client + index}
-                  initial={{ opacity: 0, y: 15 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: index * 0.1 }}
-                  className="p-6 bg-white/5 rounded-xl border border-white/10 hover:border-[#C9A14A]/30 transition-all flex flex-col items-center justify-center min-h-[100px] group text-center"
-                >
-                  <span className="text-sm font-semibold tracking-wide text-white/80 group-hover:text-[#C9A14A] transition-colors">{client}</span>
-                </motion.div>
-              ))}
+            
+            {/* Infinite Marquee Ticker */}
+            <div className="relative w-full overflow-hidden py-4 mask-gradient-x">
+              <div className="flex gap-6 animate-marquee">
+                {[...clientLogos, ...clientLogos, ...clientLogos].map((client, idx) => (
+                  <div
+                    key={client + '-' + idx}
+                    className="flex-shrink-0 px-8 py-6 bg-white/5 rounded-2xl border border-white/10 hover:border-[#C9A14A]/40 transition-all flex items-center justify-center min-w-[240px] group cursor-pointer"
+                  >
+                    <span className="text-base font-heading font-semibold tracking-wider text-white/80 group-hover:text-[#C9A14A] transition-colors">
+                      {client}
+                    </span>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </section>
