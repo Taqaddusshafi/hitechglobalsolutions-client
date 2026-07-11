@@ -5,13 +5,20 @@ import { ArrowRight, CheckCircle2, Sparkles } from 'lucide-react';
 import { Testimonials } from '../Testimonials';
 
 export function Home() {
-  const stats = [
-    { value: '100+', label: 'Brands Trusted' },
+  const quickStats = [
+    { value: '100+', label: 'Brands Served' },
+    { value: '500+', label: 'Projects Delivered' },
+    { value: '50M+', label: 'Organic Reach Generated' },
+    { value: '95%', label: 'Client Retention' },
+  ];
+
+  const counterSection = [
+    { value: '100+', label: 'Trusted Brands' },
     { value: '500+', label: 'Projects Delivered' },
     { value: '25+', label: 'Industries Served' },
+    { value: '50M+', label: 'Digital Reach' },
     { value: '95%', label: 'Client Satisfaction' },
-    { value: '8+', label: 'Creative Services' },
-    { value: '5+', label: 'Years Experience' },
+    { value: '10+', label: 'Creative Experts' },
   ];
 
   const whatWeDoList = [
@@ -42,14 +49,21 @@ export function Home() {
   ];
 
   const clientLogos = [
-    'Aura Aesthetics', 'Luminary Fashion', 'Apex Healthcare', 'Elysian Hotels', 'Vanguard Realty', 'Nexa Startups'
+    'Vidyam Care',
+    'Patna Biryani',
+    'World Dream Studio',
+    'Mindmanthan Software Solutions',
+    'Beauty Clinics',
+    'Restaurants',
+    'Fashion Brands',
+    'Educational Institutes'
   ];
 
   return (
     <>
       <SEO 
-        title="We Build Market Leaders | Creative Marketing Agency"
-        description="Irtiqa Marketing is a full-service creative marketing agency helping startups, businesses, and enterprises grow through branding, digital marketing, AI solutions, websites, photography, and video."
+        title="Scale Your Brand with Creative Marketing | Irtiqa Marketing"
+        description="Irtiqa Marketing is a full-service creative marketing agency helping businesses grow through branding, social media, performance marketing, website development, content creation, photography, videography, and AI-powered solutions."
         keywords="irtiqa marketing, creative marketing agency, branding, digital marketing, website design, video production, photography, performance marketing"
       />
 
@@ -97,7 +111,7 @@ export function Home() {
               <div className="inline-flex items-center gap-2 px-4 py-2 bg-secondary/50 rounded-full mb-6 border border-[#C9A14A]/25 backdrop-blur-sm">
                 <span className="w-2 h-2 bg-[#C9A14A] rounded-full animate-pulse" />
                 <span className="text-[#C9A14A] text-xs sm:text-sm font-semibold uppercase tracking-widest" style={{ fontFamily: "'Poppins', sans-serif" }}>
-                  We Don’t Just Market Brands.
+                  Irtiqa Marketing
                 </span>
               </div>
 
@@ -112,7 +126,7 @@ export function Home() {
               transition={{ duration: 0.8, delay: 0.2 }}
               className="text-lg sm:text-xl md:text-2xl text-muted-foreground max-w-4xl mx-auto mb-12 px-4 font-body leading-relaxed"
             >
-              Irtiqa Marketing is a full-service creative marketing agency helping startups, businesses, and enterprises grow through branding, digital marketing, AI solutions, websites, photography, videography, and performance-driven campaigns.
+              Irtiqa Marketing is a full-service creative marketing agency helping businesses grow through branding, social media, performance marketing, website development, content creation, photography, videography, and AI-powered solutions.
             </motion.p>
 
             <motion.div
@@ -127,7 +141,7 @@ export function Home() {
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
                 >
-                  Book Free Consultation
+                  Book a Free Consultation
                   <ArrowRight className="w-4 h-4 text-[#C9A14A] group-hover:translate-x-1 transition-transform" />
                 </motion.button>
               </Link>
@@ -137,45 +151,18 @@ export function Home() {
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
                 >
-                  Explore Our Work
+                  View Our Portfolio
                 </motion.button>
               </Link>
             </motion.div>
           </div>
         </section>
 
-        {/* Trusted By Section */}
-        <section className="py-16 bg-[#0B0B0B] text-white border-y border-white/5 relative overflow-hidden">
-          <div className="absolute inset-0 bg-[radial-gradient(#C9A14A_0.5px,transparent_0.5px)] [background-size:24px_24px] opacity-5 pointer-events-none" />
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 text-center relative z-10">
-            <span className="text-[#C9A14A] text-xs uppercase tracking-[0.25em] font-semibold block mb-2" style={{ fontFamily: "'Poppins', sans-serif" }}>
-              Trusted By
-            </span>
-            <h2 className="text-2xl sm:text-3xl font-heading mb-10 tracking-wide">
-              100+ Growing Brands Across Multiple Industries
-            </h2>
-            <div className="grid grid-cols-2 md:grid-cols-6 gap-6 items-center justify-center opacity-65">
-              {clientLogos.map((client, index) => (
-                <motion.div
-                  key={client}
-                  initial={{ opacity: 0, y: 15 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: index * 0.1 }}
-                  className="p-4 bg-white/5 rounded-lg border border-white/10 hover:border-[#C9A14A]/30 transition-colors text-center text-sm font-semibold tracking-wide text-white/80"
-                >
-                  {client}
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Statistics Section */}
-        <section className="py-20 px-4 sm:px-6 relative">
-          <div className="max-w-7xl mx-auto">
-            <div className="grid grid-cols-2 md:grid-cols-6 gap-8 text-center">
-              {stats.map((stat, index) => (
+        {/* Quick Stats Section */}
+        <section className="py-16 bg-secondary/10 border-y border-border/50">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+              {quickStats.map((stat, index) => (
                 <motion.div
                   key={stat.label}
                   initial={{ opacity: 0, y: 20 }}
@@ -186,6 +173,61 @@ export function Home() {
                 >
                   <div className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#C9A14A] mb-2 font-heading">{stat.value}</div>
                   <div className="text-xs sm:text-sm text-muted-foreground uppercase tracking-wider font-semibold">{stat.label}</div>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Trusted By Section */}
+        <section className="py-20 bg-[#0B0B0B] text-white border-b border-white/5 relative overflow-hidden">
+          <div className="absolute inset-0 bg-[radial-gradient(#C9A14A_0.5px,transparent_0.5px)] [background-size:24px_24px] opacity-5 pointer-events-none" />
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 text-center relative z-10">
+            <span className="text-[#C9A14A] text-xs uppercase tracking-[0.25em] font-semibold block mb-2" style={{ fontFamily: "'Poppins', sans-serif" }}>
+              Trusted By
+            </span>
+            <h2 className="text-3xl sm:text-4xl font-heading mb-12 tracking-wide text-white">
+              Our Clients
+            </h2>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 items-center justify-center">
+              {clientLogos.map((client, index) => (
+                <motion.div
+                  key={client + index}
+                  initial={{ opacity: 0, y: 15 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.1 }}
+                  className="p-6 bg-white/5 rounded-xl border border-white/10 hover:border-[#C9A14A]/30 transition-all flex flex-col items-center justify-center min-h-[100px] group text-center"
+                >
+                  <span className="text-sm font-semibold tracking-wide text-white/80 group-hover:text-[#C9A14A] transition-colors">{client}</span>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Homepage Counter Section */}
+        <section className="py-20 px-4 sm:px-6 relative">
+          <div className="max-w-7xl mx-auto">
+            <div className="text-center mb-12">
+              <span className="text-[#C9A14A] text-xs uppercase tracking-[0.25em] font-semibold block mb-2">
+                At A Glance
+              </span>
+              <h2 className="text-2xl sm:text-3xl font-heading tracking-wide">Our Track Record</h2>
+              <div className="luxury-divider mt-4" />
+            </div>
+            <div className="grid grid-cols-2 md:grid-cols-6 gap-6 text-center">
+              {counterSection.map((stat, index) => (
+                <motion.div
+                  key={stat.label + index}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  className="p-4 bg-card rounded-xl border border-border/60 shadow-sm flex flex-col justify-center"
+                >
+                  <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#C9A14A] mb-1 font-heading">{stat.value}</div>
+                  <div className="text-[10px] sm:text-xs text-muted-foreground uppercase tracking-wider font-semibold">{stat.label}</div>
                 </motion.div>
               ))}
             </div>

@@ -6,9 +6,14 @@ export function Footer() {
   const links = {
     quickLinks: [
       { name: 'Home', path: '/' },
-      { name: 'About', path: '/about' },
+      { name: 'About Irtiqa', path: '/about' },
+      { name: 'About Founder', path: '/founder' },
       { name: 'Services', path: '/services' },
       { name: 'Portfolio', path: '/portfolio' },
+      { name: 'Industries', path: '/industries' },
+      { name: 'Clients', path: '/clients' },
+      { name: 'Why Choose Us', path: '/why-choose-us' },
+      { name: 'Testimonials', path: '/testimonials' },
       { name: 'Contact', path: '/contact' },
     ],
     services: [
@@ -50,20 +55,9 @@ export function Footer() {
                 </span>
               </div>
             </Link>
-            <p className="text-base sm:text-lg text-white/70 mb-2 max-w-md" style={{ fontFamily: "'Poppins', sans-serif" }}>
-              Building Brands. Creating Impact.
+            <p className="text-sm text-[#C9A14A]/80 tracking-wider uppercase mb-6 leading-relaxed" style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 400 }}>
+              Creative Agency | Branding | Digital Marketing | Website Development | Photography | Videography | Social Media | SEO | Performance Marketing
             </p>
-            <p className="text-sm sm:text-base text-white/50 mb-6 sm:mb-8 max-w-md" style={{ fontFamily: "'Poppins', sans-serif" }}>
-              A full-service creative marketing agency helping businesses establish powerful identities and achieve sustainable growth.
-            </p>
-            <Link to="/contact">
-              <button className="px-6 py-3 bg-[#C9A14A] text-white rounded-full hover:bg-[#b8913f] transition-colors inline-flex items-center gap-2 group text-sm tracking-widest uppercase"
-                style={{ fontFamily: "'Poppins', sans-serif" }}
-              >
-                Book Consultation
-                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-              </button>
-            </Link>
           </div>
 
           {/* Links Section */}
@@ -153,7 +147,7 @@ export function Footer() {
               <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-3">
                 <MapPin className="w-5 h-5 text-[#C9A14A]" />
                 <span className="text-base sm:text-lg text-white/80" style={{ fontFamily: "'Poppins', sans-serif" }}>
-                  India
+                  Lucknow, Uttar Pradesh
                 </span>
               </div>
             </div>

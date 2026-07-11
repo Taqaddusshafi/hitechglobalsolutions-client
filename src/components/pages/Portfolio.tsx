@@ -17,21 +17,22 @@ export function Portfolio() {
   const filters = [
     'All',
     'Logo Designs',
-    'Brand Identity',
-    'Packaging',
+    'Branding Projects',
+    'Social Media Creatives',
     'Instagram Feeds',
     'Reels',
-    'Website Designs',
+    'Motion Graphics',
     'Photography',
     'Product Shoots',
-    'Video Production',
-    'Advertising Campaigns'
+    'Website Designs',
+    'Packaging Design',
+    'Marketing Campaigns'
   ];
 
   const projects: Project[] = [
     {
       title: 'Monarch Cosmetics Packaging',
-      category: 'Packaging',
+      category: 'Packaging Design',
       description: 'Luxury outer carton and container design utilizing gold foil prints and structured textures.',
       tags: ['Luxury Packaging', 'Foil Stamping', 'Graphic Design'],
       client: 'Monarch Brands',
@@ -39,7 +40,7 @@ export function Portfolio() {
     },
     {
       title: 'Aura Aesthetics Brand Identity',
-      category: 'Brand Identity',
+      category: 'Branding Projects',
       description: 'Sophisticated minimalist visual brand framework, style guidelines, and logo design.',
       tags: ['Branding', 'Typography', 'Logo Design'],
       client: 'Aura Skin Clinic',
@@ -71,7 +72,7 @@ export function Portfolio() {
     },
     {
       title: 'Vanguard Realty Advertising Campaign',
-      category: 'Advertising Campaigns',
+      category: 'Marketing Campaigns',
       description: 'Targeted Lead generation and brand awareness campaigns on Meta and Google Ads.',
       tags: ['Meta Ads', 'Google PPC', 'Copywriting'],
       client: 'Vanguard Properties',

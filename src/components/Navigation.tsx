@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, Search } from 'lucide-react';
+import { Menu, X, Search, ChevronDown } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { DarkModeToggle } from './DarkModeToggle';
 import { SearchModal } from './SearchModal';
@@ -9,6 +9,7 @@ export function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [searchOpen, setSearchOpen] = useState(false);
+  const [aboutDropdownOpen, setAboutDropdownOpen] = useState(false);
   const location = useLocation();
 
   useEffect(() => {
@@ -31,17 +32,20 @@ export function Navigation() {
     return () => document.removeEventListener('keydown', handleKeyDown);
   }, []);
 
-  const navLinks = [
+  const mobileLinks = [
     { path: '/', label: 'Home' },
-    { path: '/about', label: 'About' },
+    { path: '/about', label: 'About Irtiqa' },
+    { path: '/founder', label: 'About Founder' },
     { path: '/services', label: 'Services' },
     { path: '/portfolio', label: 'Portfolio' },
     { path: '/industries', label: 'Industries' },
-    { path: '/blog', label: 'Insights' },
+    { path: '/clients', label: 'Clients' },
+    { path: '/why-choose-us', label: 'Why Choose Us' },
+    { path: '/testimonials', label: 'Testimonials' },
     { path: '/contact', label: 'Contact' },
   ];
 
-  const isActive = (path: string) => location.pathname === path || (path === '/blog' && location.pathname.startsWith('/blog'));
+  const isActive = (path: string) => location.pathname === path;
 
   return (
     <>
@@ -76,12 +80,80 @@ export function Navigation() {
 
             {/* Desktop Navigation */}
             <div className="hidden md:flex items-center gap-6 lg:gap-8">
-              {navLinks.map((link) => (
+              <Link
+                to="/"
+                className="relative text-sm tracking-wide uppercase font-body"
+                style={{ letterSpacing: '0.08em' }}
+              >
+                <span className={`transition-colors ${isActive('/') ? 'text-[#C9A14A]' : 'text-muted-foreground hover:text-foreground'}`}>
+                  Home
+                </span>
+                {isActive('/') && (
+                  <motion.div
+                    layoutId="activeNav"
+                    className="absolute -bottom-1 left-0 right-0 h-0.5 bg-[#C9A14A]"
+                    transition={{ type: 'spring', stiffness: 380, damping: 30 }}
+                  />
+                )}
+              </Link>
+
+              {/* About Dropdown */}
+              <div 
+                className="relative group py-2"
+                onMouseEnter={() => setAboutDropdownOpen(true)}
+                onMouseLeave={() => setAboutDropdownOpen(false)}
+              >
+                <button
+                  className="flex items-center gap-1 text-sm tracking-wide uppercase font-body text-muted-foreground hover:text-foreground transition-colors cursor-pointer"
+                  style={{ letterSpacing: '0.08em' }}
+                >
+                  <span>About</span>
+                  <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${aboutDropdownOpen ? 'rotate-180 text-[#C9A14A]' : ''}`} />
+                </button>
+
+                {/* Dropdown Menu */}
+                <AnimatePresence>
+                  {aboutDropdownOpen && (
+                    <motion.div
+                      initial={{ opacity: 0, y: 10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: 10 }}
+                      transition={{ duration: 0.15 }}
+                      className="absolute left-0 mt-2 w-48 bg-card border border-border rounded-xl shadow-xl py-2 z-50"
+                    >
+                      {[
+                        { path: '/about', label: 'About Irtiqa' },
+                        { path: '/founder', label: 'About Founder' },
+                        { path: '/why-choose-us', label: 'Why Choose Us' },
+                        { path: '/clients', label: 'Clients' },
+                        { path: '/testimonials', label: 'Testimonials' },
+                      ].map((subLink) => (
+                        <Link
+                          key={subLink.path}
+                          to={subLink.path}
+                          className={`block px-4 py-2.5 text-xs tracking-wider uppercase font-body hover:bg-secondary transition-colors ${
+                            isActive(subLink.path) ? 'text-[#C9A14A] font-semibold' : 'text-muted-foreground hover:text-foreground'
+                          }`}
+                        >
+                          {subLink.label}
+                        </Link>
+                      ))}
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
+
+              {[
+                { path: '/services', label: 'Services' },
+                { path: '/portfolio', label: 'Portfolio' },
+                { path: '/industries', label: 'Industries' },
+                { path: '/contact', label: 'Contact' },
+              ].map((link) => (
                 <Link
                   key={link.path}
                   to={link.path}
-                  className="relative text-sm tracking-wide group uppercase"
-                  style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 400, letterSpacing: '0.08em' }}
+                  className="relative text-sm tracking-wide group uppercase font-body"
+                  style={{ letterSpacing: '0.08em' }}
                 >
                   <span
                     className={`transition-colors ${isActive(link.path)
@@ -145,17 +217,17 @@ export function Navigation() {
               className="md:hidden bg-background border-t border-border overflow-hidden"
             >
               <div className="px-6 py-6 space-y-4">
-                {navLinks.map((link, index) => (
+                {mobileLinks.map((link, index) => (
                   <motion.div
                     key={link.path}
                     initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: index * 0.1 }}
+                    transition={{ delay: index * 0.05 }}
                   >
                     <Link
                       to={link.path}
                       onClick={() => setIsOpen(false)}
-                      className={`block py-2 text-lg uppercase tracking-wide ${isActive(link.path)
+                      className={`block py-2 text-base uppercase tracking-wide ${isActive(link.path)
                         ? 'text-[#C9A14A]'
                         : 'text-muted-foreground'
                         }`}
@@ -168,7 +240,7 @@ export function Navigation() {
                 <motion.div
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: navLinks.length * 0.1 }}
+                  transition={{ delay: mobileLinks.length * 0.05 }}
                 >
                   <Link to="/contact" onClick={() => setIsOpen(false)}>
                     <button className="w-full px-6 py-3 bg-[#C9A14A] text-white rounded-full text-sm tracking-widest uppercase mt-4 hover:bg-[#b8913f] transition-colors"

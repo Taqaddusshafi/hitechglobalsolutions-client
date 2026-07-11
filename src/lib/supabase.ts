@@ -1,15 +1,13 @@
-import { createClient } from '@supabase/supabase-js';
+// import { createClient } from '@supabase/supabase-js';
 
-const supabaseUrl = import.meta.env.VITE_SUPABASE_URL;
-const supabaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY;
+// const supabaseUrl = import.meta.env.VITE_SUPABASE_URL;
+// const supabaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY;
 
-if (!supabaseUrl || !supabaseAnonKey) {
-    console.warn('Supabase credentials not found. Using mock data.');
-}
+// if (!supabaseUrl || !supabaseAnonKey) {
+//     console.warn('Supabase credentials not found. Using mock data.');
+// }
 
-export const supabase = supabaseUrl && supabaseAnonKey
-    ? createClient(supabaseUrl, supabaseAnonKey)
-    : null;
+export const supabase = null;
 
 // Types
 export interface Blog {
@@ -152,10 +150,10 @@ Design for everyone. Use sufficient color contrast, provide alt text for images,
 export const mockTestimonials: Testimonial[] = [
     {
         id: '1',
-        name: 'Sarah Johnson',
-        role: 'CEO',
-        company: 'TechStart Inc',
-        content: 'Irtiqa Marketing transformed our online presence completely. Their attention to detail and modern design approach exceeded our expectations. Highly recommended!',
+        name: 'Satisfied Client',
+        role: 'Social Media Management',
+        company: 'Partner Brand',
+        content: 'Irtiqa Marketing completely transformed our social media presence.',
         avatar: null,
         rating: 5,
         featured: true,
@@ -163,10 +161,10 @@ export const mockTestimonials: Testimonial[] = [
     },
     {
         id: '2',
-        name: 'Michael Chen',
-        role: 'Product Manager',
-        company: 'InnovateCo',
-        content: 'Working with Irtiqa Marketing was a fantastic experience. They delivered our mobile app on time and the quality was exceptional. The team truly cares about their work.',
+        name: 'Satisfied Client',
+        role: 'Creative Design Partner',
+        company: 'Partner Brand',
+        content: 'Professional team with outstanding creativity.',
         avatar: null,
         rating: 5,
         featured: true,
@@ -174,24 +172,13 @@ export const mockTestimonials: Testimonial[] = [
     },
     {
         id: '3',
-        name: 'Emily Rodriguez',
-        role: 'Founder',
-        company: 'DesignHub',
-        content: 'The e-commerce platform they built for us has increased our sales by 200%. Their development skills and business understanding is impressive.',
+        name: 'Satisfied Client',
+        role: 'Branding & Marketing Client',
+        company: 'Partner Brand',
+        content: 'Highly recommended for branding and marketing.',
         avatar: null,
         rating: 5,
         featured: true,
-        created_at: new Date().toISOString(),
-    },
-    {
-        id: '4',
-        name: 'David Kim',
-        role: 'CTO',
-        company: 'CloudScale',
-        content: 'Professional, responsive, and technically excellent. They understood our complex requirements and delivered a solution that perfectly fits our needs.',
-        avatar: null,
-        rating: 5,
-        featured: false,
         created_at: new Date().toISOString(),
     },
 ];

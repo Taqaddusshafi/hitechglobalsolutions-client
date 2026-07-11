@@ -25,9 +25,9 @@ export function Contact() {
     {
       icon: MapPin,
       title: 'Office Address',
-      value: 'India',
+      value: 'Lucknow, Uttar Pradesh',
       link: null,
-      description: 'Remote-first across India'
+      description: 'Our creative hub'
     }
   ];
 

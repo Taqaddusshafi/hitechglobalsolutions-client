@@ -1,25 +1,22 @@
 import { SEO } from '../SEO';
 import { motion } from 'framer-motion';
-import { Heart, UtensilsCrossed, Hotel, GraduationCap, Shirt, Sparkles, Building2, HardHat, Factory, HeartHandshake, Rocket, Briefcase, ShoppingBag, Compass, Calendar } from 'lucide-react';
+import { Heart, UtensilsCrossed, Hotel, GraduationCap, Shirt, Sparkles, Building2, Factory, HeartHandshake, Rocket, Briefcase, ShoppingBag } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 export function Industries() {
   const industries = [
     { name: 'Healthcare', icon: Heart, desc: 'Patient-centric marketing, clinic branding, and medical growth strategies.' },
-    { name: 'Restaurants', icon: UtensilsCrossed, desc: 'Appetizing visual content, food photography, and SMM campaigns.' },
-    { name: 'Hotels', icon: Hotel, desc: 'Premium hospitality campaigns, digital reach, and premium design guides.' },
+    { name: 'Real Estate', icon: Building2, desc: 'Lead generation funnels, premium brochures, and local property SEO.' },
     { name: 'Education', icon: GraduationCap, desc: 'Brand authority building and conversion campaigns for institutions.' },
     { name: 'Fashion', icon: Shirt, desc: 'Lookbook photography, reels creation, and retail marketing campaigns.' },
     { name: 'Beauty & Salon', icon: Sparkles, desc: 'Aesthetic SMM layouts, influencer tie-ups, and brand styling.' },
-    { name: 'Real Estate', icon: Building2, desc: 'Lead generation funnels, premium brochures, and local property SEO.' },
-    { name: 'Construction', icon: HardHat, desc: 'Corporate brochures, custom websites, and professional portfolios.' },
-    { name: 'Manufacturing', icon: Factory, desc: 'Corporate identity, catalog design, and technical brand guidelines.' },
-    { name: 'NGOs', icon: HeartHandshake, desc: 'Inspiring storytelling design, fundraising campaigns, and community reach.' },
+    { name: 'Restaurants', icon: UtensilsCrossed, desc: 'Appetizing visual content, food photography, and SMM campaigns.' },
+    { name: 'Hotels', icon: Hotel, desc: 'Premium hospitality campaigns, digital reach, and premium design guides.' },
     { name: 'Startups', icon: Rocket, desc: 'Rapid brand launch frameworks, pitch design, and fast turnarounds.' },
-    { name: 'Corporate Businesses', icon: Briefcase, desc: 'Consistent corporate identity, profile designs, and internal guides.' },
-    { name: 'E-commerce', icon: ShoppingBag, desc: 'Conversion rate optimization, custom Shopify stores, and retargeting ads.' },
-    { name: 'Travel', icon: Compass, desc: 'Cinematic travel content, destination Reels, and travel brand SEO.' },
-    { name: 'Events', icon: Calendar, desc: 'Promotional graphics, ticket sales campaigns, and post-event videos.' },
+    { name: 'Ecommerce', icon: ShoppingBag, desc: 'Conversion rate optimization, custom Shopify stores, and retargeting ads.' },
+    { name: 'NGOs', icon: HeartHandshake, desc: 'Inspiring storytelling design, fundraising campaigns, and community reach.' },
+    { name: 'Manufacturing', icon: Factory, desc: 'Corporate identity, catalog design, and technical brand guidelines.' },
+    { name: 'Corporate Companies', icon: Briefcase, desc: 'Consistent corporate identity, profile designs, and internal guides.' },
   ];
 
   return (

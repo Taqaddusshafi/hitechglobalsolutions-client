@@ -28,6 +28,7 @@ const WhyChooseUs = lazy(() => import('./components/pages/WhyChooseUs').then(m =
 const Clients = lazy(() => import('./components/pages/Clients').then(m => ({ default: m.Clients })));
 const Team = lazy(() => import('./components/pages/Team').then(m => ({ default: m.Team })));
 const FAQs = lazy(() => import('./components/pages/FAQs').then(m => ({ default: m.FAQs })));
+const TestimonialsPage = lazy(() => import('./components/pages/Testimonials').then(m => ({ default: m.Testimonials })));
 
 // Lazy load admin components
 const AdminLogin = lazy(() => import('./components/admin/AdminLogin').then(m => ({ default: m.AdminLogin })));
@@ -169,6 +170,7 @@ export default function App() {
                             <Route path="/clients" element={<Clients />} />
                             <Route path="/team" element={<Team />} />
                             <Route path="/faqs" element={<FAQs />} />
+                            <Route path="/testimonials" element={<TestimonialsPage />} />
                             <Route path="/contact" element={<Contact />} />
                             <Route path="/blog" element={<Blog />} />
                             <Route path="/blog/:slug" element={<BlogPost />} />

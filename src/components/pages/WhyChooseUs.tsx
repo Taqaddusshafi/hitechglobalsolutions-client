@@ -1,19 +1,19 @@
 import { SEO } from '../SEO';
 import { motion } from 'framer-motion';
-import { Lightbulb, Briefcase, Zap, MessageSquare, Award, Users, BadgePercent, Target, HeartHandshake } from 'lucide-react';
+import { Lightbulb, Zap, MessageSquare, Award, Users, BadgePercent, Target, HeartHandshake } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 export function WhyChooseUs() {
   const reasons = [
     {
-      title: 'Creative Thinking',
+      title: 'Creative Strategy',
       icon: Lightbulb,
       desc: 'We step away from generic models to design bespoke narratives, styling elements, and layouts that ensure your brand stands out.',
     },
     {
-      title: 'Business Understanding',
-      icon: Briefcase,
-      desc: 'We study your unit economics, customer acquisition goals, and market margins to ensure marketing translates to direct sales.',
+      title: 'Experienced Team',
+      icon: Users,
+      desc: 'Your brand receives personalized attention from dedicated, highly skilled experts committed to scaling your business.',
     },
     {
       title: 'Fast Delivery',
@@ -21,9 +21,9 @@ export function WhyChooseUs() {
       desc: 'Agile design frameworks and dedicated professionals allow us to ship visual resources, profiles, and campaigns rapidly.',
     },
     {
-      title: 'Transparent Communication',
-      icon: MessageSquare,
-      desc: 'Scheduled check-ins, continuous reporting dashboards, and honest billing parameters with zero surprises.',
+      title: 'Affordable Packages',
+      icon: BadgePercent,
+      desc: 'Premium visual brand building, videography, and execution priced to deliver high value for growing businesses.',
     },
     {
       title: 'Premium Quality',
@@ -31,22 +31,17 @@ export function WhyChooseUs() {
       desc: 'Strict design audits and styling rules inspired by global brands ensure class-leading aesthetic quality across outputs.',
     },
     {
-      title: 'Dedicated Team',
-      icon: Users,
-      desc: 'Your brand receives personalized attention from dedicated strategists, copywriters, and developers committed to scaling.',
+      title: 'Dedicated Account Manager',
+      icon: MessageSquare,
+      desc: 'Scheduled check-ins, continuous reporting dashboards, and a single point of contact for seamless support.',
     },
     {
-      title: 'Affordable Pricing',
-      icon: BadgePercent,
-      desc: 'Premium visual brand building, videography, and execution priced to deliver high value for growing businesses.',
-    },
-    {
-      title: 'Result-Oriented Marketing',
+      title: 'ROI-Focused Marketing',
       icon: Target,
       desc: 'Every ad setup and keyword target is tracked against sales conversions, cost per acquisition, and clear ROI.',
     },
     {
-      title: 'Long-Term Partnership',
+      title: 'End-to-End Solutions',
       icon: HeartHandshake,
       desc: 'We support your brand launch and guide your growth through continuous maintenance, audits, and strategic expansions.',
     },
