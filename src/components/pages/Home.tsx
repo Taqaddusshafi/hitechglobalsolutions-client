@@ -293,25 +293,26 @@ export function Home() {
 
             <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
               {portfolioCategories.map((category, index) => (
-                <motion.div
-                  key={category}
-                  initial={{ opacity: 0, scale: 0.95 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: index * 0.08 }}
-                  className="relative group overflow-hidden rounded-2xl border border-border bg-card aspect-[4/3] flex items-center justify-center p-6 text-center cursor-pointer hover:border-accent/40 transition-all hover:shadow-lg"
-                >
-                  <div className="absolute inset-0 bg-[#0B0B0B]/85 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-center items-center p-4">
-                    <span className="text-white font-heading text-xl sm:text-2xl mb-2">{category}</span>
-                    <span className="text-accent text-xs uppercase tracking-widest font-semibold flex items-center gap-1">
-                      View Projects <ArrowRight className="w-3.5 h-3.5" />
-                    </span>
-                  </div>
-                  <div className="flex flex-col items-center">
-                    <Sparkles className="w-8 h-8 text-accent mb-3 opacity-60 group-hover:opacity-100 transition-all" />
-                    <span className="text-lg font-heading text-foreground font-semibold tracking-wider">{category}</span>
-                  </div>
-                </motion.div>
+                <Link to="/portfolio" state={{ filter: category }} key={category}>
+                  <motion.div
+                    initial={{ opacity: 0, scale: 0.95 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: index * 0.08 }}
+                    className="relative group overflow-hidden rounded-2xl border border-border bg-card aspect-[4/3] flex items-center justify-center p-6 text-center cursor-pointer hover:border-accent/40 transition-all hover:shadow-lg h-full"
+                  >
+                    <div className="absolute inset-0 bg-[#0B0B0B]/85 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-center items-center p-4">
+                      <span className="text-white font-heading text-xl sm:text-2xl mb-2">{category}</span>
+                      <span className="text-accent text-xs uppercase tracking-widest font-semibold flex items-center gap-1">
+                        View Projects <ArrowRight className="w-3.5 h-3.5" />
+                      </span>
+                    </div>
+                    <div className="flex flex-col items-center">
+                      <Sparkles className="w-8 h-8 text-accent mb-3 opacity-60 group-hover:opacity-100 transition-all" />
+                      <span className="text-lg font-heading text-foreground font-semibold tracking-wider">{category}</span>
+                    </div>
+                  </motion.div>
+                </Link>
               ))}
             </div>
           </div>
