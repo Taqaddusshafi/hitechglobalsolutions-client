@@ -111,7 +111,7 @@ export function Home() {
               <div className="inline-flex items-center gap-2 px-4 py-2 bg-secondary/50 rounded-full mb-6 border border-[#C9A14A]/25 backdrop-blur-sm">
                 <span className="w-2 h-2 bg-[#C9A14A] rounded-full animate-pulse" />
                 <span className="text-[#C9A14A] text-xs sm:text-sm font-semibold uppercase tracking-widest" style={{ fontFamily: "'Poppins', sans-serif" }}>
-                  Irtiqa Marketing
+                  We don't just market brands
                 </span>
               </div>
 
