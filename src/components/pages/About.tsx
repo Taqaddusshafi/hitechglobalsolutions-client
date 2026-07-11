@@ -1,6 +1,6 @@
 import { SEO } from '../SEO';
 import { motion } from 'framer-motion';
-import { Target, Eye, Quote } from 'lucide-react';
+import { Target, Eye } from 'lucide-react';
 
 export function About() {
   const values = [
