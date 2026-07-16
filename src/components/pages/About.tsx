@@ -50,52 +50,40 @@ export function About() {
         {/* Mission and Vision */}
         <section className="py-16 px-4 sm:px-6 bg-[#0B0B0B] text-white border-y border-white/5">
           <div className="max-w-7xl mx-auto">
-            <div className="grid lg:grid-cols-12 gap-12 items-center">
+            <div className="grid md:grid-cols-2 gap-8 lg:gap-12 items-stretch">
               
-              {/* Vision & Mission Image — Colored */}
+              {/* Our Vision Card (Replaces Image) */}
               <motion.div
                 initial={{ opacity: 0, x: -30 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.8 }}
-                className="lg:col-span-5"
+                className="p-8 sm:p-10 bg-white/5 rounded-2xl border border-[#C9A14A]/30 hover:border-[#C9A14A]/50 transition-all flex flex-col justify-center"
               >
-                <div className="aspect-[4/5] bg-neutral-900 border border-[#C9A14A]/30 rounded-3xl overflow-hidden shadow-2xl">
-                  <img 
-                    src="/images/our_vision.PNG" 
-                    alt="Our Vision" 
-                    className="w-full h-full object-cover" 
-                  />
+                <div className="w-12 h-12 bg-[#C9A14A]/10 rounded-xl flex items-center justify-center mb-6">
+                  <Eye className="w-6 h-6 text-[#C9A14A]" />
                 </div>
+                <h2 className="text-2xl font-heading mb-4 tracking-wide text-white">Our Vision</h2>
+                <p className="text-sm sm:text-base text-white/70 leading-relaxed font-body">
+                  Our vision is to become a luxury marketing agency that feels like home for every brand we serve. We aspire to create meaningful connections, deliver exceptional experiences, and empower businesses to grow fearlessly while redefining excellence through creativity, innovation, and strategic thinking.
+                </p>
               </motion.div>
 
-              {/* Mission & Vision Cards */}
+              {/* Our Mission Card */}
               <motion.div
                 initial={{ opacity: 0, x: 30 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.8, delay: 0.2 }}
-                className="lg:col-span-7 space-y-8"
+                className="p-8 sm:p-10 bg-white/5 rounded-2xl border border-white/10 hover:border-white/20 transition-all flex flex-col justify-center"
               >
-                <div className="p-8 bg-white/5 rounded-2xl border border-white/10 hover:border-white/20 transition-all">
-                  <div className="w-12 h-12 bg-[#C9A14A]/10 rounded-xl flex items-center justify-center mb-6">
-                    <Target className="w-6 h-6 text-[#C9A14A]" />
-                  </div>
-                  <h2 className="text-2xl font-heading mb-4 tracking-wide text-white">Our Mission</h2>
-                  <p className="text-sm sm:text-base text-white/70 leading-relaxed font-body">
-                    To empower businesses with innovative marketing solutions.
-                  </p>
+                <div className="w-12 h-12 bg-[#C9A14A]/10 rounded-xl flex items-center justify-center mb-6">
+                  <Target className="w-6 h-6 text-[#C9A14A]" />
                 </div>
-
-                <div className="p-8 bg-white/5 rounded-2xl border border-white/10 hover:border-white/20 transition-all">
-                  <div className="w-12 h-12 bg-[#C9A14A]/10 rounded-xl flex items-center justify-center mb-6">
-                    <Eye className="w-6 h-6 text-[#C9A14A]" />
-                  </div>
-                  <h2 className="text-2xl font-heading mb-4 tracking-wide text-white">Our Vision</h2>
-                  <p className="text-sm sm:text-base text-white/70 leading-relaxed font-body">
-                    To become one of India's most trusted creative marketing agencies.
-                  </p>
-                </div>
+                <h2 className="text-2xl font-heading mb-4 tracking-wide text-white">Our Mission</h2>
+                <p className="text-sm sm:text-base text-white/70 leading-relaxed font-body">
+                  To empower businesses with innovative marketing solutions.
+                </p>
               </motion.div>
 
             </div>
