@@ -64,7 +64,7 @@ export function Navigation() {
             <Link to="/" className="flex items-center gap-2 group">
               <div className="flex flex-col">
                 <span
-                  className="text-xl sm:text-2xl font-bold tracking-wider text-foreground"
+                  className="text-xl sm:text-2xl font-bold tracking-wider text-gold"
                   style={{ fontFamily: "'Cinzel', serif" }}
                 >
                   IRTIQA

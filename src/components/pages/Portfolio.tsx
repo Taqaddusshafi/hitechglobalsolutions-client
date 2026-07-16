@@ -222,13 +222,13 @@ export function Portfolio() {
 
                           {/* Client / Results Metadata Table */}
                           <div className="border-t border-border/50 pt-4 space-y-2 mb-6">
-                            <div className="flex justify-between items-center text-xs">
-                              <span className="text-muted-foreground font-body">Client</span>
-                              <span className="text-foreground font-semibold font-body">{project.client}</span>
+                            <div className="flex justify-between items-start gap-4 text-xs">
+                              <span className="text-muted-foreground font-body flex-shrink-0">Client</span>
+                              <span className="text-foreground font-semibold font-body text-right">{project.client}</span>
                             </div>
-                            <div className="flex justify-between items-center text-xs">
-                              <span className="text-muted-foreground font-body">Impact</span>
-                              <span className="text-emerald-600 dark:text-emerald-400 font-bold font-body">{project.results}</span>
+                            <div className="flex justify-between items-start gap-4 text-xs">
+                              <span className="text-muted-foreground font-body flex-shrink-0">Impact</span>
+                              <span className="text-emerald-600 dark:text-emerald-400 font-bold font-body text-right">{project.results}</span>
                             </div>
                           </div>
                         </div>

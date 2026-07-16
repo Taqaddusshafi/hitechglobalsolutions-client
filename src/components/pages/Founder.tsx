@@ -73,8 +73,8 @@ export function Founder() {
                   <div className="md:col-span-5">
                     <div className="aspect-[3/4] bg-neutral-900 border border-border rounded-2xl overflow-hidden shadow-lg">
                       <img 
-                        src="/images/founderquote.JPG" 
-                        alt="Faqeha Fatima Quote Portrait" 
+                        src="/images/vision_behind_irtiqa.jpg" 
+                        alt="Faqeha Fatima — Vision Behind Irtiqa" 
                         className="w-full h-full object-cover"
                       />
                     </div>
@@ -97,33 +97,23 @@ export function Founder() {
               <div className="luxury-divider mt-4" />
             </div>
 
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-4">
-              {[
-                { src: '/images/vision_behind_irtiqa.jpg', label: 'Creative Direction' },
-                { src: '/images/founder.PNG', label: 'Brand Strategy' },
-                { src: '/images/our_vision.PNG', label: 'Storytelling' },
-                { src: '/images/who are we.png', label: 'Digital Presence' },
-                { src: '/images/services.JPG', label: 'Campaign Planning' },
-                { src: '/images/founderquote.JPG', label: 'Executive Vision' }
-              ].map((img, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: index * 0.08 }}
-                  className="group relative aspect-[3/4] bg-neutral-900 border border-border/60 rounded-xl overflow-hidden shadow-md"
-                >
-                  <img
-                    src={img.src}
-                    alt={img.label}
-                    className="w-full h-full object-cover"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-3">
-                    <span className="text-[10px] uppercase tracking-widest text-[#C9A14A] font-semibold">{img.label}</span>
-                  </div>
-                </motion.div>
-              ))}
+            <div className="flex justify-center">
+              <motion.div
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5 }}
+                className="group relative aspect-[3/4] w-full max-w-[280px] bg-neutral-900 border border-border/60 rounded-xl overflow-hidden shadow-md"
+              >
+                <img
+                  src="/images/founderquote.JPG"
+                  alt="Executive Vision"
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-3">
+                  <span className="text-[10px] uppercase tracking-widest text-[#C9A14A] font-semibold">Executive Vision</span>
+                </div>
+              </motion.div>
             </div>
           </div>
         </section>

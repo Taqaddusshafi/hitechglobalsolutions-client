@@ -47,7 +47,7 @@ export function Footer() {
               />
               <div className="flex flex-col">
                 <span
-                  className="text-3xl sm:text-4xl font-bold tracking-wider text-white"
+                  className="text-3xl sm:text-4xl font-bold tracking-wider text-gold"
                   style={{ fontFamily: "'Cinzel', serif" }}
                 >
                   IRTIQA

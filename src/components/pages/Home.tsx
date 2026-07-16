@@ -5,12 +5,6 @@ import { ArrowRight, CheckCircle2, Sparkles, Palette, Camera, Monitor, Brain, Me
 import { Testimonials } from '../Testimonials';
 
 export function Home() {
-  const quickStats = [
-    { value: '100+', label: 'Brands Served' },
-    { value: '500+', label: 'Projects Delivered' },
-    { value: '50M+', label: 'Organic Reach Generated' },
-    { value: '95%', label: 'Client Retention' },
-  ];
 
   const counterSection = [
     { value: '100+', label: 'Trusted Brands' },
@@ -229,26 +223,6 @@ export function Home() {
           </div>
         </section>
 
-        {/* Quick Stats Section */}
-        <section className="py-16 bg-secondary/10 border-y border-border/50">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-              {quickStats.map((stat, index) => (
-                <motion.div
-                  key={stat.label}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
-                  className="p-6 bg-card rounded-2xl border border-border/60 shadow-sm flex flex-col items-center justify-center min-h-[140px]"
-                >
-                  <div className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#C9A14A] mb-2 font-heading">{stat.value}</div>
-                  <div className="text-xs sm:text-sm text-muted-foreground uppercase tracking-wider font-semibold text-center">{stat.label}</div>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </section>
 
         {/* Trusted By Section */}
         <section className="py-20 bg-[#0B0B0B] text-white border-b border-white/5 relative overflow-hidden">
