@@ -58,7 +58,6 @@ export function Home() {
     '/images/Logos for website/621223818_18051904910689680_4610772012824543984_n.jpg',
     '/images/Logos for website/703954681_18427165540121358_8025350774876454640_n.jpg',
     '/images/Logos for website/730331520_18334272811265312_9185450868821934528_n.jpg',
-    '/images/Logos for website/WhatsApp Image 2026-07-11 at 5.01.28 PM.jpeg',
     '/images/Logos for website/king power jpg logo.jpg.jpeg',
   ];
 
