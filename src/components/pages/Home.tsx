@@ -1,7 +1,7 @@
 import { SEO } from '../SEO';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { ArrowRight, CheckCircle2, Sparkles, Palette, Camera, Video, Monitor, Brain, Megaphone } from 'lucide-react';
+import { ArrowRight, CheckCircle2, Sparkles, Palette, Camera, Monitor, Brain, Megaphone } from 'lucide-react';
 import { Testimonials } from '../Testimonials';
 
 export function Home() {
