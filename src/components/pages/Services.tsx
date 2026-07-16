@@ -66,67 +66,41 @@ export function Services() {
 
       <div className="bg-background pt-24 pb-16 overflow-hidden text-foreground">
         
-        {/* Services Header */}
+        {/* Services Header — Image Removed, Full Width */}
         <section className="py-20 px-4 sm:px-6 relative border-b border-border/40">
           <div className="max-w-7xl mx-auto">
-            <div className="grid lg:grid-cols-12 gap-12 items-center">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              className="max-w-4xl mx-auto text-center space-y-6"
+            >
+              <span className="text-[#C9A14A] text-xs uppercase tracking-[0.3em] font-semibold block">
+                Our Services
+              </span>
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-heading leading-tight">
+                What We Do
+              </h1>
+              <div className="luxury-divider" style={{ margin: '1rem auto' }} />
               
-              {/* Text Column */}
-              <motion.div
-                initial={{ opacity: 0, x: -30 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.8 }}
-                className="lg:col-span-7 space-y-6"
-              >
-                <span className="text-accent text-xs uppercase tracking-[0.3em] font-semibold block">
-                  Our Services
-                </span>
-                <h1 className="text-4xl sm:text-5xl lg:text-6xl font-heading leading-tight">
-                  What We Do
-                </h1>
-                <div className="luxury-divider" style={{ margin: '1rem 0' }} />
-                
-                <p className="text-lg text-muted-foreground leading-relaxed font-body">
-                  From strategy to execution, we help businesses build unforgettable brands and measurable growth. We blend creative marketing with data-driven workflows to deliver results that matter.
-                </p>
-                <div className="flex flex-wrap gap-3 pt-4">
-                  {['Branding', 'Design', 'Marketing', 'Development', 'SEO', 'Video Editing'].map((tag) => (
-                    <span key={tag} className="text-xs uppercase tracking-widest text-accent border border-accent/30 px-3 py-1.5 rounded-md bg-accent/5" style={{ fontFamily: "'Poppins', sans-serif" }}>
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-              </motion.div>
-
-              {/* Image Column */}
-              <motion.div
-                initial={{ opacity: 0, x: 30 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.8, delay: 0.2 }}
-                className="lg:col-span-5"
-              >
-                <div className="aspect-[3/4] bg-neutral-900 border border-accent/30 rounded-3xl overflow-hidden shadow-2xl relative group">
-                  <img 
-                    src="/images/services.JPG" 
-                    alt="Our Services" 
-                    className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700" 
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-                  <div className="absolute bottom-6 left-6 right-6">
-                    <span className="text-[10px] uppercase tracking-widest text-accent font-semibold block mb-1">Featured Visual</span>
-                    <h3 className="text-xl font-heading text-white">Creative Execution</h3>
-                  </div>
-                </div>
-              </motion.div>
-
-            </div>
+              <p className="text-lg text-muted-foreground leading-relaxed font-body max-w-3xl mx-auto">
+                From strategy to execution, we help businesses build unforgettable brands and measurable growth. We blend creative marketing with data-driven workflows to deliver results that matter.
+              </p>
+              <div className="flex flex-wrap gap-3 pt-4 justify-center">
+                {['Branding', 'Design', 'Marketing', 'Development', 'SEO', 'Video Editing'].map((tag) => (
+                  <span key={tag} className="text-xs uppercase tracking-widest text-[#C9A14A] border border-[#C9A14A]/30 px-3 py-1.5 rounded-md bg-[#C9A14A]/5" style={{ fontFamily: "'Poppins', sans-serif" }}>
+                    {tag}
+                  </span>
+                ))}
+              </div>
+            </motion.div>
           </div>
         </section>
 
-        {/* Services Grid */}
+        {/* Services Grid — Yellow Icons, Equal Size Cards */}
         <section className="py-12 px-4 sm:px-6">
           <div className="max-w-7xl mx-auto">
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8" style={{ gridAutoRows: '1fr' }}>
               {serviceCategories.map((service, idx) => {
                 const IconComponent = service.icon;
                 return (
@@ -136,12 +110,12 @@ export function Services() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.5, delay: idx * 0.08 }}
-                    className="p-8 bg-card rounded-2xl border border-border hover:border-accent/40 transition-all hover:shadow-lg flex flex-col justify-between"
+                    className="p-8 bg-card rounded-2xl border border-border hover:border-[#C9A14A]/40 transition-all hover:shadow-lg flex flex-col justify-between h-full"
                   >
                     <div>
                       <div className="flex items-center gap-4 mb-6">
-                        <div className="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center text-accent">
-                          <IconComponent className="w-6 h-6" />
+                        <div className="w-12 h-12 bg-[#C9A14A]/10 rounded-xl flex items-center justify-center">
+                          <IconComponent className="w-6 h-6 text-[#C9A14A]" />
                         </div>
                         <h2 className="text-2xl font-heading tracking-wide text-foreground">{service.title}</h2>
                       </div>
@@ -151,7 +125,7 @@ export function Services() {
                       <ul className="space-y-2 border-t border-border/50 pt-4 mb-6">
                         {service.items.map((item) => (
                           <li key={item} className="flex items-center gap-2 text-sm font-semibold tracking-wide text-foreground/80 font-body">
-                            <span className="w-1.5 h-1.5 bg-accent rounded-full" />
+                            <span className="w-1.5 h-1.5 bg-[#C9A14A] rounded-full" />
                             {item}
                           </li>
                         ))}

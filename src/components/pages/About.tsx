@@ -22,50 +22,28 @@ export function About() {
 
       <div className="bg-background pt-24 pb-16 overflow-hidden text-foreground">
         
-        {/* Section 1: About Irtiqa Marketing */}
+        {/* Section 1: About Irtiqa Marketing — Full Width (Image Removed) */}
         <section className="py-16 px-4 sm:px-6 relative">
           <div className="max-w-7xl mx-auto relative z-10">
-            <div className="grid lg:grid-cols-12 gap-12 items-center">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              className="max-w-4xl mx-auto text-center space-y-6"
+            >
+              <span className="text-[#C9A14A] text-xs uppercase tracking-[0.3em] font-semibold block animate-pulse">
+                About Irtiqa Marketing
+              </span>
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-heading tracking-wide leading-tight">
+                Who We Are
+              </h1>
+              <div className="luxury-divider" />
               
-              {/* Who We Are Text */}
-              <motion.div
-                initial={{ opacity: 0, x: -30 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.8 }}
-                className="lg:col-span-7 space-y-6"
-              >
-                <span className="text-neutral-400 text-xs uppercase tracking-[0.3em] font-semibold block animate-pulse">
-                  About Irtiqa Marketing
-                </span>
-                <h1 className="text-4xl sm:text-5xl lg:text-6xl font-heading tracking-wide leading-tight">
-                  Who We Are
-                </h1>
-                <div className="luxury-divider" />
-                
-                <p className="text-lg text-muted-foreground leading-relaxed font-body">
-                  Irtiqa Marketing is a creative digital marketing agency dedicated to transforming ideas into impactful brands. 
-                  We blend creativity with data-driven strategies to help businesses increase visibility, engagement, and revenue.
-                </p>
-              </motion.div>
-
-              {/* Who We Are Image */}
-              <motion.div
-                initial={{ opacity: 0, x: 30 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.8, delay: 0.2 }}
-                className="lg:col-span-5"
-              >
-                <div className="aspect-[4/5] bg-neutral-900 border border-accent/30 rounded-3xl overflow-hidden shadow-2xl relative group">
-                  <img 
-                    src="/images/who are we.png" 
-                    alt="Who We Are" 
-                    className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700" 
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
-                </div>
-              </motion.div>
-
-            </div>
+              <p className="text-lg text-muted-foreground leading-relaxed font-body max-w-3xl mx-auto">
+                Irtiqa Marketing is a creative digital marketing agency dedicated to transforming ideas into impactful brands. 
+                We blend creativity with data-driven strategies to help businesses increase visibility, engagement, and revenue.
+              </p>
+            </motion.div>
           </div>
         </section>
 
@@ -74,7 +52,7 @@ export function About() {
           <div className="max-w-7xl mx-auto">
             <div className="grid lg:grid-cols-12 gap-12 items-center">
               
-              {/* Vision & Mission Image */}
+              {/* Vision & Mission Image — Colored */}
               <motion.div
                 initial={{ opacity: 0, x: -30 }}
                 whileInView={{ opacity: 1, x: 0 }}
@@ -82,11 +60,11 @@ export function About() {
                 transition={{ duration: 0.8 }}
                 className="lg:col-span-5"
               >
-                <div className="aspect-[4/5] bg-neutral-900 border border-accent/30 rounded-3xl overflow-hidden shadow-2xl">
+                <div className="aspect-[4/5] bg-neutral-900 border border-[#C9A14A]/30 rounded-3xl overflow-hidden shadow-2xl">
                   <img 
                     src="/images/our_vision.PNG" 
                     alt="Our Vision" 
-                    className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700" 
+                    className="w-full h-full object-cover" 
                   />
                 </div>
               </motion.div>
@@ -100,8 +78,8 @@ export function About() {
                 className="lg:col-span-7 space-y-8"
               >
                 <div className="p-8 bg-white/5 rounded-2xl border border-white/10 hover:border-white/20 transition-all">
-                  <div className="w-12 h-12 bg-white/10 rounded-xl flex items-center justify-center mb-6">
-                    <Target className="w-6 h-6 text-white" />
+                  <div className="w-12 h-12 bg-[#C9A14A]/10 rounded-xl flex items-center justify-center mb-6">
+                    <Target className="w-6 h-6 text-[#C9A14A]" />
                   </div>
                   <h2 className="text-2xl font-heading mb-4 tracking-wide text-white">Our Mission</h2>
                   <p className="text-sm sm:text-base text-white/70 leading-relaxed font-body">
@@ -110,12 +88,12 @@ export function About() {
                 </div>
 
                 <div className="p-8 bg-white/5 rounded-2xl border border-white/10 hover:border-white/20 transition-all">
-                  <div className="w-12 h-12 bg-white/10 rounded-xl flex items-center justify-center mb-6">
-                    <Eye className="w-6 h-6 text-white" />
+                  <div className="w-12 h-12 bg-[#C9A14A]/10 rounded-xl flex items-center justify-center mb-6">
+                    <Eye className="w-6 h-6 text-[#C9A14A]" />
                   </div>
                   <h2 className="text-2xl font-heading mb-4 tracking-wide text-white">Our Vision</h2>
                   <p className="text-sm sm:text-base text-white/70 leading-relaxed font-body">
-                    To become one of India’s most trusted creative marketing agencies.
+                    To become one of India's most trusted creative marketing agencies.
                   </p>
                 </div>
               </motion.div>
@@ -128,7 +106,7 @@ export function About() {
         <section className="py-20 px-4 sm:px-6">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-16">
-              <span className="text-accent text-xs uppercase tracking-[0.25em] font-semibold block mb-3">
+              <span className="text-[#C9A14A] text-xs uppercase tracking-[0.25em] font-semibold block mb-3">
                 Our Foundation
               </span>
               <h2 className="text-3xl sm:text-5xl font-heading tracking-wide">Core Values</h2>
@@ -143,10 +121,10 @@ export function About() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: idx * 0.08 }}
-                  className="p-6 bg-card rounded-xl border border-border hover:border-accent/30 transition-all hover:shadow-md text-center"
+                  className="p-6 bg-card rounded-xl border border-border hover:border-[#C9A14A]/30 transition-all hover:shadow-md text-center"
                 >
                   <div className="flex flex-col items-center">
-                    <span className="text-xs font-bold text-accent px-2.5 py-1 bg-accent/10 rounded-md mb-4">
+                    <span className="text-xs font-bold text-[#C9A14A] px-2.5 py-1 bg-[#C9A14A]/10 rounded-md mb-4">
                       0{idx + 1}
                     </span>
                     <h3 className="text-lg font-heading tracking-wide text-foreground mb-2">{value.title}</h3>
@@ -160,13 +138,13 @@ export function About() {
           </div>
         </section>
 
-        {/* Section 2: About the Founder */}
+        {/* Section 2: About the Founder — All Colored */}
         <section className="py-20 px-4 sm:px-6 bg-[#0B0B0B] text-white relative border-t border-white/10">
-          <div className="absolute inset-0 bg-[radial-gradient(var(--accent)_0.5px,transparent_0.5px)] [background-size:24px_24px] opacity-5 pointer-events-none" />
+          <div className="absolute inset-0 bg-[radial-gradient(#C9A14A_0.5px,transparent_0.5px)] [background-size:24px_24px] opacity-5 pointer-events-none" />
           <div className="max-w-7xl mx-auto relative z-10">
             <div className="grid lg:grid-cols-12 gap-12 items-center">
               
-              {/* Founder Image Card */}
+              {/* Founder Image Card — Colored */}
               <motion.div
                 initial={{ opacity: 0, x: -35 }}
                 whileInView={{ opacity: 1, x: 0 }}
@@ -174,11 +152,11 @@ export function About() {
                 transition={{ duration: 0.8 }}
                 className="lg:col-span-5 relative group"
               >
-                <div className="aspect-[4/5] bg-neutral-900 rounded-3xl border border-accent/30 overflow-hidden relative shadow-2xl">
+                <div className="aspect-[4/5] bg-neutral-900 rounded-3xl border border-[#C9A14A]/30 overflow-hidden relative shadow-2xl">
                   <img 
                     src="/images/founder.PNG" 
                     alt="Faqeha Fatima" 
-                    className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700" 
+                    className="w-full h-full object-cover" 
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black via-black/10 to-transparent" />
                 </div>
@@ -192,7 +170,7 @@ export function About() {
                 transition={{ duration: 0.8, delay: 0.2 }}
                 className="lg:col-span-7 space-y-6"
               >
-                <span className="text-neutral-400 text-xs uppercase tracking-[0.3em] font-semibold block">
+                <span className="text-[#C9A14A] text-xs uppercase tracking-[0.3em] font-semibold block">
                   Meet the Founder
                 </span>
                 <h2 className="text-4xl sm:text-5xl font-heading leading-tight text-white">
@@ -210,19 +188,19 @@ export function About() {
                 <div className="grid md:grid-cols-12 gap-6 items-center pt-6 border-t border-white/10 mt-6">
                   {/* Quote Text */}
                   <div className="md:col-span-7">
-                    <blockquote className="border-l-4 border-white pl-6 py-2">
+                    <blockquote className="border-l-4 border-[#C9A14A] pl-6 py-2">
                       <p className="text-lg font-heading tracking-wide italic text-white/95 leading-relaxed">
-                        “Every business deserves premium branding that creates trust, attracts customers, and drives measurable growth.”
+                        "Every business deserves premium branding that creates trust, attracts customers, and drives measurable growth."
                       </p>
                     </blockquote>
                   </div>
-                  {/* Quote Image */}
+                  {/* Quote Image — Colored */}
                   <div className="md:col-span-5">
                     <div className="aspect-[3/4] bg-neutral-900 border border-white/10 rounded-2xl overflow-hidden shadow-lg">
                       <img 
                         src="/images/founderquote.JPG" 
                         alt="Faqeha Fatima Quote Portrait" 
-                        className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500"
+                        className="w-full h-full object-cover"
                       />
                     </div>
                   </div>

@@ -1,6 +1,6 @@
 import { SEO } from '../SEO';
 import { motion } from 'framer-motion';
-import { Heart, UtensilsCrossed, Hotel, GraduationCap, Shirt, Sparkles, Building2, Factory, HeartHandshake, Rocket, Briefcase, ShoppingBag } from 'lucide-react';
+import { Heart, UtensilsCrossed, Hotel, GraduationCap, Shirt, Scissors, Building2, Factory, HeartHandshake, Rocket, Briefcase, ShoppingBag } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 export function Industries() {
@@ -9,7 +9,7 @@ export function Industries() {
     { name: 'Real Estate', icon: Building2, desc: 'Lead generation funnels, premium brochures, and local property SEO.' },
     { name: 'Education', icon: GraduationCap, desc: 'Brand authority building and conversion campaigns for institutions.' },
     { name: 'Fashion', icon: Shirt, desc: 'Lookbook photography, reels creation, and retail marketing campaigns.' },
-    { name: 'Beauty & Salon', icon: Sparkles, desc: 'Aesthetic SMM layouts, influencer tie-ups, and brand styling.' },
+    { name: 'Beauty & Salon', icon: Scissors, desc: 'Aesthetic SMM layouts, influencer tie-ups, and brand styling.' },
     { name: 'Restaurants', icon: UtensilsCrossed, desc: 'Appetizing visual content, food photography, and SMM campaigns.' },
     { name: 'Hotels', icon: Hotel, desc: 'Premium hospitality campaigns, digital reach, and premium design guides.' },
     { name: 'Startups', icon: Rocket, desc: 'Rapid brand launch frameworks, pitch design, and fast turnarounds.' },
@@ -39,7 +39,7 @@ export function Industries() {
               transition={{ duration: 0.8 }}
               className="flex flex-col items-center"
             >
-              <span className="text-accent text-xs uppercase tracking-[0.3em] font-semibold block mb-4">
+              <span className="text-[#C9A14A] text-xs uppercase tracking-[0.3em] font-semibold block mb-4">
                 Markets We Serve
               </span>
               <h1 className="text-4xl sm:text-6xl font-heading mb-6 tracking-wide leading-tight">
@@ -53,7 +53,7 @@ export function Industries() {
           </div>
         </section>
 
-        {/* Industries Grid */}
+        {/* Industries Grid — Yellow Icons */}
         <section className="py-12 px-4 sm:px-6">
           <div className="max-w-7xl mx-auto">
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -66,10 +66,10 @@ export function Industries() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.5, delay: idx * 0.05 }}
-                    className="p-8 bg-card rounded-2xl border border-border hover:border-accent/40 transition-all hover:shadow-md flex items-start gap-5"
+                    className="p-8 bg-card rounded-2xl border border-border hover:border-[#C9A14A]/40 transition-all hover:shadow-md flex items-start gap-5"
                   >
-                    <div className="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center text-accent flex-shrink-0">
-                      <IconComponent className="w-6 h-6" />
+                    <div className="w-12 h-12 bg-[#C9A14A]/10 rounded-xl flex items-center justify-center flex-shrink-0">
+                      <IconComponent className="w-6 h-6 text-[#C9A14A]" />
                     </div>
                     <div>
                       <h2 className="text-xl font-heading tracking-wide text-foreground mb-2">{ind.name}</h2>
@@ -88,7 +88,7 @@ export function Industries() {
         <section className="py-20 text-center bg-[#0B0B0B] text-white">
           <div className="max-w-3xl mx-auto px-4">
             <h2 className="text-2xl sm:text-3xl font-heading mb-6 tracking-wide">
-              Don’t see your industry listed?
+              Don't see your industry listed?
             </h2>
             <p className="text-sm text-white/60 font-body mb-8">
               Every business structure has a story. Contact us to design a tailored marketing roadmap.

@@ -1,7 +1,7 @@
 import { SEO } from '../SEO';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { ArrowRight, CheckCircle2, Sparkles } from 'lucide-react';
+import { ArrowRight, CheckCircle2, Sparkles, Palette, Camera, Video, Monitor, Brain, Megaphone } from 'lucide-react';
 import { Testimonials } from '../Testimonials';
 
 export function Home() {
@@ -22,12 +22,12 @@ export function Home() {
   ];
 
   const whatWeDoList = [
-    { title: 'Branding', desc: 'Crafting premium identities, logo designs, and comprehensive brand guidelines.' },
-    { title: 'Marketing', desc: 'Performance-driven, result-oriented marketing strategies to scale customer acquisition.' },
-    { title: 'Design', desc: 'Stunning graphic designs, social media creatives, brochures, and print layouts.' },
-    { title: 'Development', desc: 'High-performance, bespoke business websites, landing pages, and e-commerce stores.' },
-    { title: 'Content', desc: 'Engaging storytelling, copy, high-impact photography, and cinematic reels/videos.' },
-    { title: 'AI Solutions', desc: 'Modern AI automation, content workflows, and customized chatbot integrations.' },
+    { title: 'Branding', desc: 'Crafting premium identities, logo designs, and comprehensive brand guidelines.', icon: Sparkles },
+    { title: 'Marketing', desc: 'Performance-driven, result-oriented marketing strategies to scale customer acquisition.', icon: Megaphone },
+    { title: 'Design', desc: 'Stunning graphic designs, social media creatives, brochures, and print layouts.', icon: Palette },
+    { title: 'Development', desc: 'High-performance, bespoke business websites, landing pages, and e-commerce stores.', icon: Monitor },
+    { title: 'Content', desc: 'Engaging storytelling, copy, high-impact photography, and cinematic reels/videos.', icon: Camera },
+    { title: 'AI Solutions', desc: 'Modern AI automation, content workflows, and customized chatbot integrations.', icon: Brain },
   ];
 
   const portfolioCategories = [
@@ -49,14 +49,23 @@ export function Home() {
   ];
 
   const clientLogos = [
-    'Vidyam Care',
-    'Patna Biryani',
-    'World Dream Studio',
-    'Mindmanthan Software Solutions',
-    'Beauty Clinics',
-    'Restaurants',
-    'Fashion Brands',
-    'Educational Institutes'
+    '/images/Logos for website/294386778_736895840926025_6007188555280010895_n.jpg',
+    '/images/Logos for website/329477275_754937038999274_376823044394748815_n.jpg',
+    '/images/Logos for website/367608698_1457780245058530_8555842757582324557_n.jpg',
+    '/images/Logos for website/441470350_3756728654654919_3485827540906061037_n.jpg',
+    '/images/Logos for website/449799948_376114465498564_3783999225728027857_n.jpg',
+    '/images/Logos for website/450463634_395959360118936_7382763048832768321_n.jpg',
+    '/images/Logos for website/480903537_960059579607016_7510063833805973710_n.jpg',
+    '/images/Logos for website/500672647_17862794427405496_2832323647421170224_n.jpg',
+    '/images/Logos for website/528147221_17844575775544404_3837645943165711227_n.jpg',
+    '/images/Logos for website/590369783_17853545388591431_5591131273521213306_n.jpg',
+    '/images/Logos for website/590874092_18026649815781818_6755819965465007807_n.jpg',
+    '/images/Logos for website/615696484_17848361400664164_8206393633985664138_n.jpg',
+    '/images/Logos for website/621223818_18051904910689680_4610772012824543984_n.jpg',
+    '/images/Logos for website/703954681_18427165540121358_8025350774876454640_n.jpg',
+    '/images/Logos for website/730331520_18334272811265312_9185450868821934528_n.jpg',
+    '/images/Logos for website/WhatsApp Image 2026-07-11 at 5.01.28 PM.jpeg',
+    '/images/Logos for website/king power jpg logo.jpg.jpeg',
   ];
 
   return (
@@ -137,17 +146,17 @@ export function Home() {
             >
               <Link to="/contact">
                 <motion.button
-                  className="w-full sm:w-auto px-8 py-4 bg-primary text-primary-foreground rounded-full hover:shadow-2xl hover:shadow-accent/10 transition-all flex items-center justify-center gap-2 group text-sm tracking-widest uppercase font-semibold border border-transparent hover:border-accent/30"
+                  className="w-full sm:w-auto px-8 py-4 bg-primary text-primary-foreground rounded-full hover:shadow-2xl hover:shadow-[#C9A14A]/10 transition-all flex items-center justify-center gap-2 group text-sm tracking-widest uppercase font-semibold border border-transparent hover:border-[#C9A14A]/30"
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
                 >
                   Book a Free Consultation
-                  <ArrowRight className="w-4 h-4 text-accent group-hover:translate-x-1 transition-transform" />
+                  <ArrowRight className="w-4 h-4 text-[#C9A14A] group-hover:translate-x-1 transition-transform" />
                 </motion.button>
               </Link>
               <Link to="/portfolio">
                 <motion.button
-                  className="w-full sm:w-auto px-8 py-4 border border-accent/40 rounded-full hover:border-accent hover:bg-accent/5 transition-all text-sm tracking-widest uppercase font-semibold text-foreground"
+                  className="w-full sm:w-auto px-8 py-4 border border-[#C9A14A]/40 rounded-full hover:border-[#C9A14A] hover:bg-[#C9A14A]/5 transition-all text-sm tracking-widest uppercase font-semibold text-foreground"
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
                 >
@@ -155,6 +164,68 @@ export function Home() {
                 </motion.button>
               </Link>
             </motion.div>
+          </div>
+        </section>
+
+        {/* About the Founder */}
+        <section className="py-20 sm:py-28 px-4 sm:px-6 bg-[#0B0B0B] text-white relative overflow-hidden">
+          <div className="absolute inset-0 bg-[radial-gradient(#C9A14A_0.5px,transparent_0.5px)] [background-size:24px_24px] opacity-5 pointer-events-none" />
+          <div className="max-w-7xl mx-auto relative z-10">
+            <div className="grid lg:grid-cols-12 gap-12 items-center">
+              <motion.div
+                initial={{ opacity: 0, x: -30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8 }}
+                className="lg:col-span-5"
+              >
+                <div className="aspect-[4/5] bg-neutral-900 rounded-3xl border border-[#C9A14A]/30 overflow-hidden relative shadow-2xl">
+                  <img 
+                    src="/images/founder.PNG" 
+                    alt="Faqeha Fatima — Founder" 
+                    className="w-full h-full object-cover" 
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
+                </div>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, x: 30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8, delay: 0.2 }}
+                className="lg:col-span-7 space-y-6"
+              >
+                <span className="text-[#C9A14A] text-xs uppercase tracking-[0.3em] font-semibold block" style={{ fontFamily: "'Poppins', sans-serif" }}>
+                  Meet the Founder
+                </span>
+                <h2 className="text-3xl sm:text-5xl font-heading leading-tight text-white">
+                  Faqeha Fatima
+                </h2>
+                <p className="text-sm font-semibold uppercase tracking-wider text-white/60 font-body">
+                  Founder & Creative Director, Irtiqa Marketing
+                </p>
+                <div className="luxury-divider" style={{ margin: '1rem 0' }} />
+                <p className="text-base sm:text-lg text-white/70 leading-relaxed font-body">
+                  With a passion for creativity and business growth, Faqeha Fatima established Irtiqa Marketing to help brands build a powerful digital presence. Combining strategy, design, storytelling, and technology, she has led successful campaigns across multiple industries.
+                </p>
+                <blockquote className="border-l-4 border-[#C9A14A] pl-6 py-2 mt-4">
+                  <p className="text-lg font-heading tracking-wide italic text-white/90 leading-relaxed">
+                    "Every business deserves premium branding that creates trust, attracts customers, and drives measurable growth."
+                  </p>
+                </blockquote>
+                <Link to="/founder">
+                  <motion.button
+                    className="mt-4 px-8 py-3 border border-[#C9A14A]/50 rounded-full hover:bg-[#C9A14A]/10 transition-all text-sm tracking-widest uppercase font-semibold text-white flex items-center gap-2 group"
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
+                  >
+                    Learn More About the Founder
+                    <ArrowRight className="w-4 h-4 text-[#C9A14A] group-hover:translate-x-1 transition-transform" />
+                  </motion.button>
+                </Link>
+              </motion.div>
+            </div>
           </div>
         </section>
 
@@ -169,10 +240,10 @@ export function Home() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
-                  className="p-6 bg-card rounded-2xl border border-border/60 shadow-sm flex flex-col justify-center"
+                  className="p-6 bg-card rounded-2xl border border-border/60 shadow-sm flex flex-col items-center justify-center min-h-[140px]"
                 >
-                  <div className="text-3xl sm:text-4xl md:text-5xl font-bold text-accent mb-2 font-heading">{stat.value}</div>
-                  <div className="text-xs sm:text-sm text-muted-foreground uppercase tracking-wider font-semibold">{stat.label}</div>
+                  <div className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#C9A14A] mb-2 font-heading">{stat.value}</div>
+                  <div className="text-xs sm:text-sm text-muted-foreground uppercase tracking-wider font-semibold text-center">{stat.label}</div>
                 </motion.div>
               ))}
             </div>
@@ -193,14 +264,16 @@ export function Home() {
             {/* Infinite Marquee Ticker */}
             <div className="relative w-full overflow-hidden py-4 mask-gradient-x">
               <div className="flex gap-6 animate-marquee">
-                {[...clientLogos, ...clientLogos, ...clientLogos].map((client, idx) => (
+                {[...clientLogos, ...clientLogos, ...clientLogos].map((logo, idx) => (
                   <div
-                    key={client + '-' + idx}
-                    className="flex-shrink-0 px-8 py-6 bg-white/5 rounded-2xl border border-white/10 hover:border-accent/40 transition-all flex items-center justify-center min-w-[240px] group cursor-pointer"
+                    key={'logo-' + idx}
+                    className="flex-shrink-0 p-4 bg-white/5 rounded-2xl border border-white/10 hover:border-[#C9A14A]/40 transition-all flex items-center justify-center h-28 w-44 group cursor-pointer"
                   >
-                    <span className="text-base font-heading font-semibold tracking-wider text-white/80 group-hover:text-white transition-colors">
-                      {client}
-                    </span>
+                    <img
+                      src={logo}
+                      alt={`Client ${(idx % clientLogos.length) + 1}`}
+                      className="max-h-16 max-w-[140px] object-contain group-hover:scale-105 transition-transform duration-300"
+                    />
                   </div>
                 ))}
               </div>
@@ -226,10 +299,10 @@ export function Home() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
-                  className="p-4 bg-card rounded-xl border border-border/60 shadow-sm flex flex-col justify-center"
+                  className="p-4 bg-card rounded-xl border border-border/60 shadow-sm flex flex-col items-center justify-center min-h-[120px]"
                 >
-                  <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-accent mb-1 font-heading">{stat.value}</div>
-                  <div className="text-[10px] sm:text-xs text-muted-foreground uppercase tracking-wider font-semibold">{stat.label}</div>
+                  <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#C9A14A] mb-1 font-heading">{stat.value}</div>
+                  <div className="text-[10px] sm:text-xs text-muted-foreground uppercase tracking-wider font-semibold text-center">{stat.label}</div>
                 </motion.div>
               ))}
             </div>
@@ -254,23 +327,26 @@ export function Home() {
             </div>
 
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
-              {whatWeDoList.map((service, index) => (
-                <motion.div
-                  key={service.title}
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
-                  whileHover={{ y: -6 }}
-                  className="p-8 bg-card rounded-2xl border border-border hover:border-accent/40 hover:shadow-xl transition-all group relative overflow-hidden"
-                >
-                  <div className="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-accent transition-colors duration-300">
-                    <Sparkles className="w-6 h-6 text-accent group-hover:text-primary transition-colors" />
-                  </div>
-                  <h3 className="text-xl sm:text-2xl font-heading mb-4 tracking-wide">{service.title}</h3>
-                  <p className="text-sm sm:text-base text-muted-foreground leading-relaxed font-body">{service.desc}</p>
-                </motion.div>
-              ))}
+              {whatWeDoList.map((service, index) => {
+                const IconComp = service.icon;
+                return (
+                  <motion.div
+                    key={service.title}
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: index * 0.1 }}
+                    whileHover={{ y: -6 }}
+                    className="p-8 bg-card rounded-2xl border border-border hover:border-[#C9A14A]/40 hover:shadow-xl transition-all group relative overflow-hidden"
+                  >
+                    <div className="w-12 h-12 bg-[#C9A14A]/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-[#C9A14A] transition-colors duration-300">
+                      <IconComp className="w-6 h-6 text-[#C9A14A] group-hover:text-white transition-colors" />
+                    </div>
+                    <h3 className="text-xl sm:text-2xl font-heading mb-4 tracking-wide">{service.title}</h3>
+                    <p className="text-sm sm:text-base text-muted-foreground leading-relaxed font-body">{service.desc}</p>
+                  </motion.div>
+                );
+              })}
             </div>
           </div>
         </section>
@@ -285,7 +361,7 @@ export function Home() {
                 </span>
                 <h2 className="text-3xl sm:text-5xl font-heading tracking-wide">Portfolio Preview</h2>
               </div>
-              <Link to="/portfolio" className="mt-4 md:mt-0 text-accent hover:text-accent/90 font-semibold text-sm tracking-wider uppercase flex items-center gap-2 group">
+              <Link to="/portfolio" className="mt-4 md:mt-0 text-[#C9A14A] hover:text-[#C9A14A]/90 font-semibold text-sm tracking-wider uppercase flex items-center gap-2 group">
                 View All Case Studies
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </Link>
@@ -299,16 +375,16 @@ export function Home() {
                     whileInView={{ opacity: 1, scale: 1 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.5, delay: index * 0.08 }}
-                    className="relative group overflow-hidden rounded-2xl border border-border bg-card aspect-[4/3] flex items-center justify-center p-6 text-center cursor-pointer hover:border-accent/40 transition-all hover:shadow-lg h-full"
+                    className="relative group overflow-hidden rounded-2xl border border-border bg-card aspect-[4/3] flex items-center justify-center p-6 text-center cursor-pointer hover:border-[#C9A14A]/40 transition-all hover:shadow-lg h-full"
                   >
                     <div className="absolute inset-0 bg-[#0B0B0B]/85 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-center items-center p-4">
                       <span className="text-white font-heading text-xl sm:text-2xl mb-2">{category}</span>
-                      <span className="text-accent text-xs uppercase tracking-widest font-semibold flex items-center gap-1">
+                      <span className="text-[#C9A14A] text-xs uppercase tracking-widest font-semibold flex items-center gap-1">
                         View Projects <ArrowRight className="w-3.5 h-3.5" />
                       </span>
                     </div>
                     <div className="flex flex-col items-center">
-                      <Sparkles className="w-8 h-8 text-accent mb-3 opacity-60 group-hover:opacity-100 transition-all" />
+                      <Sparkles className="w-8 h-8 text-[#C9A14A] mb-3 opacity-60 group-hover:opacity-100 transition-all" />
                       <span className="text-lg font-heading text-foreground font-semibold tracking-wider">{category}</span>
                     </div>
                   </motion.div>
@@ -342,7 +418,7 @@ export function Home() {
                 <div className="grid sm:grid-cols-2 gap-4">
                   {whyIrtiqa.map((differentiator) => (
                     <div key={differentiator} className="flex items-center gap-3 py-3 border-b border-white/10">
-                      <CheckCircle2 className="w-5 h-5 text-neutral-300 flex-shrink-0" />
+                      <CheckCircle2 className="w-5 h-5 text-[#C9A14A] flex-shrink-0" />
                       <span className="text-sm font-semibold tracking-wide text-white/90" style={{ fontFamily: "'Poppins', sans-serif" }}>
                         {differentiator}
                       </span>
@@ -358,7 +434,7 @@ export function Home() {
                 transition={{ duration: 0.6 }}
                 className="relative bg-gradient-to-br from-[#1c1c1c] to-[#121212] rounded-3xl p-8 sm:p-12 border border-white/10"
               >
-                <div className="absolute top-0 right-0 w-36 h-36 bg-accent/10 rounded-full blur-2xl -z-10" />
+                <div className="absolute top-0 right-0 w-36 h-36 bg-[#C9A14A]/10 rounded-full blur-2xl -z-10" />
                 <h3 className="text-2xl sm:text-3xl font-heading mb-4 text-white tracking-wider">Premium Quality Guaranteed</h3>
                 <p className="text-sm sm:text-base text-white/60 mb-8 leading-relaxed font-body">
                   We maintain strict attention to detail, luxury brand aesthetics, fast turnaround times, and data-driven optimization structures.

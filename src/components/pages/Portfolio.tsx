@@ -143,7 +143,7 @@ export function Portfolio() {
               transition={{ duration: 0.8 }}
               className="flex flex-col items-center"
             >
-              <span className="text-accent text-xs uppercase tracking-[0.3em] font-semibold block mb-4">
+              <span className="text-[#C9A14A] text-xs uppercase tracking-[0.3em] font-semibold block mb-4">
                 Creative Showcase
               </span>
               <h1 className="text-4xl sm:text-6xl font-heading mb-6 tracking-wide leading-tight">
@@ -163,8 +163,8 @@ export function Portfolio() {
                 onClick={() => setActiveFilter(filter)}
                 className={`px-5 py-2.5 rounded-full text-xs font-semibold uppercase tracking-wider transition-all duration-300 ${
                   activeFilter === filter
-                    ? 'bg-accent text-accent-foreground'
-                    : 'bg-card border border-border text-muted-foreground hover:border-accent hover:text-foreground'
+                    ? 'bg-[#C9A14A] text-white'
+                    : 'bg-card border border-border text-muted-foreground hover:border-[#C9A14A] hover:text-foreground'
                 }`}
                 style={{ fontFamily: "'Poppins', sans-serif" }}
               >
@@ -192,19 +192,20 @@ export function Portfolio() {
                       animate={{ opacity: 1, scale: 1 }}
                       exit={{ opacity: 0, scale: 0.95 }}
                       transition={{ duration: 0.4 }}
-                      className="group relative bg-card border border-border rounded-2xl overflow-hidden hover:border-accent/40 transition-all duration-500 flex flex-col h-full hover:shadow-2xl hover:-translate-y-1"
+                    className="group relative bg-card border border-border rounded-2xl overflow-hidden hover:border-[#C9A14A]/40 transition-all duration-500 flex flex-col hover:shadow-2xl hover:-translate-y-1"
+                    style={{ height: '100%' }}
                     >
                       {/* Image Preview Container */}
                       <div className="relative aspect-[16/10] overflow-hidden bg-neutral-900">
                         <img
                           src={project.image}
                           alt={project.title}
-                          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out grayscale group-hover:grayscale-0 opacity-85 group-hover:opacity-100"
+                          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out opacity-85 group-hover:opacity-100"
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/10 to-transparent" />
                         
                         {/* Category Floating Badge */}
-                        <span className="absolute top-4 left-4 text-[10px] uppercase font-semibold tracking-widest text-accent-foreground bg-accent px-3 py-1 rounded-md font-body shadow-sm">
+                        <span className="absolute top-4 left-4 text-[10px] uppercase font-semibold tracking-widest text-white bg-[#C9A14A] px-3 py-1 rounded-md font-body shadow-sm">
                           {project.category}
                         </span>
                       </div>
@@ -212,7 +213,7 @@ export function Portfolio() {
                       {/* Content Wrapper */}
                       <div className="p-6 flex-1 flex flex-col justify-between">
                         <div>
-                          <h3 className="text-xl sm:text-2xl font-heading tracking-wide text-foreground mb-3 group-hover:text-accent transition-colors duration-300">
+                          <h3 className="text-xl sm:text-2xl font-heading tracking-wide text-foreground mb-3 group-hover:text-[#C9A14A] transition-colors duration-300">
                             {project.title}
                           </h3>
                           <p className="text-sm text-muted-foreground font-body leading-relaxed mb-6">
@@ -246,7 +247,7 @@ export function Portfolio() {
                           {/* Discuss Project Link CTA */}
                           <Link
                             to="/contact"
-                            className="inline-flex items-center gap-1.5 text-xs font-semibold text-accent hover:text-accent/80 transition-colors uppercase tracking-wider font-body pt-2 group/btn"
+                            className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#C9A14A] hover:text-[#C9A14A]/80 transition-colors uppercase tracking-wider font-body pt-2 group/btn"
                           >
                             Inquire About This Project 
                             <ArrowRight className="w-3.5 h-3.5 group-hover/btn:translate-x-1 transition-transform" />
