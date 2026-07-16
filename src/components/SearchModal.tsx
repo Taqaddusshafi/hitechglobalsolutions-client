@@ -95,9 +95,10 @@ export function SearchModal({ isOpen, onClose }: { isOpen: boolean; onClose: () 
                         {loading && <Loader2 className="w-4 h-4 animate-spin text-muted-foreground" />}
                         <button
                             onClick={onClose}
-                            className="p-1 hover:bg-secondary rounded-lg transition-colors"
+                            className="p-2 hover:bg-secondary rounded-lg transition-colors"
+                            aria-label="Close search"
                         >
-                            <X className="w-4 h-4 text-muted-foreground" />
+                            <X className="w-5 h-5 text-muted-foreground" />
                         </button>
                     </div>
 
